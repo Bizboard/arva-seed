@@ -4,12 +4,12 @@
 
 import {Inject}                     from 'di.js';
 import FastClick                    from 'fastclick';
-import Context                      from 'famous/core/Context';
-import {App as ArvaApp}             from 'arva-mvc/core/App';
-import {Router}                     from 'arva-mvc/core/Router';
+import Context                      from 'famous/core/Context.js';
+import {App as ArvaApp}             from 'arva-mvc/core/App.js';
+import {Router}                     from 'arva-mvc/core/Router.js';
 
 /* Here we import all controllers we want to use in the app */
-import {HomeController}             from './controllers/HomeController';
+import {HomeController}             from './controllers/HomeController.js';
 
 /* By injecting these constructors, objects of their type will be created
  * and are globally available through the Dependency Injection context. (arva-utils/Context.js)

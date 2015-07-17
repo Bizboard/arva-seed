@@ -1,8 +1,8 @@
 /**
  * Created by tom on 17/07/15.
  */
-import Surface              from 'famous/core/Surface';
-import {View}               from 'arva-mvc/core/View';
+import Surface              from 'famous/core/Surface.js';
+import {View}               from 'arva-mvc/core/View.js';
 
 export class HomeView extends View {
     constructor(welcomeName = 'world'){

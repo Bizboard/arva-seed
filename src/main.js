@@ -2,10 +2,10 @@
  * Created by tom on 17/07/15.
  */
 
-import {App}                    from './App';
-import {FirebaseDataSource}     from 'arva-ds/datasources/FirebaseDataSource';
-import {createDefaultContext}   from 'arva-mvc/DefaultContext';
-import {ArvaRouter}             from 'arva-mvc/routers/ArvaRouter';
+import {FirebaseDataSource}     from 'arva-ds/datasources/FirebaseDataSource.js';
+import {createDefaultContext}   from 'arva-mvc/DefaultContext.js';
+import {ArvaRouter}             from 'arva-mvc/routers/ArvaRouter.js';
+import {App}                    from './App.js';
 
 /* Importing CSS in jspm bundled builds injects them into the DOM automagically */
 import famousCSS                from 'famous/core/famous.css!';
