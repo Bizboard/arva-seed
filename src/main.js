@@ -3,8 +3,8 @@
  */
 
 import {FirebaseDataSource}     from 'arva-ds/datasources/FirebaseDataSource.js';
-import {createDefaultContext}   from 'arva-mvc/DefaultContext.js';
-import {ArvaRouter}             from 'arva-mvc/routers/ArvaRouter.js';
+import {createDefaultContext}   from 'arva-js/DefaultContext.js';
+import {ArvaRouter}             from 'arva-js/routers/ArvaRouter.js';
 import {App}                    from './App.js';
 
 /* Importing CSS in jspm bundled builds injects them into the DOM automagically */

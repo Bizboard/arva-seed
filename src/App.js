@@ -5,8 +5,8 @@
 import {Inject}                     from 'di.js';
 import FastClick                    from 'fastclick';
 import Context                      from 'famous/core/Context.js';
-import {App as ArvaApp}             from 'arva-mvc/core/App.js';
-import {Router}                     from 'arva-mvc/core/Router.js';
+import {App as ArvaApp}             from 'arva-js/core/App.js';
+import {Router}                     from 'arva-js/core/Router.js';
 
 /* Here we import all controllers we want to use in the app */
 import {HomeController}             from './controllers/HomeController.js';
