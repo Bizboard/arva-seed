@@ -1,7 +1,3 @@
-/**
- * Created by tom on 17/07/15.
- */
-
 import {Inject}                     from 'di.js';
 import FastClick                    from 'fastclick';
 import Context                      from 'famous/core/Context.js';

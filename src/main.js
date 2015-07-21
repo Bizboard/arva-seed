@@ -1,10 +1,6 @@
-/**
- * Created by tom on 17/07/15.
- */
-
-import {FirebaseDataSource}     from 'arva-ds/datasources/FirebaseDataSource.js';
 import {createDefaultContext}   from 'arva-js/DefaultContext.js';
 import {ArvaRouter}             from 'arva-js/routers/ArvaRouter.js';
+import {DefaultDataSource}      from './DefaultDataSource.js';
 import {App}                    from './App.js';
 
 /* Importing CSS in jspm bundled builds injects them into the DOM automagically */
@@ -17,8 +13,10 @@ async function start() {
      * or our /www/cordova.js dummy to trigger the deviceready when the DOM has loaded. */
     await waitUntilReadyFired();
 
-    /* Create a Dependency Injection context with the wanted router and dataSource types. */
-    let context = createDefaultContext(ArvaRouter, FirebaseDataSource);
+    /* Create a Dependency Injection context with the wanted router and dataSource types.
+     * If you want a DataSource other than Firebase, edit DefaultDataSource.js to return an instance of it. */
+    DefaultDataSource.setRoot('https://your-app-here.firebaseio.com');
+    let context = createDefaultContext(ArvaRouter, DefaultDataSource);
 
     /* This creates a new instance of the App, which launches the Router
      * and kicks off app execution. */
