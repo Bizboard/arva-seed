@@ -1,14 +1,13 @@
 {
   "scripts": {
-    "build": "jspm bundle-sfx main.js www/bundle.js"
+    "build": "jspm bundle-sfx src/main.js www/bundle.js"
   },
   "jspm": {
-    "directories": {},
     "dependencies": {
-      "arva-components": "github:Bizboard/arva-components@1.0.0-beta-1",
-      "arva-ds": "github:Bizboard/arva-ds@1.0.0-beta-1",
-      "arva-js": "github:Bizboard/arva-js@1.0.0-beta-1",
-      "arva-utils": "github:Bizboard/arva-utils@1.0.0-beta-1",
+      "arva-components": "github:Bizboard/arva-components@develop",
+      "arva-ds": "github:Bizboard/arva-ds@develop",
+      "arva-js": "github:Bizboard/arva-js@develop",
+      "arva-utils": "github:Bizboard/arva-utils@develop",
       "clean-css": "npm:clean-css@^3.3.6",
       "css": "github:systemjs/plugin-css@^0.1.13",
       "di.js": "github:Bizboard/di.js@master",
@@ -18,6 +17,9 @@
       "lodash": "npm:lodash@^3.10.0"
     },
     "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4",
       "traceur": "github:jmcriffey/bower-traceur@0.0.90",
       "traceur-runtime": "github:jmcriffey/bower-traceur-runtime@0.0.90"
     }
