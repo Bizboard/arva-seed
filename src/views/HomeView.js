@@ -16,8 +16,5 @@ export class HomeView extends View {
                 align: [0.5, 0.5]
             });
         });
-
-        /* Hook up our renderables and layout function to famous-flex */
-        this.build();
     }
 }
