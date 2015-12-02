@@ -1,10 +1,10 @@
-import {Provide}                        from 'di.js';
+import {provide}                        from 'di.js';
 import {DataSource}                     from 'arva-ds/core/DataSource.js';
 import {FirebaseDataSource}             from 'arva-ds/datasources/FirebaseDataSource.js';
 
 var root;
 
-@Provide(DataSource)
+@provide(DataSource)
 export class DefaultDataSource {
     /**
      * Sets the default Firebase domain, and any additional path to use in the application-wide DataSource instance.

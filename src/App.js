@@ -1,4 +1,4 @@
-import {Inject}                     from 'di.js';
+import {inject}                     from 'di.js';
 import FastClick                    from 'fastclick';
 import Context                      from 'famous/core/Context.js';
 import {App as ArvaApp}             from 'arva-js/core/App.js';
@@ -11,7 +11,7 @@ import {HomeController}             from './controllers/HomeController.js';
  * and are globally available through the Dependency Injection context. (arva-utils/Context.js)
  * Be sure to add any new controllers you add after HomeController,
  * or the Router won't find them! */
-@Inject(Router, Context, HomeController)
+@inject(HomeController)
 export class App extends ArvaApp {
 
     constructor(router, context) {
