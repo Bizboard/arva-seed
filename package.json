@@ -4,10 +4,10 @@
   },
   "jspm": {
     "dependencies": {
-      "arva-components": "github:bizboard/arva-components@develop",
-      "arva-ds": "github:bizboard/arva-ds@develop",
-      "arva-js": "github:bizboard/arva-js@develop",
-      "arva-utils": "github:bizboard/arva-utils@develop",
+      "arva-components": "github:bizboard/arva-components@1.0.0-beta-2",
+      "arva-ds": "github:bizboard/arva-ds@1.0.0-beta-2",
+      "arva-js": "github:bizboard/arva-js@1.0.0-beta-2",
+      "arva-utils": "github:bizboard/arva-utils@1.0.0-beta-2",
       "clean-css": "npm:clean-css@^3.3.6",
       "css": "github:systemjs/plugin-css@^0.1.13",
       "di.js": "github:bizboard/di.js@master",

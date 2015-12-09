@@ -32,10 +32,10 @@ System.config({
   },
 
   map: {
-    "arva-components": "github:bizboard/arva-components@develop",
-    "arva-ds": "github:bizboard/arva-ds@develop",
-    "arva-js": "github:bizboard/arva-js@develop",
-    "arva-utils": "github:bizboard/arva-utils@develop",
+    "arva-components": "github:bizboard/arva-components@1.0.0-beta-2",
+    "arva-ds": "github:bizboard/arva-ds@1.0.0-beta-2",
+    "arva-js": "github:bizboard/arva-js@1.0.0-beta-2",
+    "arva-utils": "github:bizboard/arva-utils@1.0.0-beta-2",
     "babel": "npm:babel-core@5.8.34",
     "babel-runtime": "npm:babel-runtime@5.8.34",
     "clean-css": "npm:clean-css@3.4.8",
@@ -48,36 +48,37 @@ System.config({
     "lodash": "npm:lodash@3.10.1",
     "traceur": "github:jmcriffey/bower-traceur@0.0.90",
     "traceur-runtime": "github:jmcriffey/bower-traceur-runtime@0.0.90",
-    "github:bizboard/SPSoapAdapter@develop": {
-      "arva-utils": "github:bizboard/arva-utils@develop",
+    "github:bizboard/SPSoapAdapter@1.0.0-beta-2": {
+      "arva-utils": "github:bizboard/arva-utils@1.0.0-beta-2",
       "eventemitter3": "npm:eventemitter3@1.1.1",
       "json-query": "npm:json-query@1.5.0",
       "lodash": "npm:lodash@3.10.1",
       "xml2js": "npm:xml2js@0.4.15"
     },
-    "github:bizboard/arva-components@develop": {
-      "arva-ds": "github:bizboard/arva-ds@develop",
-      "arva-utils": "github:bizboard/arva-utils@develop",
+    "github:bizboard/arva-components@1.0.0-beta-2": {
+      "SPSoapAdapter": "github:bizboard/SPSoapAdapter@1.0.0-beta-2",
+      "arva-ds": "github:bizboard/arva-ds@1.0.0-beta-2",
+      "arva-utils": "github:bizboard/arva-utils@1.0.0-beta-2",
       "di.js": "github:bizboard/di.js@master"
     },
-    "github:bizboard/arva-ds@develop": {
-      "SPSoapAdapter": "github:bizboard/SPSoapAdapter@develop",
-      "arva-utils": "github:bizboard/arva-utils@develop",
+    "github:bizboard/arva-ds@1.0.0-beta-2": {
+      "SPSoapAdapter": "github:bizboard/SPSoapAdapter@1.0.0-beta-2",
+      "arva-utils": "github:bizboard/arva-utils@1.0.0-beta-2",
       "di": "github:bizboard/di.js@master",
       "eventemitter3": "npm:eventemitter3@1.1.1",
       "firebase": "github:firebase/firebase-bower@2.3.2",
       "lodash": "npm:lodash@3.10.1"
     },
-    "github:bizboard/arva-js@develop": {
-      "arva-ds": "github:bizboard/arva-ds@develop",
-      "arva-utils": "github:bizboard/arva-utils@develop",
+    "github:bizboard/arva-js@1.0.0-beta-2": {
+      "arva-ds": "github:bizboard/arva-ds@1.0.0-beta-2",
+      "arva-utils": "github:bizboard/arva-utils@1.0.0-beta-2",
       "di": "github:bizboard/di.js@master",
       "eventemitter3": "npm:eventemitter3@1.1.1",
       "famous": "npm:famous@0.3.5",
       "famous-flex": "github:ijzerenhein/famous-flex@0.3.5",
       "lodash": "npm:lodash@3.10.1"
     },
-    "github:bizboard/arva-utils@develop": {
+    "github:bizboard/arva-utils@1.0.0-beta-2": {
       "di": "github:bizboard/di.js@master",
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "lodash": "npm:lodash@3.10.1",
