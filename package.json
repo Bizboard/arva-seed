@@ -25,6 +25,6 @@
     }
   },
   "dependencies": {
-    "jspm": "^0.16.0-beta.3"
+    "jspm": "^0.16.15"
   }
 }
