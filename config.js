@@ -13,8 +13,7 @@ System.config({
   },
   paths: {
     "github:*": "jspm_packages/github/*",
-    "npm:*": "jspm_packages/npm/*",
-    "bitbucket:*": "jspm_packages/bitbucket/*"
+    "npm:*": "jspm_packages/npm/*"
   },
 
   meta: {
@@ -33,7 +32,6 @@ System.config({
   },
 
   map: {
-    "SPSoapAdapter": "github:bizboard/SPSoapAdapter@develop",
     "arva-components": "github:bizboard/arva-components@develop",
     "arva-ds": "github:bizboard/arva-ds@develop",
     "arva-js": "github:bizboard/arva-js@develop",
@@ -76,7 +74,7 @@ System.config({
       "di": "github:bizboard/di.js@master",
       "eventemitter3": "npm:eventemitter3@1.1.1",
       "famous": "npm:famous@0.3.5",
-      "famous-flex": "github:ijzerenhein/famous-flex@0.3.6",
+      "famous-flex": "github:ijzerenhein/famous-flex@0.3.5",
       "lodash": "npm:lodash@3.10.1"
     },
     "github:bizboard/arva-utils@develop": {
@@ -89,7 +87,7 @@ System.config({
       "assert": "npm:assert@1.3.0"
     },
     "github:jspm/nodelibs-buffer@0.1.0": {
-      "buffer": "npm:buffer@3.5.3"
+      "buffer": "npm:buffer@3.5.4"
     },
     "github:jspm/nodelibs-events@0.1.1": {
       "events": "npm:events@1.0.2"
@@ -121,7 +119,7 @@ System.config({
       "string_decoder": "npm:string_decoder@0.10.31"
     },
     "github:jspm/nodelibs-timers@0.1.0": {
-      "timers-browserify": "npm:timers-browserify@1.4.1"
+      "timers-browserify": "npm:timers-browserify@1.4.2"
     },
     "github:jspm/nodelibs-url@0.1.0": {
       "url": "npm:url@0.10.3"
@@ -141,12 +139,12 @@ System.config({
     "npm:babel-runtime@5.8.34": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
-    "npm:buffer@3.5.3": {
+    "npm:buffer@3.5.4": {
       "base64-js": "npm:base64-js@0.0.8",
       "child_process": "github:jspm/nodelibs-child_process@0.1.0",
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "ieee754": "npm:ieee754@1.1.6",
-      "is-array": "npm:is-array@1.0.1",
+      "isarray": "npm:isarray@0.0.1",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:clean-css@3.4.8": {
@@ -195,7 +193,7 @@ System.config({
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2",
-      "source-map": "npm:source-map@0.4.4",
+      "source-map": "npm:source-map@0.5.3",
       "systemjs-json": "github:systemjs/plugin-json@0.1.0"
     },
     "npm:esprima@1.0.4": {
@@ -253,6 +251,9 @@ System.config({
       "amdefine": "npm:amdefine@1.0.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
+    "npm:source-map@0.5.3": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
     "npm:stream-browserify@1.0.0": {
       "events": "github:jspm/nodelibs-events@0.1.1",
       "inherits": "npm:inherits@2.0.1",
@@ -265,7 +266,7 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.2",
       "stream": "github:jspm/nodelibs-stream@0.1.0"
     },
-    "npm:timers-browserify@1.4.1": {
+    "npm:timers-browserify@1.4.2": {
       "process": "npm:process@0.11.2"
     },
     "npm:url@0.10.3": {

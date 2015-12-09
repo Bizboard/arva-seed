@@ -4,7 +4,6 @@
   },
   "jspm": {
     "dependencies": {
-      "SPSoapAdapter": "github:bizboard/SPSoapAdapter@develop",
       "arva-components": "github:bizboard/arva-components@develop",
       "arva-ds": "github:bizboard/arva-ds@develop",
       "arva-js": "github:bizboard/arva-js@develop",
