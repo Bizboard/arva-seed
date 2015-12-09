@@ -43,7 +43,7 @@ System.config({
     "css": "github:systemjs/plugin-css@0.1.20",
     "di.js": "github:bizboard/di.js@master",
     "famous": "npm:famous@0.3.5",
-    "famous-flex": "github:ijzerenhein/famous-flex@0.3.6",
+    "famous-flex": "github:ijzerenhein/famous-flex@0.3.5",
     "fastclick": "npm:fastclick@1.0.6",
     "lodash": "npm:lodash@3.10.1",
     "traceur": "github:jmcriffey/bower-traceur@0.0.90",
