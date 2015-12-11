@@ -16,6 +16,7 @@ export class KeyboardShortcuts {
         this.ipcRenderer = electron.ipcRenderer;
 
         this.registerShortcut('ctrl+alt+shift+i', this._onDevTools);
+        this.registerShortcut('ctrl+alt+shift+l', this._onShowLogin);
     }
 
     /**
@@ -37,5 +38,15 @@ export class KeyboardShortcuts {
      */
     _onDevTools() {
         this.ipcRenderer.send('toggle-devtools');
+    }
+
+    /**
+     * Show a seperate login window for SharePoint.
+     * Needs to be a seperate window because of compatibility issues with Electron's
+     * Node integration overriding the jQuery that Microsoft needs.
+     * @private
+     */
+    _onShowLogin() {
+        this.ipcRenderer.send('show-login');
     }
 }

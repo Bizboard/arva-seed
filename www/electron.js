@@ -10,7 +10,7 @@ electron.crashReporter.start();
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-let mainWindow;
+let mainWindow, loginWindow;
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function() {
@@ -26,9 +26,11 @@ app.on('window-all-closed', function() {
 app.on('ready', function() {
   // Create the browser window.
   mainWindow = new BrowserWindow({width: 800, height: 600});
+  loginWindow = new BrowserWindow({width: 800, height: 600, webPreferences: {nodeIntegration: false}, show: false});
 
   // and load the index.html of the app.
   mainWindow.loadURL(`file://${__dirname}/index.html`);
+  loginWindow.loadURL('https://<yourcompany>.sharepoint.com');
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function() {
@@ -36,6 +38,10 @@ app.on('ready', function() {
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
     mainWindow = null;
+  });
+
+  loginWindow.on('closed', function() {
+    loginWindow = null;
   });
 
   /* Register keyboard shortcut listener that can be called from renderer processes
@@ -48,5 +54,8 @@ app.on('ready', function() {
   });
   ipcMain.on('toggle-devtools', function() {
     mainWindow.webContents.toggleDevTools();
+  });
+  ipcMain.on('show-login', function() {
+    loginWindow.show();
   });
 });

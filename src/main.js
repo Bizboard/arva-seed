@@ -13,9 +13,8 @@ async function start() {
      * or our /www/cordova.js dummy to trigger the deviceready when the DOM has loaded. */
     await waitUntilReadyFired();
 
-    /* Create a Dependency Injection context with the wanted router and dataSource types.
-     * If you want a DataSource other than Firebase, edit DefaultDataSource.js to return an instance of it. */
-    DefaultDataSource.setRoot('https://your-app-here.firebaseio.com');
+    let dataSourceRoot = localStorage.getItem('SharePointURL') || 'https://bizboardapps.sharepoint.com/JOYce';
+    DefaultDataSource.setRoot(dataSourceRoot);
     let context = createDefaultContext(ArvaRouter, DefaultDataSource);
 
     /* This creates a new instance of the App, which launches the Router
