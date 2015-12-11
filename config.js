@@ -42,6 +42,7 @@ System.config({
     "core-js": "npm:core-js@1.2.6",
     "css": "github:systemjs/plugin-css@0.1.20",
     "di.js": "github:bizboard/di.js@master",
+    "electron": "npm:electron@0.4.1",
     "famous": "npm:famous@0.3.5",
     "famous-flex": "github:ijzerenhein/famous-flex@0.3.5",
     "fastclick": "npm:fastclick@1.0.6",
@@ -122,6 +123,9 @@ System.config({
     "github:jspm/nodelibs-timers@0.1.0": {
       "timers-browserify": "npm:timers-browserify@1.4.2"
     },
+    "github:jspm/nodelibs-tty@0.1.0": {
+      "tty-browserify": "npm:tty-browserify@0.0.0"
+    },
     "github:jspm/nodelibs-url@0.1.0": {
       "url": "npm:url@0.10.3"
     },
@@ -186,6 +190,17 @@ System.config({
       "esprima": "npm:esprima@1.0.4",
       "estraverse": "npm:estraverse@1.3.2",
       "through": "npm:through@2.3.8",
+      "util": "github:jspm/nodelibs-util@0.1.0"
+    },
+    "npm:drip@1.1.0": {
+      "events": "github:jspm/nodelibs-events@0.1.1",
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "tea-concat": "npm:tea-concat@0.1.0"
+    },
+    "npm:electron@0.4.1": {
+      "drip": "npm:drip@1.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "tty": "github:jspm/nodelibs-tty@0.1.0",
       "util": "github:jspm/nodelibs-util@0.1.0"
     },
     "npm:escodegen@0.0.28": {
@@ -262,6 +277,9 @@ System.config({
     },
     "npm:string_decoder@0.10.31": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0"
+    },
+    "npm:tea-concat@0.1.0": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:through@2.3.8": {
       "process": "github:jspm/nodelibs-process@0.1.2",
