@@ -15,7 +15,6 @@ export class KeyboardShortcuts {
         const electron = require('electron');
         this.ipcRenderer = electron.ipcRenderer;
 
-        this.registerShortcut('esc', this._onMinimize);
         this.registerShortcut('ctrl+alt+shift+i', this._onDevTools);
     }
 
@@ -30,10 +29,6 @@ export class KeyboardShortcuts {
     registerShortcut(shortcut, callback){
         this.ipcRenderer.on(shortcut, callback);
         this.ipcRenderer.send('keyboard-subscribe', shortcut);
-    }
-
-    _onMinimize() {
-        this.ipcRenderer.send('minimize');
     }
 
     /**

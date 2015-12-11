@@ -49,7 +49,4 @@ app.on('ready', function() {
   ipcMain.on('toggle-devtools', function() {
     mainWindow.webContents.toggleDevTools();
   });
-  ipcMain.on('minimize', function() {
-    mainWindow.minimize();
-  });
 });
