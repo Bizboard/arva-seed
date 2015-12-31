@@ -2,7 +2,8 @@
   "scripts": {
     "release": "npm run build; electron-packager ./www HelloWorld --platform=win32,darwin --arch=x64 --version=0.36.0 --out=build --overwrite",
     "build": "jspm bundle-sfx src/main.js www/bundle.js",
-    "start": "electron www/electron.js"
+    "start": "electron www/electron.js",
+    "devbuilder": "node scripts/devbuilder.js"
   },
   "jspm": {
     "dependencies": {
@@ -29,6 +30,9 @@
     "jspm": "^0.16.15"
   },
   "devDependencies": {
-    "electron-prebuilt": "^0.35.0"
+    "electron-prebuilt": "^0.35.0",
+    "eslint": "^1.10.3",
+    "ipc-light": "^1.1.2",
+    "jspm-dev-builder": "^0.3.2"
   }
 }

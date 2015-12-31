@@ -1,5 +1,7 @@
 /.idea/
+/build/
 /jspm_packages/
 /node_modules/
 www/bundle.*
-/build/
+www/dev.*
+scripts/devbuild.lock
