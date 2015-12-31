@@ -2,3 +2,5 @@
 /jspm_packages/
 /node_modules/
 www/bundle.*
+www/dev.*
+scripts/devbuild.lock

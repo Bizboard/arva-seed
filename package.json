@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "build": "jspm bundle-sfx src/main.js www/bundle.js"
+    "build": "jspm bundle-sfx src/main.js www/bundle.js",
+    "devbuilder": "node scripts/devbuilder.js"
   },
   "jspm": {
     "dependencies": {
@@ -26,5 +27,10 @@
   },
   "dependencies": {
     "jspm": "^0.16.15"
+  },
+  "devDependencies": {
+    "eslint": "^1.10.3",
+    "ipc-light": "^1.1.2",
+    "jspm-dev-builder": "^0.3.2"
   }
 }
