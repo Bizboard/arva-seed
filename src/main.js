@@ -4,7 +4,8 @@ import {DefaultDataSource}      from './DefaultDataSource.js';
 import {App}                    from './App.js';
 
 /* Importing CSS in jspm bundled builds injects them into the DOM automagically */
-import famousCSS                from 'famous/core/famous.css!';
+import 'famous/core/famous.css!';
+import './fonts.css!';
 
 start();
 

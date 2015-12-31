@@ -11,7 +11,7 @@ export class HomeView extends View {
         /* Tell famous-flex how to render our components in Famous. */
         this.layouts.push((context) => {
             context.set('message', {
-                size: [true, true],
+                size: [112, 24],
                 origin: [0.5, 0.5],
                 align: [0.5, 0.5]
             });
