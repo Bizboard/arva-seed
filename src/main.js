@@ -2,6 +2,7 @@ import {ArvaRouter}             from 'arva-js/routers/ArvaRouter.js';
 import {createDefaultContext}   from 'arva-js/DefaultContext.js';
 import {DefaultDataSource}      from './DefaultDataSource.js';
 import {App}                    from './App.js';
+import './polyfills.js';
 
 /* Importing CSS in jspm bundled builds injects them into the DOM automagically */
 import 'famous/core/famous.css!';
