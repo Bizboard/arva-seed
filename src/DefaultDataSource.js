@@ -1,6 +1,6 @@
 import {provide}                        from 'di.js';
-import {DataSource}                     from 'arva-ds/core/DataSource.js';
-import {FirebaseDataSource}             from 'arva-ds/datasources/FirebaseDataSource.js';
+import {DataSource}                     from 'arva-js/data/DataSource.js';
+import {FirebaseDataSource}             from 'arva-js/data/datasources/FirebaseDataSource.js';
 
 var root;
 

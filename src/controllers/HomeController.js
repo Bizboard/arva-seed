@@ -5,7 +5,7 @@ export class HomeController extends Controller {
 
     Index(){
         if(!this.homeView) {
-            this.homeView = new HomeView('world');
+            this.homeView = new HomeView({welcomeName: 'world'});
         }
         return this.homeView;
     }
