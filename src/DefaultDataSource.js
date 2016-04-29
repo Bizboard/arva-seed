@@ -1,6 +1,6 @@
-import {provide}                        from 'di';
-import {DataSource}                     from 'arva-ds/core/DataSource.js';
-import {SharePointDataSource}           from 'arva-ds/datasources/SharePointDataSource.js';
+import {provide}                        from 'di.js';
+import {DataSource}                     from 'arva-js/data/DataSource.js';
+import {SharePointDataSource}             from 'arva-js/data/datasources/SharePointDataSource.js';
 
 var root;
 
@@ -8,7 +8,7 @@ var root;
 export class DefaultDataSource {
     /**
      * Sets the default SharePoint domain, and any additional path to use in the application-wide DataSource instance.
-     * For example, 'https://bizboard.sharepointcom/'
+     * For example, 'https://bizboard.sharepoint.com/'
      * @param {String} rootPath Path to remote dataSource, including protocol and domain.
      */
     static setRoot(rootPath) {

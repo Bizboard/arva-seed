@@ -6,7 +6,7 @@
  * Created by tom on 14/09/15.
  */
 
-import {ObjectHelper}               from 'arva-utils/ObjectHelper.js';
+import {ObjectHelper}               from 'arva-js/utils/ObjectHelper.js';
 
 export class KeyboardShortcuts {
     constructor() {
