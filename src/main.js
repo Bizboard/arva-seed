@@ -16,9 +16,17 @@ async function start() {
     await waitUntilReadyFired();
 
     /* Create a Dependency Injection context with the wanted router and dataSource types.
-     * If you want a DataSource other than Firebase, edit DefaultDataSource.js to return an instance of it. */
-    DefaultDataSource.setRoot('https://your-app-here.firebaseio.com');
+     * If you want a DataSource other than Firebase, edit DefaultDataSource.js to return an instance of it.
+     *
+     * Generate this config automatically in the Firebase console -> Overview -> Add Firebase to your web app. */
+    DefaultDataSource.setConfig({
+        apiKey: '<api-key>',
+        authDomain: '<subdomain>.firebaseapp.com',
+        databaseURL: 'https://<subdomain>.firebaseio.com',
+        storageBucket: '<subdomain>.appspot.com'
+    });
     let context = createDefaultContext(ArvaRouter, DefaultDataSource);
+    window.ds = context.get(DefaultDataSource);
 
     /* This creates a new instance of the App, which launches the Router
      * and kicks off app execution. */

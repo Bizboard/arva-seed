@@ -1,22 +1,24 @@
+import firebase                         from 'firebase';
 import {provide}                        from 'di.js';
 import {DataSource}                     from 'arva-js/data/DataSource.js';
 import {FirebaseDataSource}             from 'arva-js/data/datasources/FirebaseDataSource.js';
 
-var root;
+var config;
 
 @provide(DataSource)
 export class DefaultDataSource {
     /**
      * Sets the default Firebase domain, and any additional path to use in the application-wide DataSource instance.
      * For example, 'https://arva.firebaseio.com/my/path'
-     * @param {String} rootPath Path to remote dataSource, including protocol and domain.
+     * @param {Object} configuration Object as required by firebase.initializeApp(). Can be generated at Firebase console -> Overview -> Add Firebase to your web app.
      */
-    static setRoot(rootPath) {
-        root = rootPath;
+    static setConfig(configuration) {
+        config = configuration;
     }
 
     /* Provides a Dependency Injectable constructor of a FirebaseDataSource, that allows for setting a root path across the entire app. */
     constructor() {
-        return new FirebaseDataSource(root);
+        firebase.initializeApp(config);
+        return new FirebaseDataSource('/', {});
     }
 }
