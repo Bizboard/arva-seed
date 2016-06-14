@@ -1,5 +1,5 @@
 import firebase                         from 'firebase';
-import {provide}                        from 'di.js';
+import {provide}                        from 'di';
 import {DataSource}                     from 'arva-js/data/DataSource.js';
 import {FirebaseDataSource}             from 'arva-js/data/datasources/FirebaseDataSource.js';
 

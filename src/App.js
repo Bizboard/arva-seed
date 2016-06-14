@@ -1,4 +1,4 @@
-import {inject}                     from 'di.js';
+import {inject}                     from 'di';
 import FastClick                    from 'fastclick';
 import Context                      from 'famous/core/Context.js';
 import {App as ArvaApp}             from 'arva-js/core/App.js';

@@ -23,6 +23,9 @@ System.config({
     "/*.svg": {
       "loader": "arva-js/utils/ImageLoader"
     },
+    "/*.gif": {
+      "loader": "arva-js/utils/ImageLoader"
+    },
     "/*.png": {
       "loader": "arva-js/utils/ImageLoader"
     },
@@ -38,7 +41,7 @@ System.config({
     "clean-css": "npm:clean-css@3.4.17",
     "core-js": "npm:core-js@1.2.6",
     "css": "github:systemjs/plugin-css@0.1.23",
-    "di.js": "github:bizboard/di.js@master",
+    "di": "github:bizboard/di.js@master",
     "famous": "github:bizboard/famous@develop",
     "famous-flex": "github:bizboard/famous-flex@master",
     "fastclick": "npm:fastclick@1.0.6",

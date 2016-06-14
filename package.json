@@ -1,14 +1,18 @@
 {
   "scripts": {
-    "build": "jspm bundle-sfx src/main.js www/bundle.js",
-    "devbuilder": "node scripts/devbuilder.js"
+    "build": "jspm bundle-sfx src/main.js www/bundle.js --minify",
+    "devbuilder": "node scripts/devbuilder.js",
+    "gen-keystore": "keytool -genkey -v -keystore release.keystore -alias release -keyalg RSA -keysize 2048 -validity 10000",
+    "gen-icons": "node node_modules/splashicon-generator/bin/splashicon-generator --imagespath='./res'",
+    "copy-apk": "mkdir -p build && cp platforms/android/build/outputs/apk/android-armv7-release.apk build/android-armv7-release.apk",
+    "release": "jspm install && npm run build  && npm run gen-icons && cordova build --release && npm run copy-apk"
   },
   "jspm": {
     "dependencies": {
       "arva-js": "github:bizboard/arva-js@develop",
       "clean-css": "npm:clean-css@^3.3.6",
       "css": "github:systemjs/plugin-css@^0.1.13",
-      "di.js": "github:bizboard/di.js@master",
+      "di": "github:bizboard/di.js@master",
       "famous": "github:bizboard/famous@develop",
       "famous-flex": "github:bizboard/famous-flex@master",
       "fastclick": "npm:fastclick@^1.0.6",

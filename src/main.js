@@ -26,7 +26,6 @@ async function start() {
         storageBucket: '<subdomain>.appspot.com'
     });
     let context = createDefaultContext(ArvaRouter, DefaultDataSource);
-    window.ds = context.get(DefaultDataSource);
 
     /* This creates a new instance of the App, which launches the Router
      * and kicks off app execution. */
