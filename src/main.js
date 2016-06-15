@@ -5,8 +5,8 @@ import {App}                    from './App.js';
 import './polyfills.js';
 
 /* Importing CSS in jspm bundled builds injects them into the DOM automagically */
-import 'famous/core/famous.css!';
-import './fonts.css!';
+import 'famous/core/famous.css!systemjs/plugin-css';
+import './fonts.css';
 
 start();
 

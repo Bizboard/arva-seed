@@ -8,32 +8,65 @@
     "release": "npm run build -- --minify  && npm run gen-icons && cordova build --release && npm run copy-apk"
   },
   "jspm": {
+    "name": "nl.bizboard.arva.seed",
+    "main": "main.js",
     "dependencies": {
       "arva-js": "github:bizboard/arva-js@develop",
-      "clean-css": "npm:clean-css@^3.3.6",
-      "css": "github:systemjs/plugin-css@^0.1.13",
+      "babel-plugin-transform-decorators-legacy": "npm:babel-plugin-transform-decorators-legacy@^1.3.4",
       "di": "github:bizboard/di.js@master",
       "famous": "github:bizboard/famous@develop",
       "famous-flex": "github:bizboard/famous-flex@master",
       "fastclick": "npm:fastclick@^1.0.6",
-      "firebase": "github:firebase/firebase-bower@^3.0.4",
-      "lodash": "npm:lodash@^4.13.1"
+      "firebase": "github:firebase/firebase-bower@^3.0.5",
+      "lodash": "npm:lodash@^4.13.1",
+      "systemjs/plugin-css": "github:systemjs/plugin-css@^0.1.23"
     },
     "devDependencies": {
-      "babel": "npm:babel-core@^5.8.24",
-      "babel-runtime": "npm:babel-runtime@^5.8.24",
-      "core-js": "npm:core-js@^1.1.4",
-      "traceur": "github:jmcriffey/bower-traceur@0.0.90",
-      "traceur-runtime": "github:jmcriffey/bower-traceur-runtime@0.0.90"
+      "babel-plugin-transform-decorators": "npm:babel-plugin-transform-decorators@^6.8.0",
+      "babel-preset-es2015": "npm:babel-preset-es2015@^6.9.0",
+      "child_process": "github:jspm/nodelibs-child_process@^0.2.0-alpha",
+      "http": "github:jspm/nodelibs-http@^0.2.0-alpha",
+      "module": "github:jspm/nodelibs-module@^0.2.0-alpha",
+      "plugin-babel": "npm:systemjs-plugin-babel@^0.0.12",
+      "url": "github:jspm/nodelibs-url@^0.2.0-alpha"
+    },
+    "peerDependencies": {
+      "assert": "github:jspm/nodelibs-assert@^0.2.0-alpha",
+      "buffer": "github:jspm/nodelibs-buffer@^0.2.0-alpha",
+      "events": "github:jspm/nodelibs-events@^0.2.0-alpha",
+      "fs": "github:jspm/nodelibs-fs@^0.2.0-alpha",
+      "path": "github:jspm/nodelibs-path@^0.2.0-alpha",
+      "process": "github:jspm/nodelibs-process@^0.2.0-alpha",
+      "stream": "github:jspm/nodelibs-stream@^0.2.0-alpha",
+      "string_decoder": "github:jspm/nodelibs-string_decoder@^0.2.0-alpha",
+      "timers": "github:jspm/nodelibs-timers@^0.2.0-alpha",
+      "util": "github:jspm/nodelibs-util@^0.2.0-alpha",
+      "vm": "github:jspm/nodelibs-vm@^0.2.0-alpha"
+    },
+    "overrides": {
+      "npm:debug@2.2.0": {
+        "main": "browser.js",
+        "jspmNodeConversion": false,
+        "format": "cjs",
+        "map": {
+          "./browser.js": {
+            "node": "./node.js"
+          },
+          "fs": "@node/fs",
+          "net": "@node/net",
+          "tty": "@node/tty",
+          "util": "@node/util"
+        }
+      },
+      "npm:inherits@2.0.1": {
+        "ignore": [
+          "test.js"
+        ]
+      },
+      "npm:ms@0.7.1": {
+        "jspmNodeConversion": false,
+        "format": "cjs"
+      }
     }
-  },
-  "dependencies": {
-    "jspm": "^0.16.15"
-  },
-  "devDependencies": {
-    "cordova-build-increment": "^0.1.0",
-    "eslint": "^1.10.3",
-    "ipc-light": "^1.1.2",
-    "jspm-dev-builder": "^0.3.2"
   }
 }
