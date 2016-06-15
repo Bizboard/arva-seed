@@ -1,6 +1,5 @@
 import {inject}                     from 'di';
 import FastClick                    from 'fastclick';
-import Context                      from 'famous/core/Context.js';
 import {App as ArvaApp}             from 'arva-js/core/App.js';
 import {Router}                     from 'arva-js/core/Router.js';
 
@@ -26,5 +25,8 @@ export class App extends ArvaApp {
 
         /* Initialize the app with the Router and Famous Context */
         super(router, context);
+
+        /* Hide splash screen */
+        if(navigator && navigator.splashscreen) { navigator.splashscreen.hide(); }
     }
 }

@@ -10,3 +10,4 @@ plugins
 res/icons
 res/screens
 store
+incrementBuildNum.js
