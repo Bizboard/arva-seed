@@ -3,6 +3,8 @@ import {HomeView}                   from '../views/HomeView.js';
 
 export class HomeController extends Controller {
 
+    myProp = 1;
+
     Index(){
         if(!this.homeView) {
             this.homeView = new HomeView({welcomeName: 'world'});

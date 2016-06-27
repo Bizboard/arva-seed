@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "jspm bundle-sfx src/main.js www/bundle.js",
+    "build": "jspm build src/main.js www/bundle.js",
     "devbuilder": "node scripts/devbuilder.js",
     "gen-keystore": "keytool -genkey -v -keystore release.keystore -alias release -keyalg RSA -keysize 2048 -validity 10000",
     "gen-icons": "node node_modules/splashicon-generator/bin/splashicon-generator --imagespath='./res'",
@@ -12,7 +12,9 @@
     "main": "main.js",
     "dependencies": {
       "arva-js": "github:bizboard/arva-js@develop",
-      "babel-plugin-transform-decorators-legacy": "npm:babel-plugin-transform-decorators-legacy@^1.3.4",
+      "babel-plugin-transform-class-properties": "npm:babel-plugin-transform-class-properties@^6.9.1",
+      "babel-plugin-transform-es2015-classes": "npm:babel-plugin-transform-es2015-classes@^6.9.0",
+      "css": "github:systemjs/plugin-css@^0.1.23",
       "di": "github:bizboard/di.js@master",
       "famous": "github:bizboard/famous@develop",
       "famous-flex": "github:bizboard/famous-flex@master",
@@ -22,9 +24,12 @@
       "systemjs/plugin-css": "github:systemjs/plugin-css@^0.1.23"
     },
     "devDependencies": {
+      "babel-plugin-syntax-decorators": "npm:babel-plugin-syntax-decorators@^6.8.0",
+      "babel-plugin-transform-async-functions": "npm:babel-plugin-transform-async-functions@^6.8.0",
       "babel-plugin-transform-decorators": "npm:babel-plugin-transform-decorators@^6.8.0",
-      "babel-preset-es2015": "npm:babel-preset-es2015@^6.9.0",
+      "babel-plugin-transform-decorators-legacy": "npm:babel-plugin-transform-decorators-legacy@^1.3.4",
       "child_process": "github:jspm/nodelibs-child_process@^0.2.0-alpha",
+      "core-js": "npm:core-js@^2.4.0",
       "http": "github:jspm/nodelibs-http@^0.2.0-alpha",
       "module": "github:jspm/nodelibs-module@^0.2.0-alpha",
       "plugin-babel": "npm:systemjs-plugin-babel@^0.0.12",
