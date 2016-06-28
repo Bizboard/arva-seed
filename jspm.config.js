@@ -1,7 +1,8 @@
 SystemJS.config({
   babelOptions: {
     "plugins": [
-      "babel-plugin-transform-decorators-legacy"
+      "babel-plugin-transform-decorators-legacy",
+      "babel-plugin-transform-class-properties"
     ]
   },
   paths: {
@@ -23,7 +24,8 @@ SystemJS.config({
       "babel-plugin-transform-decorators-legacy": "npm:babel-plugin-transform-decorators-legacy@1.3.4",
       "core-js": "npm:core-js@2.4.0",
       "babel-plugin-syntax-decorators": "npm:babel-plugin-syntax-decorators@6.8.0",
-      "babel-plugin-transform-async-functions": "npm:babel-plugin-transform-async-functions@6.8.0"
+      "babel-plugin-transform-async-functions": "npm:babel-plugin-transform-async-functions@6.8.0",
+      "babel-plugin-transform-runtime-constructor-name": "github:bizboard/babel-plugin-transform-runtime-constructor-name@master"
     },
     "packages": {
       "npm:babel-plugin-transform-decorators@6.8.0": {
@@ -108,10 +110,14 @@ SystemJS.config({
       "format": "",
       "meta": {
         "*.js": {
+          "loader": "plugin-babel"
+        },
+        "models/*.js": {
           "loader": "plugin-babel",
           "babelOptions": {
             "plugins": [
               "babel-plugin-transform-decorators-legacy",
+              "babel-plugin-transform-runtime-constructor-name",
               "babel-plugin-transform-class-properties"
             ]
           }
@@ -121,16 +127,7 @@ SystemJS.config({
           "babelOptions": {
             "plugins": [
               "babel-plugin-transform-decorators-legacy",
-              "babel-plugin-transform-class-properties",
-              "src/namedMangling.js"
-            ]
-          }
-        },
-        "github:*.js": {
-          "loader": "plugin-babel",
-          "babelOptions": {
-            "plugins": [
-              "babel-plugin-transform-decorators-legacy",
+              "babel-plugin-transform-runtime-constructor-name",
               "babel-plugin-transform-class-properties"
             ]
           }
