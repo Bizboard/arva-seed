@@ -5,6 +5,11 @@ SystemJS.config({
       "babel-plugin-transform-class-properties"
     ]
   },
+  arvaOptions: {
+    "fileMappings": {
+      "github:bizboard/arva-js@develop": "../arva-js"
+    }
+  },
   paths: {
     "npm:": "jspm_packages/npm/",
     "github:": "jspm_packages/github/",
@@ -384,7 +389,9 @@ SystemJS.config({
         "request-animation-frame-mock": "github:erykpiast/request-animation-frame-mock@0.1.8",
         "famous-flex": "github:bizboard/famous-flex@master",
         "famous": "github:bizboard/famous@develop",
-        "SPSoapAdapter": "github:bizboard/SPSoapAdapter@develop"
+        "SPSoapAdapter": "github:bizboard/SPSoapAdapter@develop",
+        "xml2js": "npm:xml2js@0.4.16",
+        "arva-js": "github:bizboard/arva-js@develop"
       }
     },
     "github:jspm/nodelibs-path@0.1.0": {

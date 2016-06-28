@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "install-all": "npm install && jspm install && node scripts/linkJspmToLocal.js",
     "build": "jspm build src/main.js www/bundle.js",
     "devbuilder": "node scripts/devbuilder.js",
     "gen-keystore": "keytool -genkey -v -keystore release.keystore -alias release -keyalg RSA -keysize 2048 -validity 10000",
