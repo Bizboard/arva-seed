@@ -13,7 +13,7 @@ SystemJS.config({
   paths: {
     "npm:": "jspm_packages/npm/",
     "github:": "jspm_packages/github/",
-    "nl.bizboard.arva.seed/": "src/"
+    "app/": "src/"
   },
   browserConfig: {
     "baseURL": "/arva-seed"
@@ -299,7 +299,7 @@ SystemJS.config({
   },
   transpiler: "plugin-babel",
   packages: {
-    "nl.bizboard.arva.seed": {
+    "app": {
       "main": "main.js",
       "format": "",
       "meta": {
@@ -389,23 +389,12 @@ SystemJS.config({
         "request-animation-frame-mock": "github:erykpiast/request-animation-frame-mock@0.1.8",
         "famous-flex": "github:bizboard/famous-flex@master",
         "famous": "github:bizboard/famous@develop",
-        "SPSoapAdapter": "github:bizboard/SPSoapAdapter@develop",
-        "xml2js": "npm:xml2js@0.4.16",
-        "arva-js": "github:bizboard/arva-js@develop"
+        "xml2js": "npm:xml2js@0.4.16"
       }
     },
     "github:jspm/nodelibs-path@0.1.0": {
       "map": {
         "path-browserify": "npm:path-browserify@0.0.0"
-      }
-    },
-    "github:bizboard/SPSoapAdapter@develop": {
-      "map": {
-        "eventemitter3": "npm:eventemitter3@1.2.0",
-        "lodash": "npm:lodash@4.13.1",
-        "xml2js": "npm:xml2js@0.4.16",
-        "json-query": "npm:json-query@1.8.0",
-        "arva-utils": "github:bizboard/arva-utils@develop"
       }
     },
     "github:jspm/nodelibs-buffer@0.2.0-alpha": {
@@ -422,16 +411,6 @@ SystemJS.config({
     "npm:xmlbuilder@4.2.1": {
       "map": {
         "lodash": "npm:lodash@4.13.1"
-      }
-    },
-    "github:bizboard/arva-utils@develop": {
-      "map": {
-        "bowser": "npm:bowser@1.3.0",
-        "calmelcase": "npm:camelcase@2.1.1",
-        "lodash": "npm:lodash@4.13.1",
-        "di": "github:bizboard/di.js@master",
-        "fs": "github:jspm/nodelibs-fs@0.1.2",
-        "path": "github:jspm/nodelibs-path@0.1.0"
       }
     },
     "github:jspm/nodelibs-string_decoder@0.2.0-alpha": {
