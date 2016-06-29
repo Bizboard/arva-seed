@@ -32,13 +32,13 @@ for(var packageName in fileMappings){
     if(!fs.lstatSync(externalFileName).isDirectory()){
         console.log(externalFileName + " is not a directory!");
     }
-    fs.symlink(externalFileName, jspmFileName, 'dir', function(res, err) {
+    (function(jspmFileName, externalFileName) {fs.symlink(externalFileName, jspmFileName, 'dir', function(res, err) {
         if(err){
             console.log("Could not create link, " + err + ". Falling back on external resource");
         } else {
             console.log("Successfully mapped " + jspmFileName + " to " + externalFileName);
         }
-    });
+    })})(jspmFileName, externalFileName);
 
 }
 
