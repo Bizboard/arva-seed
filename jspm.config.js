@@ -7,7 +7,8 @@ SystemJS.config({
   },
   arvaOptions: {
     "fileMappings": {
-      "github:bizboard/arva-js@develop": "../arva-js"
+      "github:bizboard/arva-js@develop": "../arva-js",
+      "github:bizboard/famous-flex@master": "../famous-flex"
     }
   },
   paths: {
