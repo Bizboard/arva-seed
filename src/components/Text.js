@@ -11,6 +11,7 @@ export class Text extends Surface {
             properties: {
                 fontFamily: 'monospace',
                 fontSize: '14px',
+                textAlign: 'center',
                 lineHeight:'110%',
                 fontWeight: 'lighter',
                 color: "#333"

@@ -9,4 +9,6 @@ export class ComponentDemoView extends View {
     @layout.place('center')
     @layout.size(300, 100)
     text = new Text({content: "This text is styled."})
+
+    
 }
