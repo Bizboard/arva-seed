@@ -1,7 +1,7 @@
 import Surface              from 'famous/core/Surface.js';
 import AnimationController  from 'famous-flex/AnimationController.js';
 import {View}               from 'arva-js/core/View.js';
-import {layout, options}    from 'arva-js/layout/decorators.js';
+import {layout}             from 'arva-js/layout/decorators.js';
 
 
 export class ViewWithTopBar extends View {
