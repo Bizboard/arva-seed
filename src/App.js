@@ -32,17 +32,17 @@ export class App extends ArvaApp {
     }
 
     /**
-     *  Called before the App is constructed and before the basic components (Router, Famous Context, Controllers, DataSource)
-     *  have loaded.
+     *  Called before the App is constructed and before the basic components (Router, Famous Context, Controllers,
+     *  DataSource) have loaded.
      */
     static initialize(){
+        /* Change initial route, view animation or something needed before we start */
         this.start();
     }
 
     /**
      * Called after the Router, Famous Context, and Controllers have been instantiated,
-     * but before any Controller method is executed by the Router. Keep in mind that there is still
-     * a static context here, so no access to "this" of the App instance can be used yet, outside of the static "this.references".
+     * but before any Controller method is executed by the Router.
      */
     static loaded(){
         /* Instantiate things you need before the router is executed here. For example:
@@ -51,7 +51,8 @@ export class App extends ArvaApp {
     }
 
     /**
-     * Called by super class after all components (routing, controllers, views, etc.) have been loaded by the Dependency Injection engine.
+     * Called by super class after all components (routing, controllers, views, etc.) have been loaded and the
+     * app is up and running.
      */
     static done(){
     }
