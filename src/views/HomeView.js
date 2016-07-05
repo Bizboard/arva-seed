@@ -69,7 +69,6 @@ export class HomeView extends ViewWithTopBar {
         super(options);
         this.message.on('click', () => {
             this.showRenderable('answer');
-            console.log(({...a,l:2}));
         });
     }
 }

@@ -20,10 +20,10 @@ async function start() {
      *
      * Generate this config automatically in the Firebase console -> Overview -> Add Firebase to your web app. */
     DefaultDataSource.setConfig({
-        apiKey: '<api-key>',
-        authDomain: '<subdomain>.firebaseapp.com',
-        databaseURL: 'https://<subdomain>.firebaseio.com',
-        storageBucket: '<subdomain>.appspot.com'
+        apiKey: "AIzaSyCtobNFjFeiR3LWT6JC5riLv8ukc350teY",
+        authDomain: "arva-demo-f8143.firebaseapp.com",
+        databaseURL: "https://arva-demo-f8143.firebaseio.com",
+        storageBucket: "arva-demo-f8143.appspot.com"
     });
     let context = createDefaultContext(ArvaRouter, DefaultDataSource);
 
