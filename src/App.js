@@ -53,7 +53,7 @@ export class App extends ArvaApp {
     /**
      * Called by super class after all components (routing, controllers, views, etc.) have been loaded by the Dependency Injection engine.
      */
-    done(){
+    static done(){
     }
 }
 
