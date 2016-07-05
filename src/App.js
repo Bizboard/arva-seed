@@ -18,12 +18,7 @@ export class App extends ArvaApp {
     /* References to Dependency Injection created App and Controller instances, so they are not garbage collected. */
     static references = {};
 
-    /* Options that are used in the ArvaApp constructor to properly set up the app. */
-    static options = {
-        /* Be sure to add any new controllers you add after HomeController,
-         * or the Router won't be able to find them! */
-        controllers: [HomeController]
-    };
+    static controllers = [HomeController];
 
     @provide(DataSource)
     static defaultDataSource() {
@@ -37,28 +32,28 @@ export class App extends ArvaApp {
     }
 
     /**
-     *  Called before the App is constructed and before the other components have loaded.
+     *  Called before the App is constructed and before the basic components (Router, Famous Context, Controllers, DataSource)
+     *  have loaded.
      */
     static initialize(){
-        Injection.addProviders(this.defaultDataSource);
-
-        /* Instantiate this App, which also instantiates the other components. */
-        this.references.app = Injection.get(App);
+        this.start();
     }
 
     /**
      * Called after the Router, Famous Context, and Controllers have been instantiated,
-     * but before any Controller method is executed by the Router.
+     * but before any Controller method is executed by the Router. Keep in mind that there is still
+     * a static context here, so no access to "this" of the App instance can be used yet, outside of the static "this.references".
      */
     static loaded(){
-
+        /* Instantiate things you need before the router is executed here. For example:
+         *
+         * this.references.menu = Injection.get(Menu); */
     }
 
     /**
-     * Called by super class after all components (routing, controllers, views, etc) have been loaded by the Dependency Injection engine.
+     * Called by super class after all components (routing, controllers, views, etc.) have been loaded by the Dependency Injection engine.
      */
     done(){
-
     }
 }
 
