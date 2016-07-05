@@ -17,9 +17,8 @@ export class DataView extends View {
     layoutOptions: {
         itemSize: [undefined, 30]
     },
-    itemTemplate: function (monkey) {
-    return new Surface({content: `Mood: ${monkey.currentMood}`});
-    },
+    itemTemplate: (monkey) =>
+        new Surface({content: `Mood: ${monkey.currentMood}`}),
     dataStore: new Monkeys()
     });
 }
