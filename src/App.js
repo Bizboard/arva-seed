@@ -18,10 +18,14 @@ export class App extends ArvaApp {
     /* References to Dependency Injection created App and Controller instances, so they are not garbage collected. */
     static references = {};
 
+    /* The controllers that will be used in the app. */
     static controllers = [HomeController];
 
+
+    /* Define which DataSource to use */
     @provide(DataSource)
     static defaultDataSource() {
+        /* Firebase initialization */
         firebase.initializeApp({
             apiKey: '<api-key>',
             authDomain: '<subdomain>.firebaseapp.com',
