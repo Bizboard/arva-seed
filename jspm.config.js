@@ -13,7 +13,8 @@ SystemJS.config({
   paths: {
     "npm:": "jspm_packages/npm/",
     "github:": "jspm_packages/github/",
-    "app/": "src/"
+    "app/": "src/",
+    "bitbucket:": "jspm_packages/bitbucket/"
   },
   browserConfig: {
     "baseURL": "/arva-seed"
@@ -350,10 +351,11 @@ SystemJS.config({
   packageConfigPaths: [
     "npm:@*/*.json",
     "npm:*.json",
-    "github:*/*.json"
+    "github:*/*.json",
+    "bitbucket:*.json"
   ],
   map: {
-    "arva-js": "github:bizboard/arva-js@di-rework",
+    "arva-js": "github:bizboard/arva-js@develop",
     "assert": "github:jspm/nodelibs-assert@0.2.0-alpha",
     "buffer": "github:jspm/nodelibs-buffer@0.2.0-alpha",
     "css": "github:systemjs/plugin-css@0.1.23",
@@ -362,7 +364,7 @@ SystemJS.config({
     "famous": "github:bizboard/famous@0.3.6",
     "famous-flex": "github:bizboard/famous-flex@master",
     "fastclick": "npm:fastclick@1.0.6",
-    "firebase": "github:firebase/firebase-bower@3.0.5",
+    "firebase": "github:firebase/firebase-bower@3.1.0",
     "fs": "github:jspm/nodelibs-fs@0.2.0-alpha",
     "lodash": "npm:lodash@4.13.1",
     "path": "github:jspm/nodelibs-path@0.2.0-alpha",
@@ -383,12 +385,6 @@ SystemJS.config({
     "github:jspm/nodelibs-buffer@0.2.0-alpha": {
       "map": {
         "buffer-browserify": "npm:buffer@4.7.0"
-      }
-    },
-    "npm:xml2js@0.4.16": {
-      "map": {
-        "sax": "npm:sax@1.2.1",
-        "xmlbuilder": "npm:xmlbuilder@4.2.1"
       }
     },
     "npm:xmlbuilder@4.2.1": {
@@ -440,20 +436,26 @@ SystemJS.config({
         "ieee754": "npm:ieee754@1.1.6"
       }
     },
-    "github:bizboard/arva-js@di-rework": {
+    "github:bizboard/arva-js@develop": {
       "map": {
-        "famous": "github:bizboard/famous@0.3.6",
-        "bowser": "npm:bowser@1.3.0",
-        "camelcase": "npm:camelcase@2.1.1",
-        "eventemitter3": "npm:eventemitter3@1.2.0",
         "lodash": "npm:lodash@4.13.1",
-        "ordered-hashmap": "npm:ordered-hashmap@1.0.0",
-        "xml2js": "npm:xml2js@0.4.16",
         "famous-flex": "github:bizboard/famous-flex@master",
+        "famous": "github:bizboard/famous@0.3.6",
+        "eventemitter3": "npm:eventemitter3@1.2.0",
+        "camelcase": "npm:camelcase@2.1.1",
+        "bowser": "npm:bowser@1.4.0",
+        "xml2js": "npm:xml2js@0.4.17",
+        "ordered-hashmap": "npm:ordered-hashmap@1.0.0",
         "fs": "github:jspm/nodelibs-fs@0.1.2",
-        "path": "github:jspm/nodelibs-path@0.1.0",
-        "firebase": "github:firebase/firebase-bower@3.0.5",
-        "request-animation-frame-mock": "github:erykpiast/request-animation-frame-mock@0.1.8"
+        "request-animation-frame-mock": "github:erykpiast/request-animation-frame-mock@0.1.8",
+        "firebase": "github:firebase/firebase-bower@3.1.0",
+        "path": "github:jspm/nodelibs-path@0.1.0"
+      }
+    },
+    "npm:xml2js@0.4.17": {
+      "map": {
+        "sax": "npm:sax@1.2.1",
+        "xmlbuilder": "npm:xmlbuilder@4.2.1"
       }
     }
   }

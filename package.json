@@ -83,6 +83,7 @@
     }
   },
   "devDependencies": {
-    "jspm": "^0.17.0-beta.22"
+    "jspm": "^0.17.0-beta.22",
+    "jspm-git": "^0.5.0-beta.3"
   }
 }
