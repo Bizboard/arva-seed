@@ -23,7 +23,6 @@ export class App extends ArvaApp {
 
 
     /* Define which DataSource to use */
-    @provide(DataSource)
     static defaultDataSource() {
         /* Firebase initialization */
         firebase.initializeApp({
@@ -41,6 +40,7 @@ export class App extends ArvaApp {
      */
     static initialize(){
         /* Change initial route, view animation or something needed before we start */
+        provide(DataSource)(App.defaultDataSource);
         this.start();
     }
 
