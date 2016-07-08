@@ -371,7 +371,7 @@ SystemJS.config({
     "bitbucket:*.json"
   ],
   map: {
-    "arva-js": "github:bizboard/arva-js@develop",
+    "arva-js": "github:bizboard/arva-js@di-rework",
     "assert": "github:jspm/nodelibs-assert@0.2.0-alpha",
     "buffer": "github:jspm/nodelibs-buffer@0.2.0-alpha",
     "css": "github:systemjs/plugin-css@0.1.23",
@@ -452,26 +452,26 @@ SystemJS.config({
         "ieee754": "npm:ieee754@1.1.6"
       }
     },
-    "github:bizboard/arva-js@develop": {
-      "map": {
-        "lodash": "npm:lodash@4.13.1",
-        "famous-flex": "github:bizboard/famous-flex@master",
-        "famous": "github:bizboard/famous@0.3.6",
-        "eventemitter3": "npm:eventemitter3@1.2.0",
-        "camelcase": "npm:camelcase@2.1.1",
-        "bowser": "npm:bowser@1.4.1",
-        "xml2js": "npm:xml2js@0.4.17",
-        "ordered-hashmap": "npm:ordered-hashmap@1.0.0",
-        "fs": "github:jspm/nodelibs-fs@0.1.2",
-        "request-animation-frame-mock": "github:erykpiast/request-animation-frame-mock@0.1.8",
-        "firebase": "github:firebase/firebase-bower@3.1.0",
-        "path": "github:jspm/nodelibs-path@0.1.0"
-      }
-    },
     "npm:xml2js@0.4.17": {
       "map": {
         "sax": "npm:sax@1.2.1",
         "xmlbuilder": "npm:xmlbuilder@4.2.1"
+      }
+    },
+    "github:bizboard/arva-js@di-rework": {
+      "map": {
+        "camelcase": "npm:camelcase@2.1.1",
+        "bowser": "npm:bowser@1.4.1",
+        "eventemitter3": "npm:eventemitter3@1.2.0",
+        "lodash": "npm:lodash@4.13.1",
+        "ordered-hashmap": "npm:ordered-hashmap@1.0.0",
+        "xml2js": "npm:xml2js@0.4.17",
+        "famous": "github:bizboard/famous@0.3.6",
+        "famous-flex": "github:bizboard/famous-flex@master",
+        "firebase": "github:firebase/firebase-bower@3.1.0",
+        "fs": "github:jspm/nodelibs-fs@0.1.2",
+        "path": "github:jspm/nodelibs-path@0.1.0",
+        "request-animation-frame-mock": "github:erykpiast/request-animation-frame-mock@0.1.8"
       }
     }
   }
