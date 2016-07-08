@@ -25,6 +25,7 @@
     "devDependencies": {
       "babel-plugin-syntax-decorators": "npm:babel-plugin-syntax-decorators@^6.8.0",
       "babel-plugin-transform-async-functions": "npm:babel-plugin-transform-async-functions@^6.8.0",
+      "babel-plugin-transform-builtin-extend": "npm:babel-plugin-transform-builtin-extend@^1.1.0",
       "babel-plugin-transform-class-properties": "npm:babel-plugin-transform-class-properties@^6.10.2",
       "babel-plugin-transform-decorators": "npm:babel-plugin-transform-decorators@^6.8.0",
       "babel-plugin-transform-decorators-legacy": "npm:babel-plugin-transform-decorators-legacy@^1.3.4",
