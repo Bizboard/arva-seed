@@ -395,21 +395,18 @@ SystemJS.config({
   packages: {
     "github:bizboard/arva-js@develop": {
       "map": {
-        "ordered-hashmap": "npm:ordered-hashmap@1.0.0",
         "camelcase": "npm:camelcase@2.1.1",
-        "bowser": "npm:bowser@1.3.0",
+        "xml2js": "npm:xml2js@0.4.17",
+        "bowser": "npm:bowser@1.4.1",
+        "ordered-hashmap": "npm:ordered-hashmap@1.0.0",
         "eventemitter3": "npm:eventemitter3@1.2.0",
         "lodash": "npm:lodash@4.13.1",
-        "di": "github:bizboard/di.js@master",
         "fs": "github:jspm/nodelibs-fs@0.1.2",
-        "path": "github:jspm/nodelibs-path@0.1.0",
-        "firebase": "github:firebase/firebase-bower@3.0.5",
         "request-animation-frame-mock": "github:erykpiast/request-animation-frame-mock@0.1.8",
+        "firebase": "github:firebase/firebase-bower@3.2.0",
         "famous-flex": "github:bizboard/famous-flex@master",
-        "famous": "github:bizboard/famous@develop",
-        "SPSoapAdapter": "github:bizboard/SPSoapAdapter@develop",
-        "xml2js": "npm:xml2js@0.4.16",
-        "arva-js": "github:bizboard/arva-js@develop"
+        "path": "github:jspm/nodelibs-path@0.1.0",
+        "famous": "github:bizboard/famous@0.3.7"
       }
     },
     "github:jspm/nodelibs-path@0.1.0": {
@@ -417,24 +414,9 @@ SystemJS.config({
         "path-browserify": "npm:path-browserify@0.0.0"
       }
     },
-    "github:bizboard/SPSoapAdapter@develop": {
-      "map": {
-        "eventemitter3": "npm:eventemitter3@1.2.0",
-        "lodash": "npm:lodash@4.13.1",
-        "xml2js": "npm:xml2js@0.4.16",
-        "json-query": "npm:json-query@1.8.0",
-        "arva-utils": "github:bizboard/arva-utils@develop"
-      }
-    },
     "github:jspm/nodelibs-buffer@0.2.0-alpha": {
       "map": {
         "buffer-browserify": "npm:buffer@4.7.0"
-      }
-    },
-    "npm:xml2js@0.4.16": {
-      "map": {
-        "sax": "npm:sax@1.2.1",
-        "xmlbuilder": "npm:xmlbuilder@4.2.1"
       }
     },
     "npm:xmlbuilder@4.2.1": {
@@ -483,29 +465,6 @@ SystemJS.config({
       "map": {
         "sax": "npm:sax@1.2.1",
         "xmlbuilder": "npm:xmlbuilder@4.2.1"
-      }
-    },
-    "github:bizboard/arva-js@develop": {
-      "map": {
-        "camelcase": "npm:camelcase@2.1.1",
-        "xml2js": "npm:xml2js@0.4.17",
-        "bowser": "npm:bowser@1.4.1",
-        "ordered-hashmap": "npm:ordered-hashmap@1.0.0",
-        "eventemitter3": "npm:eventemitter3@1.2.0",
-        "lodash": "npm:lodash@4.13.1",
-        "fs": "github:jspm/nodelibs-fs@0.1.2",
-        "request-animation-frame-mock": "github:erykpiast/request-animation-frame-mock@0.1.8",
-        "firebase": "github:firebase/firebase-bower@3.2.0",
-        "famous-flex": "github:bizboard/famous-flex@master",
-        "path": "github:jspm/nodelibs-path@0.1.0",
-        "famous": "github:bizboard/famous@0.3.7"
-      }
-    },
-    "npm:buffer@4.7.1": {
-      "map": {
-        "base64-js": "npm:base64-js@1.1.2",
-        "ieee754": "npm:ieee754@1.1.6",
-        "isarray": "npm:isarray@1.0.0"
       }
     }
   }
