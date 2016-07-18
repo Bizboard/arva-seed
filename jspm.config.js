@@ -16,7 +16,7 @@ SystemJS.config({
   },
   arvaOptions: {
     "fileMappings": {
-      "github:bizboard/arva-js@di-rework": "../arva-js"
+      "github:bizboard/arva-js@develop": "../arva-js"
     }
   },
   paths: {
@@ -368,7 +368,7 @@ SystemJS.config({
     "npm:@*/*.json",
     "npm:*.json",
     "github:*/*.json",
-    "bitbucket:*.json"
+    "bitbucket:*/*.json"
   ],
   map: {
     "arva-js": "github:bizboard/arva-js@develop",
@@ -393,14 +393,48 @@ SystemJS.config({
     "vm": "github:jspm/nodelibs-vm@0.2.0-alpha"
   },
   packages: {
+    "github:bizboard/arva-js@develop": {
+      "map": {
+        "ordered-hashmap": "npm:ordered-hashmap@1.0.0",
+        "camelcase": "npm:camelcase@2.1.1",
+        "bowser": "npm:bowser@1.3.0",
+        "eventemitter3": "npm:eventemitter3@1.2.0",
+        "lodash": "npm:lodash@4.13.1",
+        "di": "github:bizboard/di.js@master",
+        "fs": "github:jspm/nodelibs-fs@0.1.2",
+        "path": "github:jspm/nodelibs-path@0.1.0",
+        "firebase": "github:firebase/firebase-bower@3.0.5",
+        "request-animation-frame-mock": "github:erykpiast/request-animation-frame-mock@0.1.8",
+        "famous-flex": "github:bizboard/famous-flex@master",
+        "famous": "github:bizboard/famous@develop",
+        "SPSoapAdapter": "github:bizboard/SPSoapAdapter@develop",
+        "xml2js": "npm:xml2js@0.4.16",
+        "arva-js": "github:bizboard/arva-js@develop"
+      }
+    },
     "github:jspm/nodelibs-path@0.1.0": {
       "map": {
         "path-browserify": "npm:path-browserify@0.0.0"
       }
     },
+    "github:bizboard/SPSoapAdapter@develop": {
+      "map": {
+        "eventemitter3": "npm:eventemitter3@1.2.0",
+        "lodash": "npm:lodash@4.13.1",
+        "xml2js": "npm:xml2js@0.4.16",
+        "json-query": "npm:json-query@1.8.0",
+        "arva-utils": "github:bizboard/arva-utils@develop"
+      }
+    },
     "github:jspm/nodelibs-buffer@0.2.0-alpha": {
       "map": {
-        "buffer-browserify": "npm:buffer@4.7.1"
+        "buffer-browserify": "npm:buffer@4.7.0"
+      }
+    },
+    "npm:xml2js@0.4.16": {
+      "map": {
+        "sax": "npm:sax@1.2.1",
+        "xmlbuilder": "npm:xmlbuilder@4.2.1"
       }
     },
     "npm:xmlbuilder@4.2.1": {
