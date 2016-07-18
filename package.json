@@ -12,10 +12,10 @@
     "name": "nl.bizboard.arva.seed",
     "main": "main.js",
     "dependencies": {
-      "arva-js": "github:bizboard/arva-js@di-rework",
+      "arva-js": "github:bizboard/arva-js@develop",
       "css": "github:systemjs/plugin-css@^0.1.23",
       "di": "github:bizboard/di.js@master",
-      "famous": "github:bizboard/famous@develop",
+      "famous": "github:bizboard/famous@^0.3.6",
       "famous-flex": "github:bizboard/famous-flex@master",
       "fastclick": "npm:fastclick@^1.0.6",
       "firebase": "github:firebase/firebase-bower@^3.0.5",
