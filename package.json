@@ -18,7 +18,8 @@
       "famous-flex": "github:bizboard/famous-flex@master",
       "fastclick": "npm:fastclick@^1.0.6",
       "firebase": "github:firebase/firebase-bower@^3.0.5",
-      "lodash": "npm:lodash@^4.13.1"
+      "lodash": "npm:lodash@^4.13.1",
+      "text": "github:systemjs/plugin-text@^0.0.8"
     },
     "devDependencies": {
       "babel-plugin-syntax-decorators": "npm:babel-plugin-syntax-decorators@^6.8.0",
