@@ -1,3 +1,4 @@
+import 'babel-polyfill';
 import firebase                     from 'firebase';
 
 import {FirebaseDataSource}         from 'arva-js/data/datasources/FirebaseDataSource.js';
