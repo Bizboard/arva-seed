@@ -368,7 +368,7 @@ SystemJS.config({
     "npm:@*/*.json",
     "npm:*.json",
     "github:*/*.json",
-    "bitbucket:*.json"
+    "bitbucket:*/*.json"
   ],
   map: {
     "arva-js": "github:bizboard/arva-js@di-rework",
