@@ -1,4 +1,5 @@
 import Surface              from 'famous/core/Surface.js';
+
 import {View}               from 'arva-js/core/View.js';
 import {layout, options}    from 'arva-js/layout/decorators.js';
 
