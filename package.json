@@ -4,7 +4,8 @@
     "build": "jspm build src/App.js www/bundle.js",
     "devbuilder": "node scripts/devbuilder.js",
     "start": "electron www/electron.js",
-    "release": "npm run build; electron-packager ./www HelloWorld --platform=win32,darwin --arch=x64 --version=0.36.0 --out=build --overwrite"
+    "build-sp-worker": "jspm build arva-js/data/datasources/SharePoint/SPSoapAdapter/Worker/Manager.js www/worker.js",
+    "release": "npm run build-sp-worker; npm run build; electron-packager ./www HelloWorld --platform=win32,darwin --arch=x64 --version=0.36.0 --out=build --overwrite"
   },
   "jspm": {
     "name": "nl.bizboard.arva.seed",
