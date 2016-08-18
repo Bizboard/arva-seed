@@ -5,3 +5,10 @@
 www/bundle.*
 www/dev.*
 scripts/devbuild.lock
+build
+platforms
+plugins
+res/icons
+res/screens
+store
+incrementBuildNum.js
