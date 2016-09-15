@@ -18,6 +18,10 @@
     transform-style: preserve-3d;
 }
 
+svg {
+    position: absolute;
+}
+
 .famous-container, .famous-group {
     position: absolute;
     top: 0px;
