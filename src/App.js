@@ -2,6 +2,7 @@ import 'babel-polyfill';
 import firebase                     from 'firebase';
 
 import {FirebaseDataSource}         from 'arva-js/data/datasources/FirebaseDataSource.js';
+import 'arva-js/utils/hotfixes/IESupport.js';
 import {provide}                    from 'arva-js/utils/di/Decorators.js';
 import {Injection}                  from 'arva-js/utils/Injection.js';
 import {DataSource}                 from 'arva-js/data/DataSource.js';
