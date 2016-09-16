@@ -1,12 +1,19 @@
-import 'babel-polyfill';
+// import 'babel-polyfill';
 import firebase                     from 'firebase';
 
 import {FirebaseDataSource}         from 'arva-js/data/datasources/FirebaseDataSource.js';
 import 'arva-js/utils/hotfixes/IESupport.js';
+import {App as ArvaApp}             from 'arva-js/core/App.js';
+import {Router}                     from 'arva-js/core/Router.js';
 import {provide}                    from 'arva-js/utils/di/Decorators.js';
 import {Injection}                  from 'arva-js/utils/Injection.js';
 import {DataSource}                 from 'arva-js/data/DataSource.js';
-import {App as ArvaApp}             from 'arva-js/core/App.js';
+
+import {DialogManager}              from 'arva-js/utils/DialogManager.js';
+import {NavigationDrawer}           from 'arva-kit/menus/navigationDrawer/NavigationDrawer.js';
+import {ImageSideMenuView}          from 'arva-kit/menus/navigationDrawer/sideMenus/ImageSideMenuView.js';
+
+import {AccountIcon}                from 'arva-kit/icons/AccountIcon.js';
 
 /* Importing CSS in jspm bundled builds injects them into the DOM automagically */
 import './famous.css';
@@ -40,7 +47,7 @@ export class App extends ArvaApp {
      *  Called before the App is constructed and before the basic components (Router, Famous Context, Controllers,
      *  DataSource) have loaded.
      */
-    static initialize(){
+    static initialize() {
         /* Change initial route, view animation or something needed before we start */
         provide(DataSource)(App.defaultDataSource);
         this.start();
@@ -50,17 +57,46 @@ export class App extends ArvaApp {
      * Called after the Router, Famous Context, and Controllers have been instantiated,
      * but before any Controller method is executed by the Router.
      */
-    static loaded(){
+    static loaded() {
         /* Instantiate things you need before the router is executed here. For example:
          *
          * this.references.menu = Injection.get(Menu); */
+
+        /* Set default controller and method */
+        Injection.get(Router).setDefault('Home', 'Index');
+
+        /* Set default controller specifications */
+        Injection.get(Router).setControllerSpecs({});
+
+        let dialogManager = Injection.get(DialogManager);
+        let menu = Injection.get(NavigationDrawer, {
+            topBarHeight: 48,
+            topMenuOptions: {
+                defaultTitle: 'Arva Application',
+                rightIconSize: 24
+            },
+            sideMenu: {
+                viewClass: ImageSideMenuView,
+                image: 'http://www.jcraft.nl/wp-content/uploads/2016/03/High-tech-plaatje-gallery.jpg',
+                menuItems: [{
+                    icon: AccountIcon,
+                    text: 'Menu item 1'
+                }]
+            }
+        });
+
+        menu.setNavigationDrawerEnabled(true);
+        menu.on('rightButtonClick', ()=> {});
+
+        Object.assign(this.references, {menu, dialogManager});
+
     }
 
     /**
      * Called by super class after all components (routing, controllers, views, etc.) have been loaded and the
      * app is up and running.
      */
-    static done(){
+    static done() {
     }
 }
 
