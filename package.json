@@ -12,15 +12,15 @@
     "name": "nl.bizboard.arva.seed",
     "main": "main.js",
     "dependencies": {
-      "arva-js": "github:bizboard/arva-js@develop",
+      "arva-js": "github:bizboard/arva-js@wip-animations",
+      "arva-kit": "bitbucket:bizboard/arva-kit@master",
       "babel-polyfill": "npm:babel-polyfill@^6.9.1",
       "css": "github:systemjs/plugin-css@^0.1.23",
       "famous": "github:bizboard/famous@~0.3.7",
-      "famous-flex": "github:bizboard/famous-flex@master",
+      "famous-flex": "github:bizboard/famous-flex@wip-animations",
       "fastclick": "npm:fastclick@^1.0.6",
       "firebase": "github:firebase/firebase-bower@^3.0.5",
-      "lodash": "npm:lodash@^4.13.1",
-      "text": "github:systemjs/plugin-text@^0.0.8"
+      "lodash": "npm:lodash@^4.13.1"
     },
     "devDependencies": {
       "babel-plugin-syntax-decorators": "npm:babel-plugin-syntax-decorators@^6.8.0",
@@ -57,6 +57,19 @@
       "vm": "github:jspm/nodelibs-vm@^0.2.0-alpha"
     },
     "overrides": {
+      "github:bizboard/famous-flex@wip-animations": {
+        "format": "amd"
+      },
+      "github:firebase/firebase-bower@3.4.0": {
+        "main": "firebase.js",
+        "registry": "jspm",
+        "meta": {
+          "firebase.js": {
+            "exports": "firebase",
+            "format": "global"
+          }
+        }
+      },
       "npm:debug@2.2.0": {
         "main": "browser.js",
         "jspmNodeConversion": false,
@@ -76,6 +89,11 @@
           "test.js"
         ]
       },
+      "npm:inherits@2.0.3": {
+        "ignore": [
+          "test.js"
+        ]
+      },
       "npm:lodash@4.15.0": {
         "map": {
           "buffer": "@empty",
@@ -89,7 +107,7 @@
     }
   },
   "devDependencies": {
-    "jspm": "^0.17.0-beta.22",
+    "jspm": "^0.17.0-beta.28",
     "jspm-git": "^0.5.0-beta.3",
     "splashicon-generator": "^0.2.7"
   }

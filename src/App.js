@@ -1,15 +1,18 @@
-// import 'babel-polyfill';
+import 'babel-polyfill';
+import 'arva-js/utils/hotfixes/IESupport.js';
+
 import firebase                     from 'firebase';
 
 import {FirebaseDataSource}         from 'arva-js/data/datasources/FirebaseDataSource.js';
-import 'arva-js/utils/hotfixes/IESupport.js';
 import {App as ArvaApp}             from 'arva-js/core/App.js';
 import {Router}                     from 'arva-js/core/Router.js';
 import {provide}                    from 'arva-js/utils/di/Decorators.js';
 import {Injection}                  from 'arva-js/utils/Injection.js';
 import {DataSource}                 from 'arva-js/data/DataSource.js';
-
 import {DialogManager}              from 'arva-js/utils/DialogManager.js';
+
+import {setColors}                  from 'arva-kit/defaults/DefaultColors.js';
+import {useTypefaces}               from 'arva-kit/defaults/DefaultTypefaces.js';
 import {NavigationDrawer}           from 'arva-kit/menus/navigationDrawer/NavigationDrawer.js';
 import {ImageSideMenuView}          from 'arva-kit/menus/navigationDrawer/sideMenus/ImageSideMenuView.js';
 
@@ -50,6 +53,14 @@ export class App extends ArvaApp {
     static initialize() {
         /* Change initial route, view animation or something needed before we start */
         provide(DataSource)(App.defaultDataSource);
+
+        useTypefaces({TextBody: {fontSize: '14px', fontFamily: 'avenir-light'}});
+
+        setColors({
+            PrimaryUIColor: '#4d616e',
+            SecondaryUIColor: 'blue',
+            QuaternaryUIColor: 'orange'
+        });
         this.start();
     }
 
@@ -77,7 +88,7 @@ export class App extends ArvaApp {
             },
             sideMenu: {
                 viewClass: ImageSideMenuView,
-                image: 'http://www.jcraft.nl/wp-content/uploads/2016/03/High-tech-plaatje-gallery.jpg',
+                image: 'https://www.bizboard.nl/img/tauro.jpg',
                 menuItems: [{
                     icon: AccountIcon,
                     text: 'Menu item 1'
