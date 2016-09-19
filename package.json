@@ -13,14 +13,16 @@
     "main": "main.js",
     "dependencies": {
       "arva-js": "github:bizboard/arva-js@develop",
+      "arva-kit": "bitbucket:bizboard/arva-kit@master",
       "babel-polyfill": "npm:babel-polyfill@^6.9.1",
       "css": "github:systemjs/plugin-css@^0.1.23",
+      "es6-map": "npm:es6-map@^0.1.4",
       "famous": "github:bizboard/famous@~0.3.7",
+      "famous-autosizetextarea": "github:ijzerenhein/famous-autosizetextarea@^0.3.1",
       "famous-flex": "github:bizboard/famous-flex@master",
-      "fastclick": "npm:fastclick@^1.0.6",
+      "fastclick": "npm:fastclick@1.0.6",
       "firebase": "github:firebase/firebase-bower@^3.0.5",
-      "lodash": "npm:lodash@^4.13.1",
-      "text": "github:systemjs/plugin-text@^0.0.8"
+      "lodash": "npm:lodash@^4.13.1"
     },
     "devDependencies": {
       "babel-plugin-syntax-decorators": "npm:babel-plugin-syntax-decorators@^6.8.0",
@@ -57,6 +59,19 @@
       "vm": "github:jspm/nodelibs-vm@^0.2.0-alpha"
     },
     "overrides": {
+      "github:bizboard/famous-flex@master": {
+        "format": "amd"
+      },
+      "github:firebase/firebase-bower@3.3.0": {
+        "main": "firebase.js",
+        "registry": "jspm",
+        "meta": {
+          "firebase.js": {
+            "exports": "firebase",
+            "format": "global"
+          }
+        }
+      },
       "npm:debug@2.2.0": {
         "main": "browser.js",
         "jspmNodeConversion": false,

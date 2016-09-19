@@ -28,7 +28,13 @@ SystemJS.config({
   },
   arvaOptions: {
     "fileMappings": {
-      "github:bizboard/arva-js@develop": "../arva-js"
+      "github:bizboard/arva-js@develop": "../arva-js",
+      "bitbucket:bizboard/arva-kit@master": "../arva-kit",
+      "github:bizboard/famous-flex@master": "../famous-flex"
+    },
+    "iconOptions": {
+      "form": "rounded",
+      "thickness": "bold"
     }
   },
   paths: {
@@ -366,6 +372,9 @@ SystemJS.config({
         }
       }
     }
+  },
+  map: {
+    "text": "github:bizboard/arva-js@develop/utils/IconLoader.js"
   }
 });
 
@@ -374,10 +383,15 @@ SystemJS.config({
     "npm:@*/*.json",
     "npm:*.json",
     "github:*/*.json",
-    "bitbucket:*/*.json"
+    "bitbucket:*/*.json",
+    "bitbucket:*.json"
   ],
   map: {
+    "fastclick": "npm:fastclick@1.0.6",
+    "famous-autosizetextarea": "github:ijzerenhein/famous-autosizetextarea@0.3.1",
+    "es6-map": "npm:es6-map@0.1.4",
     "arva-js": "github:bizboard/arva-js@develop",
+    "arva-kit": "bitbucket:bizboard/arva-kit@master",
     "assert": "github:jspm/nodelibs-assert@0.2.0-alpha",
     "babel-polyfill": "npm:babel-polyfill@6.9.1",
     "buffer": "github:jspm/nodelibs-buffer@0.2.0-alpha",
@@ -388,7 +402,6 @@ SystemJS.config({
     "events": "github:jspm/nodelibs-events@0.2.0-alpha",
     "famous": "github:bizboard/famous@0.3.7",
     "famous-flex": "github:bizboard/famous-flex@master",
-    "fastclick": "npm:fastclick@1.0.6",
     "firebase": "github:firebase/firebase-bower@3.3.0",
     "fs": "github:jspm/nodelibs-fs@0.2.0-alpha",
     "lodash": "npm:lodash@4.15.0",
@@ -397,7 +410,6 @@ SystemJS.config({
     "process": "github:jspm/nodelibs-process@0.2.0-alpha",
     "stream": "github:jspm/nodelibs-stream@0.2.0-alpha",
     "string_decoder": "github:jspm/nodelibs-string_decoder@0.2.0-alpha",
-    "text": "github:systemjs/plugin-text@0.0.8",
     "timers": "github:jspm/nodelibs-timers@0.2.0-alpha",
     "util": "github:jspm/nodelibs-util@0.2.0-alpha",
     "vm": "github:jspm/nodelibs-vm@0.2.0-alpha"
@@ -657,6 +669,66 @@ SystemJS.config({
     "github:jspm/nodelibs-path@0.1.0": {
       "map": {
         "path-browserify": "npm:path-browserify@0.0.0"
+      }
+    },
+    "bitbucket:bizboard/arva-kit@master": {
+      "map": {
+        "lodash": "npm:lodash@4.15.0",
+        "arva-js": "github:bizboard/arva-js@develop",
+        "famous": "github:bizboard/famous@0.3.7",
+        "famous-flex": "github:bizboard/famous-flex@master",
+        "degrees-radians": "npm:degrees-radians@1.0.3",
+        "rgbcolor": "npm:rgbcolor@0.0.4",
+        "famous-bkimagesurface": "github:bizboard/famous-bkimagesurface@master"
+      }
+    },
+    "npm:es6-map@0.1.4": {
+      "map": {
+        "d": "npm:d@0.1.1",
+        "es6-iterator": "npm:es6-iterator@2.0.0",
+        "es6-set": "npm:es6-set@0.1.4",
+        "event-emitter": "npm:event-emitter@0.3.4",
+        "es6-symbol": "npm:es6-symbol@3.1.0",
+        "es5-ext": "npm:es5-ext@0.10.12"
+      }
+    },
+    "npm:event-emitter@0.3.4": {
+      "map": {
+        "d": "npm:d@0.1.1",
+        "es5-ext": "npm:es5-ext@0.10.12"
+      }
+    },
+    "npm:es6-set@0.1.4": {
+      "map": {
+        "d": "npm:d@0.1.1",
+        "es6-iterator": "npm:es6-iterator@2.0.0",
+        "es6-symbol": "npm:es6-symbol@3.1.0",
+        "event-emitter": "npm:event-emitter@0.3.4",
+        "es5-ext": "npm:es5-ext@0.10.12"
+      }
+    },
+    "npm:es6-iterator@2.0.0": {
+      "map": {
+        "d": "npm:d@0.1.1",
+        "es5-ext": "npm:es5-ext@0.10.12",
+        "es6-symbol": "npm:es6-symbol@3.1.0"
+      }
+    },
+    "npm:d@0.1.1": {
+      "map": {
+        "es5-ext": "npm:es5-ext@0.10.12"
+      }
+    },
+    "npm:es6-symbol@3.1.0": {
+      "map": {
+        "es5-ext": "npm:es5-ext@0.10.12",
+        "d": "npm:d@0.1.1"
+      }
+    },
+    "npm:es5-ext@0.10.12": {
+      "map": {
+        "es6-iterator": "npm:es6-iterator@2.0.0",
+        "es6-symbol": "npm:es6-symbol@3.1.0"
       }
     }
   }
