@@ -13,7 +13,6 @@
     "main": "main.js",
     "dependencies": {
       "arva-js": "github:bizboard/arva-js@develop",
-      "arva-kit": "bitbucket:bizboard/arva-kit@master",
       "babel-polyfill": "npm:babel-polyfill@^6.9.1",
       "css": "github:systemjs/plugin-css@^0.1.23",
       "es6-map": "npm:es6-map@^0.1.4",

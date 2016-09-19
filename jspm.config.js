@@ -29,7 +29,6 @@ SystemJS.config({
   arvaOptions: {
     "fileMappings": {
       "github:bizboard/arva-js@develop": "../arva-js",
-      "bitbucket:bizboard/arva-kit@master": "../arva-kit",
       "github:bizboard/famous-flex@master": "../famous-flex"
     },
     "iconOptions": {
@@ -391,7 +390,6 @@ SystemJS.config({
     "famous-autosizetextarea": "github:ijzerenhein/famous-autosizetextarea@0.3.1",
     "es6-map": "npm:es6-map@0.1.4",
     "arva-js": "github:bizboard/arva-js@develop",
-    "arva-kit": "bitbucket:bizboard/arva-kit@master",
     "assert": "github:jspm/nodelibs-assert@0.2.0-alpha",
     "babel-polyfill": "npm:babel-polyfill@6.9.1",
     "buffer": "github:jspm/nodelibs-buffer@0.2.0-alpha",
@@ -669,17 +667,6 @@ SystemJS.config({
     "github:jspm/nodelibs-path@0.1.0": {
       "map": {
         "path-browserify": "npm:path-browserify@0.0.0"
-      }
-    },
-    "bitbucket:bizboard/arva-kit@master": {
-      "map": {
-        "lodash": "npm:lodash@4.15.0",
-        "arva-js": "github:bizboard/arva-js@develop",
-        "famous": "github:bizboard/famous@0.3.7",
-        "famous-flex": "github:bizboard/famous-flex@master",
-        "degrees-radians": "npm:degrees-radians@1.0.3",
-        "rgbcolor": "npm:rgbcolor@0.0.4",
-        "famous-bkimagesurface": "github:bizboard/famous-bkimagesurface@master"
       }
     },
     "npm:es6-map@0.1.4": {
