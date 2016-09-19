@@ -28,7 +28,8 @@ SystemJS.config({
   },
   arvaOptions: {
     "fileMappings": {
-      "github:bizboard/arva-js@develop": "../arva-js"
+      "github:bizboard/arva-js@wip-animations": "../arva-js",
+      "bitbucket:bizboard/arva-kit@master": "../arva-kit"
     },
     "iconOptions": {
       "form": "rounded",
@@ -372,7 +373,7 @@ SystemJS.config({
     }
   },
   map: {
-    "text": "github:bizboard/arva-js@develop/utils/IconLoader.js"
+    "text": "github:bizboard/arva-js@wip-animations/utils/IconLoader.js"
   }
 });
 
@@ -615,23 +616,6 @@ SystemJS.config({
         "os-browserify": "npm:os-browserify@0.2.1"
       }
     },
-    "github:bizboard/arva-js@develop": {
-      "map": {
-        "bowser": "npm:bowser@1.4.5",
-        "eventemitter3": "npm:eventemitter3@1.2.0",
-        "camelcase": "npm:camelcase@2.1.1",
-        "ordered-hashmap": "npm:ordered-hashmap@1.0.0",
-        "lodash": "npm:lodash@4.15.0",
-        "fastclick": "npm:fastclick@1.0.6",
-        "xml2js": "npm:xml2js@0.4.17",
-        "fs": "github:jspm/nodelibs-fs@0.1.2",
-        "path": "github:jspm/nodelibs-path@0.1.0",
-        "firebase": "github:firebase/firebase-bower@3.4.0",
-        "request-animation-frame-mock": "github:erykpiast/request-animation-frame-mock@0.1.8",
-        "famous": "github:bizboard/famous@0.3.7",
-        "famous-flex": "github:bizboard/famous-flex@wip-animations"
-      }
-    },
     "npm:xml2js@0.4.17": {
       "map": {
         "xmlbuilder": "npm:xmlbuilder@4.2.1",
@@ -656,7 +640,8 @@ SystemJS.config({
         "famous-bkimagesurface": "github:bizboard/famous-bkimagesurface@master",
         "famous": "github:bizboard/famous@0.3.7",
         "arva-js": "github:bizboard/arva-js@wip-animations",
-        "famous-flex": "github:bizboard/famous-flex@wip-animations"
+        "famous-flex": "github:bizboard/famous-flex@wip-animations",
+        "famous-autosizetextarea": "github:ijzerenhein/famous-autosizetextarea@0.3.1"
       }
     },
     "npm:pbkdf2@3.0.7": {
