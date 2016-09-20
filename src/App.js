@@ -81,11 +81,7 @@ export class App extends ArvaApp {
 
         let dialogManager = Injection.get(DialogManager);
         let menu = Injection.get(NavigationDrawer, {
-            topBarHeight: 48,
-            topMenuOptions: {
-                defaultTitle: 'Arva Application',
-                rightIconSize: 24
-            },
+            topMenuOptions: { defaultTitle: 'Arva Application' },
             sideMenu: {
                 viewClass: ImageSideMenuView,
                 image: 'https://www.bizboard.nl/img/tauro.jpg',
