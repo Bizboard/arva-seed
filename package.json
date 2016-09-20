@@ -1,23 +1,25 @@
 {
   "scripts": {
     "install-all": "npm install && jspm install && node scripts/linkJspmToLocal.js",
-    "build": "jspm build src/App.js www/bundle.js",
+    "build": "jspm build src/App.js www/bundle.js && echo Build finished at `date`",
     "devbuilder": "node scripts/devbuilder.js",
     "gen-keystore": "keytool -genkey -v -keystore release.keystore -alias release -keyalg RSA -keysize 2048 -validity 10000",
     "gen-icons": "node ./scripts/generateIcons.js",
     "copy-apk": "mkdir -p build && cp platforms/android/build/outputs/apk/android-armv7-release.apk build/android-armv7-release.apk",
-    "release": "npm run build -- --minify --skip-source-maps  && npm run gen-icons && cordova build --release && npm run copy-apk"
+    "release": "npm run build -- --minify --skip-source-maps  && npm run gen-icons && cordova build --release && npm run copy-apk && echo Release done at `date`"
   },
   "jspm": {
     "name": "nl.bizboard.arva.seed",
     "main": "main.js",
     "dependencies": {
-      "arva-js": "github:bizboard/arva-js@wip-animations",
+      "arva-js": "github:bizboard/arva-js@develop",
       "arva-kit": "bitbucket:bizboard/arva-kit@master",
       "babel-polyfill": "npm:babel-polyfill@^6.9.1",
       "css": "github:systemjs/plugin-css@^0.1.23",
+      "es6-map": "npm:es6-map@^0.1.4",
       "famous": "github:bizboard/famous@~0.3.7",
-      "famous-flex": "github:bizboard/famous-flex@wip-animations",
+      "famous-autosizetextarea": "github:ijzerenhein/famous-autosizetextarea@^0.3.1",
+      "famous-flex": "github:bizboard/famous-flex@master",
       "fastclick": "npm:fastclick@^1.0.6",
       "firebase": "github:firebase/firebase-bower@^3.0.5",
       "lodash": "npm:lodash@^4.13.1"
@@ -57,7 +59,7 @@
       "vm": "github:jspm/nodelibs-vm@^0.2.0-alpha"
     },
     "overrides": {
-      "github:bizboard/famous-flex@wip-animations": {
+      "github:bizboard/famous-flex@master": {
         "format": "amd"
       },
       "github:firebase/firebase-bower@3.4.0": {

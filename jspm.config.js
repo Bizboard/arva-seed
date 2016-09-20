@@ -28,7 +28,8 @@ SystemJS.config({
   },
   arvaOptions: {
     "fileMappings": {
-      "github:bizboard/arva-js@wip-animations": "../arva-js",
+      "github:bizboard/arva-js@develop": "../arva-js",
+      "github:bizboard/famous-flex@master": "../famous-flex",
       "bitbucket:bizboard/arva-kit@master": "../arva-kit"
     },
     "iconOptions": {
@@ -373,7 +374,7 @@ SystemJS.config({
     }
   },
   map: {
-    "text": "github:bizboard/arva-js@wip-animations/utils/IconLoader.js"
+    "text": "github:bizboard/arva-js@develop/utils/IconLoader.js"
   }
 });
 
@@ -385,8 +386,11 @@ SystemJS.config({
     "bitbucket:*/*.json"
   ],
   map: {
-    "arva-kit": "bitbucket:bizboard/arva-kit@master",
-    "arva-js": "github:bizboard/arva-js@wip-animations",
+      "arva-kit": "bitbucket:bizboard/arva-kit@master",
+    "fastclick": "npm:fastclick@1.0.6",
+    "famous-autosizetextarea": "github:ijzerenhein/famous-autosizetextarea@0.3.1",
+    "es6-map": "npm:es6-map@0.1.4",
+    "arva-js": "github:bizboard/arva-js@develop",
     "assert": "github:jspm/nodelibs-assert@0.2.0-alpha",
     "babel-polyfill": "npm:babel-polyfill@6.9.1",
     "buffer": "github:jspm/nodelibs-buffer@0.2.0-alpha",
@@ -396,7 +400,7 @@ SystemJS.config({
     "css": "github:systemjs/plugin-css@0.1.23",
     "events": "github:jspm/nodelibs-events@0.2.0-alpha",
     "famous": "github:bizboard/famous@0.3.7",
-    "famous-flex": "github:bizboard/famous-flex@wip-animations",
+    "famous-flex": "github:bizboard/famous-flex@master",
     "fastclick": "npm:fastclick@1.0.6",
     "firebase": "github:firebase/firebase-bower@3.4.0",
     "fs": "github:jspm/nodelibs-fs@0.2.0-alpha",
@@ -559,6 +563,11 @@ SystemJS.config({
         "evp_bytestokey": "npm:evp_bytestokey@1.0.0",
         "browserify-des": "npm:browserify-des@1.0.0",
         "browserify-aes": "npm:browserify-aes@1.0.6"
+      }
+    },
+    "npm:cipher-base@1.0.2": {
+      "map": {
+        "inherits": "npm:inherits@2.0.1"
       }
     },
     "npm:evp_bytestokey@1.0.0": {
