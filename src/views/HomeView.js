@@ -3,11 +3,12 @@ import {View}               from 'arva-js/core/View.js';
 import {layout, event}      from 'arva-js/layout/Decorators.js';
 
 export class HomeView extends View {
-    @layout.size(~100, ~25)
-    @layout.stick.center()
-    message = new Surface({content: `Hello ${this.options.welcomeName}`});
 
-    constructor(options = {}){
-        super(options);
-    }
+    @layout.size(100, 100)
+    @layout.stick.center()
+    square = new Surface({ content: 'works', properties: { backgroundColor: 'red' } });
+
+    @layout.size(100, 100)
+    @layout.stick.bottom()
+    circle = new Surface({ properties: { backgroundColor: 'blue', borderRadius: '50%' } });
 }

@@ -21,6 +21,7 @@
       "famous-flex": "github:bizboard/famous-flex@master",
       "fastclick": "npm:fastclick@1.0.6",
       "firebase": "github:firebase/firebase-bower@^3.0.5",
+      "html-gl": "npm:html-gl@^0.3.2",
       "lodash": "npm:lodash@^4.13.1"
     },
     "devDependencies": {
@@ -37,8 +38,7 @@
       "core-js": "npm:core-js@^2.4.0",
       "http": "github:jspm/nodelibs-http@^0.2.0-alpha",
       "module": "github:jspm/nodelibs-module@^0.2.0-alpha",
-      "plugin-babel": "npm:systemjs-plugin-babel@^0.0.12",
-      "url": "github:jspm/nodelibs-url@^0.2.0-alpha"
+      "plugin-babel": "npm:systemjs-plugin-babel@^0.0.12"
     },
     "peerDependencies": {
       "assert": "github:jspm/nodelibs-assert@^0.2.0-alpha",
@@ -54,6 +54,7 @@
       "stream": "github:jspm/nodelibs-stream@^0.2.0-alpha",
       "string_decoder": "github:jspm/nodelibs-string_decoder@^0.2.0-alpha",
       "timers": "github:jspm/nodelibs-timers@^0.2.0-alpha",
+      "url": "github:jspm/nodelibs-url@^0.2.0-alpha",
       "util": "github:jspm/nodelibs-util@^0.2.0-alpha",
       "vm": "github:jspm/nodelibs-vm@^0.2.0-alpha"
     },
@@ -85,7 +86,16 @@
           "util": "@node/util"
         }
       },
+      "npm:html-gl@0.3.2": {
+        "format": "amd",
+        "main": "dist/htmlgl.js"
+      },
       "npm:inherits@2.0.1": {
+        "ignore": [
+          "test.js"
+        ]
+      },
+      "npm:inherits@2.0.3": {
         "ignore": [
           "test.js"
         ]
@@ -99,6 +109,36 @@
       "npm:ms@0.7.1": {
         "jspmNodeConversion": false,
         "format": "cjs"
+      },
+      "npm:readable-stream@1.0.34": {
+        "map": {
+          "stream": "stream-browserify/index"
+        },
+        "systemjs": {
+          "main": "readable.js"
+        },
+        "dependencies": {
+          "core-util-is": "~1.0.0",
+          "isarray": "0.0.1",
+          "string_decoder": "~0.10.0",
+          "inherits": "~2.0.1",
+          "stream-browserify": "~1.0.0"
+        }
+      },
+      "npm:readable-stream@1.1.14": {
+        "map": {
+          "stream": "stream-browserify/index"
+        },
+        "systemjs": {
+          "main": "readable.js"
+        },
+        "dependencies": {
+          "core-util-is": "~1.0.0",
+          "isarray": "0.0.1",
+          "string_decoder": "~0.10.0",
+          "inherits": "~2.0.1",
+          "stream-browserify": "~1.0.0"
+        }
       }
     }
   },
