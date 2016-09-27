@@ -1,0 +1,21 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "ecmaFeatures": {
+    "modules": true
+  },
+  "rules": {
+    "brace-style": [2, "1tbs", { "allowSingleLine": true }],
+    "comma-dangle": [2, "never"],
+    "default-case": 2,
+    "no-multi-spaces": [2, {"exceptions": {"VariableDeclarator": true, "ImportDeclaration": true}}],
+    "no-console": 0,
+    "no-underscore-dangle": 0,
+    "quotes": [2, "single"],
+    "semi": 2//,
+    //"valid-jsdoc": 2 /* We'll want this enabled for ready-to-release code */
+  }
+}
