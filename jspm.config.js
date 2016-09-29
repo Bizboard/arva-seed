@@ -153,7 +153,7 @@ SystemJS.config({
         "map": {
           "babel-types": "npm:babel-types@6.11.1",
           "babel-runtime": "npm:babel-runtime@6.9.2",
-          "lodash": "npm:lodash@4.15.0",
+          "lodash": "npm:lodash@4.16.2",
           "babel-traverse": "npm:babel-traverse@6.11.4",
           "babylon": "npm:babylon@6.8.4"
         }
@@ -201,7 +201,7 @@ SystemJS.config({
         "map": {
           "babel-runtime": "npm:babel-runtime@6.9.2",
           "babel-types": "npm:babel-types@6.11.1",
-          "lodash": "npm:lodash@4.15.0",
+          "lodash": "npm:lodash@4.16.2",
           "babel-helper-function-name": "npm:babel-helper-function-name@6.8.0"
         }
       },
@@ -254,7 +254,7 @@ SystemJS.config({
           "babel-messages": "npm:babel-messages@6.8.0",
           "babel-runtime": "npm:babel-runtime@6.9.2",
           "babel-types": "npm:babel-types@6.11.1",
-          "lodash": "npm:lodash@4.15.0",
+          "lodash": "npm:lodash@4.16.2",
           "debug": "npm:debug@2.2.0",
           "globals": "npm:globals@8.18.0",
           "invariant": "npm:invariant@2.2.1",
@@ -266,7 +266,7 @@ SystemJS.config({
         "map": {
           "babel-runtime": "npm:babel-runtime@6.9.2",
           "babel-traverse": "npm:babel-traverse@6.11.4",
-          "lodash": "npm:lodash@4.15.0",
+          "lodash": "npm:lodash@4.16.2",
           "esutils": "npm:esutils@2.0.2",
           "to-fast-properties": "npm:to-fast-properties@1.0.2"
         }
@@ -310,7 +310,7 @@ SystemJS.config({
           "debug": "npm:debug@2.2.0",
           "globals": "npm:globals@8.18.0",
           "invariant": "npm:invariant@2.2.1",
-          "lodash": "npm:lodash@4.15.0"
+          "lodash": "npm:lodash@4.16.2"
         }
       },
       "npm:readable-stream@2.1.4": {
@@ -386,7 +386,7 @@ SystemJS.config({
     "bitbucket:*/*.json"
   ],
   map: {
-      "arva-kit": "bitbucket:bizboard/arva-kit@master",
+    "arva-kit": "bitbucket:bizboard/arva-kit@master",
     "fastclick": "npm:fastclick@1.0.6",
     "famous-autosizetextarea": "github:ijzerenhein/famous-autosizetextarea@0.3.1",
     "es6-map": "npm:es6-map@0.1.4",
@@ -401,10 +401,9 @@ SystemJS.config({
     "events": "github:jspm/nodelibs-events@0.2.0-alpha",
     "famous": "github:bizboard/famous@0.3.7",
     "famous-flex": "github:bizboard/famous-flex@master",
-    "fastclick": "npm:fastclick@1.0.6",
-    "firebase": "github:firebase/firebase-bower@3.4.0",
+    "firebase": "github:firebase/firebase-bower@3.4.1",
     "fs": "github:jspm/nodelibs-fs@0.2.0-alpha",
-    "lodash": "npm:lodash@4.15.0",
+    "lodash": "npm:lodash@4.16.2",
     "os": "github:jspm/nodelibs-os@0.2.0-alpha",
     "path": "github:jspm/nodelibs-path@0.2.0-alpha",
     "process": "github:jspm/nodelibs-process@0.2.0-alpha",
@@ -473,7 +472,7 @@ SystemJS.config({
     "npm:buffer@4.9.1": {
       "map": {
         "isarray": "npm:isarray@1.0.0",
-        "base64-js": "npm:base64-js@1.1.2",
+        "base64-js": "npm:base64-js@1.2.0",
         "ieee754": "npm:ieee754@1.1.6"
       }
     },
@@ -493,7 +492,7 @@ SystemJS.config({
         "diffie-hellman": "npm:diffie-hellman@5.0.2",
         "public-encrypt": "npm:public-encrypt@4.0.0",
         "randombytes": "npm:randombytes@2.0.3",
-        "pbkdf2": "npm:pbkdf2@3.0.7"
+        "pbkdf2": "npm:pbkdf2@3.0.8"
       }
     },
     "npm:browserify-sign@4.0.0": {
@@ -552,10 +551,10 @@ SystemJS.config({
     "npm:parse-asn1@5.0.0": {
       "map": {
         "create-hash": "npm:create-hash@1.1.2",
-        "pbkdf2": "npm:pbkdf2@3.0.7",
+        "pbkdf2": "npm:pbkdf2@3.0.8",
         "evp_bytestokey": "npm:evp_bytestokey@1.0.0",
         "browserify-aes": "npm:browserify-aes@1.0.6",
-        "asn1.js": "npm:asn1.js@4.8.0"
+        "asn1.js": "npm:asn1.js@4.8.1"
       }
     },
     "npm:browserify-cipher@1.0.0": {
@@ -563,11 +562,6 @@ SystemJS.config({
         "evp_bytestokey": "npm:evp_bytestokey@1.0.0",
         "browserify-des": "npm:browserify-des@1.0.0",
         "browserify-aes": "npm:browserify-aes@1.0.6"
-      }
-    },
-    "npm:cipher-base@1.0.2": {
-      "map": {
-        "inherits": "npm:inherits@2.0.1"
       }
     },
     "npm:evp_bytestokey@1.0.0": {
@@ -602,13 +596,6 @@ SystemJS.config({
         "inherits": "npm:inherits@2.0.3"
       }
     },
-    "npm:asn1.js@4.8.0": {
-      "map": {
-        "inherits": "npm:inherits@2.0.3",
-        "bn.js": "npm:bn.js@4.11.6",
-        "minimalistic-assert": "npm:minimalistic-assert@1.0.0"
-      }
-    },
     "npm:sha.js@2.4.5": {
       "map": {
         "inherits": "npm:inherits@2.0.3"
@@ -633,29 +620,12 @@ SystemJS.config({
     },
     "npm:xmlbuilder@4.2.1": {
       "map": {
-        "lodash": "npm:lodash@4.15.0"
+        "lodash": "npm:lodash@4.16.2"
       }
     },
     "github:jspm/nodelibs-path@0.1.0": {
       "map": {
         "path-browserify": "npm:path-browserify@0.0.0"
-      }
-    },
-    "bitbucket:bizboard/arva-kit@master": {
-      "map": {
-        "lodash": "npm:lodash@4.15.0",
-        "degrees-radians": "npm:degrees-radians@1.0.3",
-        "rgbcolor": "npm:rgbcolor@0.0.4",
-        "famous-bkimagesurface": "github:bizboard/famous-bkimagesurface@master",
-        "famous": "github:bizboard/famous@0.3.7",
-        "arva-js": "github:bizboard/arva-js@wip-animations",
-        "famous-flex": "github:bizboard/famous-flex@wip-animations",
-        "famous-autosizetextarea": "github:ijzerenhein/famous-autosizetextarea@0.3.1"
-      }
-    },
-    "npm:pbkdf2@3.0.7": {
-      "map": {
-        "create-hmac": "npm:create-hmac@1.1.4"
       }
     },
     "npm:cipher-base@1.0.3": {
@@ -669,28 +639,6 @@ SystemJS.config({
         "bn.js": "npm:bn.js@4.11.6",
         "brorand": "npm:brorand@1.0.6",
         "hash.js": "npm:hash.js@1.0.3"
-      }
-    },
-    "github:bizboard/arva-js@wip-animations": {
-      "map": {
-        "camelcase": "npm:camelcase@2.1.1",
-        "ordered-hashmap": "npm:ordered-hashmap@1.0.0",
-        "eventemitter3": "npm:eventemitter3@1.2.0",
-        "fastclick": "npm:fastclick@1.0.6",
-        "lodash": "npm:lodash@4.15.0",
-        "xml2js": "npm:xml2js@0.4.17",
-        "bowser": "npm:bowser@1.4.5",
-        "path": "github:jspm/nodelibs-path@0.1.0",
-        "request-animation-frame-mock": "github:erykpiast/request-animation-frame-mock@0.1.8",
-        "firebase": "github:firebase/firebase-bower@3.4.0",
-        "fs": "github:jspm/nodelibs-fs@0.1.2",
-        "famous": "github:bizboard/famous@0.3.7",
-        "famous-flex": "github:bizboard/famous-flex@wip-animations"
-      }
-    },
-    "github:bizboard/famous-flex@wip-animations": {
-      "map": {
-        "es6-map": "npm:es6-map@0.1.4"
       }
     },
     "npm:es6-map@0.1.4": {
@@ -740,6 +688,66 @@ SystemJS.config({
         "es6-iterator": "npm:es6-iterator@2.0.0",
         "es6-symbol": "npm:es6-symbol@3.1.0",
         "event-emitter": "npm:event-emitter@0.3.4"
+      }
+    },
+    "github:bizboard/famous-flex@master": {
+      "map": {
+        "es6-map": "npm:es6-map@0.1.4"
+      }
+    },
+    "github:bizboard/arva-js@develop": {
+      "map": {
+        "fastclick": "npm:fastclick@1.0.6",
+        "lodash": "npm:lodash@4.16.2",
+        "firebase": "github:firebase/firebase-bower@3.4.1",
+        "bowser": "npm:bowser@1.4.6",
+        "camelcase": "npm:camelcase@2.1.1",
+        "eventemitter3": "npm:eventemitter3@1.2.0",
+        "ordered-hashmap": "npm:ordered-hashmap@1.0.0",
+        "xml2js": "npm:xml2js@0.4.17",
+        "famous": "github:bizboard/famous@0.3.7",
+        "famous-flex": "github:bizboard/famous-flex@master",
+        "fs": "github:jspm/nodelibs-fs@0.1.2",
+        "path": "github:jspm/nodelibs-path@0.1.0",
+        "request-animation-frame-mock": "github:erykpiast/request-animation-frame-mock@0.1.8"
+      }
+    },
+    "bitbucket:bizboard/arva-kit@master": {
+      "map": {
+        "degrees-radians": "npm:degrees-radians@1.0.3",
+        "color": "npm:color@0.11.3",
+        "lodash": "npm:lodash@4.16.2",
+        "bowser": "npm:bowser@1.4.3",
+        "rgbcolor": "npm:rgbcolor@0.0.4",
+        "famous-bkimagesurface": "github:bizboard/famous-bkimagesurface@master",
+        "famous-autosizetextarea": "github:ijzerenhein/famous-autosizetextarea@0.3.1",
+        "famous": "github:bizboard/famous@0.3.7",
+        "arva-js": "github:bizboard/arva-js@develop",
+        "famous-flex": "github:bizboard/famous-flex@master"
+      }
+    },
+    "npm:color@0.11.3": {
+      "map": {
+        "color-convert": "npm:color-convert@1.5.0",
+        "color-string": "npm:color-string@0.3.0",
+        "clone": "npm:clone@1.0.2"
+      }
+    },
+    "npm:color-string@0.3.0": {
+      "map": {
+        "color-name": "npm:color-name@1.1.1"
+      }
+    },
+    "npm:pbkdf2@3.0.8": {
+      "map": {
+        "create-hmac": "npm:create-hmac@1.1.4"
+      }
+    },
+    "npm:asn1.js@4.8.1": {
+      "map": {
+        "bn.js": "npm:bn.js@4.11.6",
+        "inherits": "npm:inherits@2.0.3",
+        "minimalistic-assert": "npm:minimalistic-assert@1.0.0"
       }
     }
   }
