@@ -47,11 +47,11 @@
       "child_process": "github:jspm/nodelibs-child_process@^0.2.0-alpha",
       "constants": "github:jspm/nodelibs-constants@^0.2.0-alpha",
       "crypto": "github:jspm/nodelibs-crypto@^0.2.0-alpha",
-      "events": "github:jspm/nodelibs-events@^0.2.0-alpha",
+      "events": "github:jspm/nodelibs-events@0.2.0-alpha",
       "fs": "github:jspm/nodelibs-fs@^0.2.0-alpha",
       "os": "github:jspm/nodelibs-os@^0.2.0-alpha",
-      "path": "github:jspm/nodelibs-path@^0.2.0-alpha",
-      "process": "github:jspm/nodelibs-process@^0.2.0-alpha",
+      "path": "github:jspm/nodelibs-path@0.2.0-alpha",
+      "process": "github:jspm/nodelibs-process@0.2.0-alpha",
       "stream": "github:jspm/nodelibs-stream@^0.2.0-alpha",
       "string_decoder": "github:jspm/nodelibs-string_decoder@^0.2.0-alpha",
       "timers": "github:jspm/nodelibs-timers@^0.2.0-alpha",
@@ -59,10 +59,7 @@
       "vm": "github:jspm/nodelibs-vm@^0.2.0-alpha"
     },
     "overrides": {
-      "github:bizboard/famous-flex@master": {
-        "format": "amd"
-      },
-      "github:firebase/firebase-bower@3.4.0": {
+      "github:firebase/firebase-bower@3.4.1": {
         "main": "firebase.js",
         "registry": "jspm",
         "meta": {
@@ -96,7 +93,7 @@
           "test.js"
         ]
       },
-      "npm:lodash@4.15.0": {
+      "npm:lodash@4.16.2": {
         "map": {
           "buffer": "@empty",
           "process": "@empty"
