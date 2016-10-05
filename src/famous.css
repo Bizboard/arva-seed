@@ -94,3 +94,11 @@ textarea::-webkit-scrollbar {
     position: absolute;
     pointer-events: auto;
 }
+
+.famous-native-scroller::after {
+    content: " "
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
