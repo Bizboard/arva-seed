@@ -50,9 +50,9 @@ SystemJS.config({
     "map": {
       "plugin-babel": "npm:systemjs-plugin-babel@0.0.12",
       "babel-plugin-transform-decorators": "npm:babel-plugin-transform-decorators@6.8.0",
-      "module": "github:jspm/nodelibs-module@0.2.0-alpha",
-      "http": "github:jspm/nodelibs-http@0.2.0-alpha",
-      "url": "github:jspm/nodelibs-url@0.2.0-alpha",
+      "module": "npm:jspm-nodelibs-module@0.2.0",
+      "http": "npm:jspm-nodelibs-http@0.2.0",
+      "url": "npm:jspm-nodelibs-url@0.2.0",
       "babel-plugin-transform-decorators-legacy": "npm:babel-plugin-transform-decorators-legacy@1.3.4",
       "core-js": "npm:core-js@2.4.1",
       "babel-plugin-syntax-decorators": "npm:babel-plugin-syntax-decorators@6.8.0",
@@ -95,11 +95,6 @@ SystemJS.config({
           "babel-runtime": "npm:babel-runtime@6.9.2"
         }
       },
-      "github:jspm/nodelibs-http@0.2.0-alpha": {
-        "map": {
-          "http-browserify": "npm:stream-http@2.3.0"
-        }
-      },
       "npm:stream-http@2.3.0": {
         "map": {
           "inherits": "npm:inherits@2.0.1",
@@ -107,11 +102,6 @@ SystemJS.config({
           "builtin-status-codes": "npm:builtin-status-codes@2.0.0",
           "xtend": "npm:xtend@4.0.1",
           "to-arraybuffer": "npm:to-arraybuffer@1.0.1"
-        }
-      },
-      "github:jspm/nodelibs-url@0.2.0-alpha": {
-        "map": {
-          "url-browserify": "npm:url@0.11.0"
         }
       },
       "npm:url@0.11.0": {
@@ -323,6 +313,16 @@ SystemJS.config({
           "core-util-is": "npm:core-util-is@1.0.2",
           "util-deprecate": "npm:util-deprecate@1.0.2"
         }
+      },
+      "npm:jspm-nodelibs-http@0.2.0": {
+        "map": {
+          "http-browserify": "npm:stream-http@2.3.0"
+        }
+      },
+      "npm:jspm-nodelibs-url@0.2.0": {
+        "map": {
+          "url-browserify": "npm:url@0.11.0"
+        }
       }
     }
   },
@@ -391,53 +391,33 @@ SystemJS.config({
     "famous-autosizetextarea": "github:ijzerenhein/famous-autosizetextarea@0.3.1",
     "es6-map": "npm:es6-map@0.1.4",
     "arva-js": "github:bizboard/arva-js@develop",
-    "assert": "github:jspm/nodelibs-assert@0.2.0-alpha",
+    "assert": "npm:jspm-nodelibs-assert@0.2.0",
     "babel-polyfill": "npm:babel-polyfill@6.9.1",
-    "buffer": "github:jspm/nodelibs-buffer@0.2.0-alpha",
-    "child_process": "github:jspm/nodelibs-child_process@0.2.0-alpha",
-    "constants": "github:jspm/nodelibs-constants@0.2.0-alpha",
-    "crypto": "github:jspm/nodelibs-crypto@0.2.0-alpha",
+    "buffer": "npm:jspm-nodelibs-buffer@0.2.0",
+    "child_process": "npm:jspm-nodelibs-child_process@0.2.0",
+    "constants": "npm:jspm-nodelibs-constants@0.2.0",
+    "crypto": "npm:jspm-nodelibs-crypto@0.2.0",
     "css": "github:systemjs/plugin-css@0.1.23",
-    "events": "github:jspm/nodelibs-events@0.2.0-alpha",
-    "famous": "github:bizboard/famous@0.3.7",
+    "events": "npm:jspm-nodelibs-events@0.2.0",
+    "famous": "github:bizboard/famous@0.3.9",
     "famous-flex": "github:bizboard/famous-flex@master",
     "firebase": "github:firebase/firebase-bower@3.4.1",
-    "fs": "github:jspm/nodelibs-fs@0.2.0-alpha",
+    "fs": "npm:jspm-nodelibs-fs@0.2.0",
     "lodash": "npm:lodash@4.16.2",
-    "os": "github:jspm/nodelibs-os@0.2.0-alpha",
-    "path": "github:jspm/nodelibs-path@0.2.0-alpha",
-    "process": "github:jspm/nodelibs-process@0.2.0-alpha",
-    "stream": "github:jspm/nodelibs-stream@0.2.0-alpha",
-    "string_decoder": "github:jspm/nodelibs-string_decoder@0.2.0-alpha",
-    "timers": "github:jspm/nodelibs-timers@0.2.0-alpha",
-    "util": "github:jspm/nodelibs-util@0.2.0-alpha",
-    "vm": "github:jspm/nodelibs-vm@0.2.0-alpha"
+    "os": "npm:jspm-nodelibs-os@0.2.0",
+    "path": "npm:jspm-nodelibs-path@0.2.0",
+    "process": "npm:jspm-nodelibs-process@0.2.0",
+    "stream": "npm:jspm-nodelibs-stream@0.2.0",
+    "string_decoder": "npm:jspm-nodelibs-string_decoder@0.2.0",
+    "timers": "npm:jspm-nodelibs-timers@0.2.0",
+    "util": "npm:jspm-nodelibs-util@0.2.0",
+    "vm": "npm:jspm-nodelibs-vm@0.2.0"
   },
   packages: {
-    "github:jspm/nodelibs-buffer@0.2.0-alpha": {
-      "map": {
-        "buffer-browserify": "npm:buffer@4.9.1"
-      }
-    },
-    "github:jspm/nodelibs-string_decoder@0.2.0-alpha": {
-      "map": {
-        "string_decoder-browserify": "npm:string_decoder@0.10.31"
-      }
-    },
-    "github:jspm/nodelibs-stream@0.2.0-alpha": {
-      "map": {
-        "stream-browserify": "npm:stream-browserify@2.0.1"
-      }
-    },
     "npm:stream-browserify@2.0.1": {
       "map": {
         "readable-stream": "npm:readable-stream@2.1.5",
         "inherits": "npm:inherits@2.0.3"
-      }
-    },
-    "github:jspm/nodelibs-timers@0.2.0-alpha": {
-      "map": {
-        "timers-browserify": "npm:timers-browserify@1.4.2"
       }
     },
     "npm:timers-browserify@1.4.2": {
@@ -474,11 +454,6 @@ SystemJS.config({
         "isarray": "npm:isarray@1.0.0",
         "base64-js": "npm:base64-js@1.2.0",
         "ieee754": "npm:ieee754@1.1.6"
-      }
-    },
-    "github:jspm/nodelibs-crypto@0.2.0-alpha": {
-      "map": {
-        "crypto-browserify": "npm:crypto-browserify@3.11.0"
       }
     },
     "npm:crypto-browserify@3.11.0": {
@@ -607,11 +582,6 @@ SystemJS.config({
         "minimalistic-assert": "npm:minimalistic-assert@1.0.0"
       }
     },
-    "github:jspm/nodelibs-os@0.2.0-alpha": {
-      "map": {
-        "os-browserify": "npm:os-browserify@0.2.1"
-      }
-    },
     "npm:xml2js@0.4.17": {
       "map": {
         "xmlbuilder": "npm:xmlbuilder@4.2.1",
@@ -621,11 +591,6 @@ SystemJS.config({
     "npm:xmlbuilder@4.2.1": {
       "map": {
         "lodash": "npm:lodash@4.16.2"
-      }
-    },
-    "github:jspm/nodelibs-path@0.1.0": {
-      "map": {
-        "path-browserify": "npm:path-browserify@0.0.0"
       }
     },
     "npm:cipher-base@1.0.3": {
@@ -705,10 +670,10 @@ SystemJS.config({
         "eventemitter3": "npm:eventemitter3@1.2.0",
         "ordered-hashmap": "npm:ordered-hashmap@1.0.0",
         "xml2js": "npm:xml2js@0.4.17",
-        "famous": "github:bizboard/famous@0.3.7",
+        "famous": "github:bizboard/famous@0.3.9",
         "famous-flex": "github:bizboard/famous-flex@master",
-        "fs": "github:jspm/nodelibs-fs@0.1.2",
-        "path": "github:jspm/nodelibs-path@0.1.0",
+        "fs": "npm:jspm-nodelibs-fs@0.2.0",
+        "path": "npm:jspm-nodelibs-path@0.2.0",
         "request-animation-frame-mock": "github:erykpiast/request-animation-frame-mock@0.1.8"
       }
     },
@@ -721,7 +686,7 @@ SystemJS.config({
         "rgbcolor": "npm:rgbcolor@0.0.4",
         "famous-bkimagesurface": "github:bizboard/famous-bkimagesurface@master",
         "famous-autosizetextarea": "github:ijzerenhein/famous-autosizetextarea@0.3.1",
-        "famous": "github:bizboard/famous@0.3.7",
+        "famous": "github:bizboard/famous@0.3.9",
         "arva-js": "github:bizboard/arva-js@develop",
         "famous-flex": "github:bizboard/famous-flex@master"
       }
@@ -748,6 +713,36 @@ SystemJS.config({
         "bn.js": "npm:bn.js@4.11.6",
         "inherits": "npm:inherits@2.0.3",
         "minimalistic-assert": "npm:minimalistic-assert@1.0.0"
+      }
+    },
+    "npm:jspm-nodelibs-os@0.2.0": {
+      "map": {
+        "os-browserify": "npm:os-browserify@0.2.1"
+      }
+    },
+    "npm:jspm-nodelibs-crypto@0.2.0": {
+      "map": {
+        "crypto-browserify": "npm:crypto-browserify@3.11.0"
+      }
+    },
+    "npm:jspm-nodelibs-timers@0.2.0": {
+      "map": {
+        "timers-browserify": "npm:timers-browserify@1.4.2"
+      }
+    },
+    "npm:jspm-nodelibs-string_decoder@0.2.0": {
+      "map": {
+        "string_decoder-browserify": "npm:string_decoder@0.10.31"
+      }
+    },
+    "npm:jspm-nodelibs-buffer@0.2.0": {
+      "map": {
+        "buffer-browserify": "npm:buffer@4.9.1"
+      }
+    },
+    "npm:jspm-nodelibs-stream@0.2.0": {
+      "map": {
+        "stream-browserify": "npm:stream-browserify@2.0.1"
       }
     }
   }
