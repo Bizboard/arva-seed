@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "305905106844",
+    "firebase_url": "https://mrbox-store.firebaseio.com",
+    "project_id": "mrbox-store",
+    "storage_bucket": "mrbox-store.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:305905106844:android:cf9747b70014b158",
+        "android_client_info": {
+          "package_name": "nl.bizboard.mrbox.store"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "305905106844-vbbm9ec309mnf026rvjkbkgnc3kp29tv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWbvHJa6xYjg9B6ZPDf5c9nwivFEmA4Ks"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
