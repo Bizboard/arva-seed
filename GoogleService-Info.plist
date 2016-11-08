@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>305905106844-tvr085g4vnqrptbtqa424kajpulpk4fd.apps.googleusercontent.com</string>
+	<string>855814959208-rcbucbd9ckjvd8qddtek1f533oa4rhad.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.305905106844-tvr085g4vnqrptbtqa424kajpulpk4fd</string>
+	<string>com.googleusercontent.apps.855814959208-rcbucbd9ckjvd8qddtek1f533oa4rhad</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBhNWNDmhxUpDW-rsWtouA_nBryqbxuROw</string>
+	<string>AIzaSyD6ETmCioaH_vMhG8PVuV34MCsC3A5PYvQ</string>
 	<key>GCM_SENDER_ID</key>
-	<string>305905106844</string>
+	<string>855814959208</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>nl.bizboard.mrbox-store</string>
+	<string>nl.bizboard.mrbox.store</string>
 	<key>PROJECT_ID</key>
-	<string>mrbox-store</string>
+	<string>bizboard-mrbox</string>
 	<key>STORAGE_BUCKET</key>
-	<string>mrbox-store.appspot.com</string>
+	<string>bizboard-mrbox.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true/>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:305905106844:ios:934fe46bf5db68f8</string>
+	<string>1:855814959208:ios:cf9747b70014b158</string>
 	<key>DATABASE_URL</key>
-	<string>https://mrbox-store.firebaseio.com</string>
+	<string>https://bizboard-mrbox.firebaseio.com</string>
 </dict>
 </plist>
