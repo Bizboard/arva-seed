@@ -15,14 +15,16 @@
       "arva-js": "github:bizboard/arva-js@develop",
       "arva-kit": "bitbucket:bizboard/arva-kit@master",
       "babel-polyfill": "npm:babel-polyfill@^6.9.1",
+      "cordova": "npm:cordova@^6.4.0",
       "css": "github:systemjs/plugin-css@^0.1.23",
       "es6-map": "npm:es6-map@^0.1.4",
-      "famous": "github:bizboard/famous@0.3.9",
+      "famous": "github:bizboard/famous@^0.3.9",
       "famous-autosizetextarea": "github:ijzerenhein/famous-autosizetextarea@^0.3.1",
       "famous-flex": "github:bizboard/famous-flex@master",
       "fastclick": "npm:fastclick@^1.0.6",
       "firebase": "github:firebase/firebase-bower@^3.0.5",
-      "lodash": "npm:lodash@^4.13.1"
+      "lodash": "npm:lodash@^4.13.1",
+      "mrbox-shared": "bitbucket:bizboard/nl.bizboard.mrbox.shared@develop"
     },
     "devDependencies": {
       "babel-plugin-syntax-decorators": "npm:babel-plugin-syntax-decorators@^6.8.0",
@@ -36,27 +38,45 @@
       "babel-plugin-transform-es2015-spread": "npm:babel-plugin-transform-es2015-spread@^6.8.0",
       "babel-plugin-transform-runtime-constructor-name": "github:bizboard/babel-plugin-transform-runtime-constructor-name@master",
       "core-js": "npm:core-js@^2.4.0",
-      "http": "npm:jspm-nodelibs-http@^0.2.0",
-      "module": "npm:jspm-nodelibs-module@^0.2.0",
-      "plugin-babel": "npm:systemjs-plugin-babel@^0.0.12",
-      "url": "npm:jspm-nodelibs-url@^0.2.0"
+      "plugin-babel": "npm:systemjs-plugin-babel@^0.0.12"
     },
     "peerDependencies": {
       "assert": "npm:jspm-nodelibs-assert@^0.2.0",
+      "bcrypt-pbkdf": "npm:bcrypt-pbkdf@^1.0.0",
       "buffer": "npm:jspm-nodelibs-buffer@^0.2.0",
       "child_process": "npm:jspm-nodelibs-child_process@^0.2.0",
       "constants": "npm:jspm-nodelibs-constants@^0.2.0",
       "crypto": "npm:jspm-nodelibs-crypto@^0.2.0",
+      "dgram": "npm:jspm-nodelibs-dgram@^0.2.0",
+      "dns": "npm:jspm-nodelibs-dns@^0.2.0",
+      "domain": "npm:jspm-nodelibs-domain@^0.2.0",
+      "ecc-jsbn": "npm:ecc-jsbn@~0.1.1",
       "events": "npm:jspm-nodelibs-events@^0.2.0",
       "fs": "npm:jspm-nodelibs-fs@^0.2.0",
+      "graceful-fs": "npm:graceful-fs@^4.1.2",
+      "http": "npm:jspm-nodelibs-http@^0.2.0",
+      "https": "npm:jspm-nodelibs-https@^0.2.0",
+      "jodid25519": "npm:jodid25519@^1.0.0",
+      "jsbn": "npm:jsbn@0.1",
+      "module": "npm:jspm-nodelibs-module@^0.2.0",
+      "net": "npm:jspm-nodelibs-net@^0.2.0",
+      "npmlog": "npm:npmlog@3.1",
       "os": "npm:jspm-nodelibs-os@^0.2.0",
       "path": "npm:jspm-nodelibs-path@^0.2.0",
       "process": "npm:jspm-nodelibs-process@^0.2.0",
+      "querystring": "npm:jspm-nodelibs-querystring@^0.2.0",
+      "readline": "npm:jspm-nodelibs-readline@^0.2.0",
+      "repl": "npm:jspm-nodelibs-repl@^0.2.0",
       "stream": "npm:jspm-nodelibs-stream@^0.2.0",
       "string_decoder": "npm:jspm-nodelibs-string_decoder@^0.2.0",
       "timers": "npm:jspm-nodelibs-timers@^0.2.0",
+      "tls": "npm:jspm-nodelibs-tls@^0.2.0",
+      "tty": "npm:jspm-nodelibs-tty@^0.2.0",
+      "tweetnacl": "npm:tweetnacl@0.14",
+      "url": "npm:jspm-nodelibs-url@^0.2.0",
       "util": "npm:jspm-nodelibs-util@^0.2.0",
-      "vm": "npm:jspm-nodelibs-vm@^0.2.0"
+      "vm": "npm:jspm-nodelibs-vm@^0.2.0",
+      "zlib": "npm:jspm-nodelibs-zlib@^0.2.0"
     },
     "overrides": {
       "github:firebase/firebase-bower@3.4.1": {
@@ -69,7 +89,45 @@
           }
         }
       },
+      "github:firebase/firebase-bower@3.6.1": {
+        "main": "firebase.js",
+        "registry": "jspm",
+        "meta": {
+          "firebase.js": {
+            "exports": "firebase",
+            "format": "global"
+          }
+        }
+      },
+      "npm:base64-js@0.0.8": {
+        "ignore": [
+          "bench"
+        ]
+      },
+      "npm:browserify-zlib@0.1.4": {
+        "dependencies": {
+          "readable-stream": "^2.0.2",
+          "pako": "~0.2.0"
+        },
+        "map": {
+          "_stream_transform": "readable-stream/transform"
+        }
+      },
       "npm:debug@2.2.0": {
+        "main": "browser.js",
+        "jspmNodeConversion": false,
+        "format": "cjs",
+        "map": {
+          "./browser.js": {
+            "node": "./node.js"
+          },
+          "fs": "@node/fs",
+          "net": "@node/net",
+          "tty": "@node/tty",
+          "util": "@node/util"
+        }
+      },
+      "npm:debug@2.3.2": {
         "main": "browser.js",
         "jspmNodeConversion": false,
         "format": "cjs",
@@ -93,7 +151,7 @@
           "test.js"
         ]
       },
-      "npm:lodash@4.16.2": {
+      "npm:lodash@4.17.2": {
         "map": {
           "buffer": "@empty",
           "process": "@empty"
@@ -102,6 +160,40 @@
       "npm:ms@0.7.1": {
         "jspmNodeConversion": false,
         "format": "cjs"
+      },
+      "npm:ms@0.7.2": {
+        "jspmNodeConversion": false,
+        "format": "cjs"
+      },
+      "npm:readable-stream@1.0.34": {
+        "map": {
+          "stream": "stream-browserify/index"
+        },
+        "systemjs": {
+          "main": "readable.js"
+        },
+        "dependencies": {
+          "core-util-is": "~1.0.0",
+          "isarray": "0.0.1",
+          "string_decoder": "~0.10.0",
+          "inherits": "~2.0.1",
+          "stream-browserify": "~1.0.0"
+        }
+      },
+      "npm:readable-stream@1.1.14": {
+        "map": {
+          "stream": "stream-browserify/index"
+        },
+        "systemjs": {
+          "main": "readable.js"
+        },
+        "dependencies": {
+          "core-util-is": "~1.0.0",
+          "isarray": "0.0.1",
+          "string_decoder": "~0.10.0",
+          "inherits": "~2.0.1",
+          "stream-browserify": "~1.0.0"
+        }
       }
     }
   },
