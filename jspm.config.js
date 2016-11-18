@@ -649,7 +649,7 @@ SystemJS.config({
         "path": "github:jspm/nodelibs-path@0.1.0",
         "firebase": "github:firebase/firebase-bower@3.3.0",
         "request-animation-frame-mock": "github:erykpiast/request-animation-frame-mock@0.1.8",
-        "famous": "github:bizboard/famous@0.3.7",
+        "famous": "github:bizboard/famous@develop",
         "famous-flex": "github:bizboard/famous-flex@master"
       }
     },
