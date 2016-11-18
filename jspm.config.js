@@ -398,7 +398,7 @@ SystemJS.config({
     "crypto": "github:jspm/nodelibs-crypto@0.2.0-alpha",
     "css": "github:systemjs/plugin-css@0.1.23",
     "events": "github:jspm/nodelibs-events@0.2.0-alpha",
-    "famous": "github:bizboard/famous@0.3.7",
+    "famous": "github:bizboard/famous@develop",
     "famous-flex": "github:bizboard/famous-flex@master",
     "firebase": "github:firebase/firebase-bower@3.3.0",
     "fs": "github:jspm/nodelibs-fs@0.2.0-alpha",
