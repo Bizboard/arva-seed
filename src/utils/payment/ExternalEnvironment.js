@@ -32,7 +32,7 @@ let postRequestFunctionStringified = `function post(path, params, method) {
          }
          `
 
-export class BuckarooEnvironment {
+export class ExternalEnvironment {
 
     constructor() {
         if (!window.cordova || !window.cordova.InAppBrowser) {
@@ -43,40 +43,30 @@ export class BuckarooEnvironment {
         }
     }
 
-    async openBuckarooEnvironment(requestObject, inTestEnvironemnt = false) {
-        if (this._paymentIsActiveChecker) {
-            throw new Error("There is already an active payment in progress");
-        }
+    async openElectronicMandate(url) {
+        this._ensureThisEnvironmentOnly();
         /* Open an empty browser and perform POST request */
+        this._openInAppBrowser(url);
+    }
+
+
+    _openInAppBrowser(url){
         if (device.platform === "Android") {
-            this._inAppBrowserRef = cordova.InAppBrowser.open('about:blank', '_blank', 'location=no,clearcache=yes,hardwareback=no,zoom=no');
+            this._inAppBrowserRef = cordova.InAppBrowser.open(url, '_blank', 'location=no,clearcache=yes,hardwareback=no,zoom=no');
         } else {
-            this._inAppBrowserRef = cordova.InAppBrowser.open('about:blank', '_blank', 'location=no,clearcache=yes,closebuttoncaption=Go back to App,toolbar=yes,presentationstyle=formsheet');
+            this._inAppBrowserRef = cordova.InAppBrowser.open(url, '_blank', 'location=no,clearcache=yes,closebuttoncaption=Go back to App,toolbar=yes,presentationstyle=formsheet');
         }
-
-
-        /* The code needs to be in a string. It executes a post request by injecting form data into the DOM */
-        let doPostRequestScript = postRequestFunctionStringified;
-        /* Assign the request object */
-        doPostRequestScript += `var requestObject = ${JSON.stringify(requestObject)};
-        `
-
-        /* Execute the POST request */
-        doPostRequestScript += `post('${buckarooEnvironments[inTestEnvironemnt ? 'test' : 'live']}', requestObject);`;
-
-        this._inAppBrowserRef.executeScript({code: doPostRequestScript});
-
         /* Check whether payment has finished processing */
         return new Promise((resolve, reject) => {
 
 
             let cleanUp = () => {
-                clearInterval(this._paymentIsActiveChecker);
-                this._paymentIsActiveChecker = null;
+                clearInterval(this._environmentIsActiveChecker);
+                this._environmentIsActiveChecker = null;
             };
 
             this._closeCurrentEnvironment = () => {
-                if(this._paymentIsActiveChecker){
+                if(this._environmentIsActiveChecker){
                     this._inAppBrowserRef.close();
                     this._closeCurrentEnvironment = null;
                     resolve();
@@ -88,7 +78,7 @@ export class BuckarooEnvironment {
                 reject('Browser closed by user');
             });
 
-            this._paymentIsActiveChecker = setInterval(() => {
+            this._environmentIsActiveChecker = setInterval(() => {
                 console.log("Checking if payment finished...");
                 this._inAppBrowserRef.executeScript({code: 'window.paymentFinished'},
                     ([isPaymentFinished]) => {
@@ -100,6 +90,34 @@ export class BuckarooEnvironment {
             }, 500);
         });
     }
+
+    _doPostRequestInBrowser(requestObject, url) {
+        /* The code needs to be in a string. It executes a post request by injecting form data into the DOM */
+        let doPostRequestScript = postRequestFunctionStringified;
+        /* Assign the request object */
+        doPostRequestScript += `var requestObject = ${JSON.stringify(requestObject)};
+        `
+
+        /* Execute the POST request */
+        doPostRequestScript += `post('${url}', requestObject);`;
+
+        this._inAppBrowserRef.executeScript({code: doPostRequestScript});
+    }
+
+    _ensureThisEnvironmentOnly() {
+        if (this._environmentIsActiveChecker) {
+            throw new Error("There is already an active payment in progress");
+        }
+    }
+
+    async openBuckarooPayment(requestObject, inTestEnvironment = false) {
+        this._ensureThisEnvironmentOnly();
+        /* Open an empty browser and perform POST request */
+        this._openInAppBrowser('about:blank');
+        this._doPostRequestInBrowser(requestObject, buckarooEnvironments[inTestEnvironment ? 'test' : 'live']);
+    }
+
+
 
     closeIfOpen() {
         if(this._closeCurrentEnvironment){
