@@ -322,7 +322,7 @@ SystemJS.config({
     "crypto": "npm:jspm-nodelibs-crypto@0.2.0",
     "css": "github:systemjs/plugin-css@0.1.32",
     "events": "npm:jspm-nodelibs-events@0.2.0",
-    "famous": "github:bizboard/famous@0.3.10",
+    "famous": "github:bizboard/famous@develop",
     "famous-flex": "github:bizboard/famous-flex@master",
     "firebase": "github:firebase/firebase-bower@3.6.1",
     "fs": "npm:jspm-nodelibs-fs@0.2.0",
@@ -580,7 +580,7 @@ SystemJS.config({
         "eventemitter3": "npm:eventemitter3@1.2.0",
         "ordered-hashmap": "npm:ordered-hashmap@1.0.0",
         "xml2js": "npm:xml2js@0.4.17",
-        "famous": "github:bizboard/famous@0.3.9",
+        "famous": "github:bizboard/famous@develop",
         "famous-flex": "github:bizboard/famous-flex@master",
         "fs": "npm:jspm-nodelibs-fs@0.2.0",
         "path": "npm:jspm-nodelibs-path@0.2.1",
@@ -596,7 +596,7 @@ SystemJS.config({
         "rgbcolor": "npm:rgbcolor@0.0.4",
         "famous-bkimagesurface": "github:bizboard/famous-bkimagesurface@master",
         "famous-autosizetextarea": "github:ijzerenhein/famous-autosizetextarea@0.3.1",
-        "famous": "github:bizboard/famous@0.3.9",
+        "famous": "github:bizboard/famous@develop",
         "arva-js": "github:bizboard/arva-js@develop",
         "famous-flex": "github:bizboard/famous-flex@master"
       }
