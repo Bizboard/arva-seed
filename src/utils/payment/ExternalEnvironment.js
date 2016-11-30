@@ -43,12 +43,25 @@ export class ExternalEnvironment {
         }
     }
 
+    /**
+     * Opening an electronic mandate page, based on the url provided
+     * @param {String} url
+     * @returns {*}
+     */
     async openElectronicMandate(url) {
         this._ensureThisEnvironmentOnly();
         /* Open an empty browser and perform POST request */
-        this._openInAppBrowser(url);
+        return this._openInAppBrowser(url);
     }
 
+
+    async openBuckarooPayment(htmlPostRequest, inTestEnvironment = false) {
+        this._ensureThisEnvironmentOnly();
+        /* Open an empty browser and perform POST request */
+        let browserOpenPromise =  this._openInAppBrowser('about:blank');
+        this._doPostRequestInBrowser(htmlPostRequest, buckarooEnvironments[inTestEnvironment ? 'test' : 'live']);
+        return browserOpenPromise;
+    }
 
     _openInAppBrowser(url){
         if (device.platform === "Android") {
@@ -91,11 +104,11 @@ export class ExternalEnvironment {
         });
     }
 
-    _doPostRequestInBrowser(requestObject, url) {
+    _doPostRequestInBrowser(htmlPostRequest, url) {
         /* The code needs to be in a string. It executes a post request by injecting form data into the DOM */
         let doPostRequestScript = postRequestFunctionStringified;
         /* Assign the request object */
-        doPostRequestScript += `var requestObject = ${JSON.stringify(requestObject)};
+        doPostRequestScript += `var requestObject = ${JSON.stringify(htmlPostRequest)};
         `
 
         /* Execute the POST request */
@@ -108,13 +121,6 @@ export class ExternalEnvironment {
         if (this._environmentIsActiveChecker) {
             throw new Error("There is already an active payment in progress");
         }
-    }
-
-    async openBuckarooPayment(requestObject, inTestEnvironment = false) {
-        this._ensureThisEnvironmentOnly();
-        /* Open an empty browser and perform POST request */
-        this._openInAppBrowser('about:blank');
-        this._doPostRequestInBrowser(requestObject, buckarooEnvironments[inTestEnvironment ? 'test' : 'live']);
     }
 
 
