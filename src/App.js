@@ -35,7 +35,7 @@ export class App extends ArvaApp {
 
 
     /* Define which DataSource to use */
-    static defaultDataSource() {
+    static defaultDataSource(path = '/', options = {}) {
         /* Firebase initialization */
         firebase.initializeApp({
             apiKey: "AIzaSyBl-UFNia9_0DJbib6_nralN9K8whdfKWY",
@@ -44,7 +44,7 @@ export class App extends ArvaApp {
             storageBucket: "bizboard-mrbox.appspot.com",
             messagingSenderId: "855814959208"
         });
-        return new FirebaseDataSource('/', {});
+        return new FirebaseDataSource(path, options);
     }
 
     /**
