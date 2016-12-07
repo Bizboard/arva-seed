@@ -35,7 +35,7 @@ export class App extends ArvaApp {
 
 
     /* Define which DataSource to use */
-    static defaultDataSource() {
+    static defaultDataSource(path = '/', options = {}) {
         /* Firebase initialization */
         firebase.initializeApp({
             apiKey: '<api-key>',
@@ -43,7 +43,7 @@ export class App extends ArvaApp {
             databaseURL: 'https://<subdomain>.firebaseio.com',
             storageBucket: '<subdomain>.appspot.com'
         });
-        return new FirebaseDataSource('/', {});
+        return new FirebaseDataSource(path, options);
     }
 
     /**
