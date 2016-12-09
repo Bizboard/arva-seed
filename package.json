@@ -4,12 +4,14 @@
     "devbuilder": "node scripts/devbuilder.js",
     "start": "electron www/electron.js",
     "release": "jspm build src/App.js www/bundle.js -- --minify --skip-source-maps; electron-packager ./www HelloWorld --platform=win32,darwin --arch=x64 --version=0.36.0 --out=build --overwrite",
-    "build": "jspm build src/App.js www/bundle.js && echo Build finished at `date`",
-    "watch": "jspm build src/App.js www/bundle.js -wid",
+    "build": "jspm build src/App.js www/bundle.js",
+    "postbuild": "echo Build finished at `date`",
+    "watch": "npm run build -- -wid",
     "gen-keystore": "keytool -genkey -v -keystore release.keystore -alias release -keyalg RSA -keysize 2048 -validity 10000",
     "gen-icons": "node ./scripts/generateIcons.js"
   },
   "jspm": {
+    "name": "nl.bizboard.arva.seed",
     "main": "main.js",
     "dependencies": {
       "arva-js": "github:bizboard/arva-js@develop",
@@ -72,6 +74,9 @@
       "zlib": "npm:jspm-nodelibs-zlib@^0.2.0"
     },
     "overrides": {
+      "github:bizboard/famous-flex@master": {
+        "format": "amd"
+      },
       "github:firebase/firebase-bower@3.3.0": {
         "main": "firebase.js",
         "registry": "jspm",
