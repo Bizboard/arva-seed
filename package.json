@@ -1,10 +1,15 @@
 {
   "scripts": {
     "install-all": "npm install && jspm install && node scripts/linkJspmToLocal.js",
-    "build": "jspm build src/App.js www/bundle.js",
     "devbuilder": "node scripts/devbuilder.js",
     "start": "electron www/electron.js",
     "release": "npm run build; electron-packager ./www HelloWorld --platform=win32,darwin --arch=x64 --version=0.36.0 --out=build --overwrite"
+    "build": "jspm build src/App.js www/bundle.js && echo Build finished at `date`",
+    "watch": "jspm build src/App.js www/bundle.js -wid",
+    "gen-keystore": "keytool -genkey -v -keystore release.keystore -alias release -keyalg RSA -keysize 2048 -validity 10000",
+    "gen-icons": "node ./scripts/generateIcons.js",
+    "copy-apk": "mkdir -p build && cp platforms/android/build/outputs/apk/android-armv7-release.apk build/android-armv7-release.apk",
+    "release": "npm run build -- --minify --skip-source-maps  && npm run gen-icons && cordova build --release && npm run copy-apk && echo Release done at `date`"
   },
   "jspm": {
     "name": "nl.bizboard.arva.seed",
@@ -15,6 +20,9 @@
       "css": "github:systemjs/plugin-css@^0.1.23",
       "electron": "npm:electron@^1.3.3",
       "famous": "github:bizboard/famous@~0.3.7",
+      "es6-map": "npm:es6-map@^0.1.4",
+      "famous": "github:bizboard/famous@develop",
+      "famous-autosizetextarea": "github:ijzerenhein/famous-autosizetextarea@^0.3.1",
       "famous-flex": "github:bizboard/famous-flex@master",
       "fastclick": "npm:fastclick@^1.0.6",
       "firebase": "github:firebase/firebase-bower@^3.0.5",
@@ -33,8 +41,10 @@
       "babel-plugin-transform-es2015-spread": "npm:babel-plugin-transform-es2015-spread@^6.8.0",
       "babel-plugin-transform-runtime-constructor-name": "github:bizboard/babel-plugin-transform-runtime-constructor-name@master",
       "core-js": "npm:core-js@^2.4.0",
+      "http": "github:jspm/nodelibs-http@^0.2.0-alpha",
       "module": "github:jspm/nodelibs-module@^0.2.0-alpha",
-      "plugin-babel": "npm:systemjs-plugin-babel@^0.0.12"
+      "plugin-babel": "npm:systemjs-plugin-babel@^0.0.12",
+      "url": "github:jspm/nodelibs-url@^0.2.0-alpha"
     },
     "peerDependencies": {
       "assert": "github:jspm/nodelibs-assert@^0.2.0-alpha",
@@ -69,6 +79,19 @@
       "zlib": "github:jspm/nodelibs-zlib@^0.2.0-alpha"
     },
     "overrides": {
+      "github:bizboard/famous-flex@master": {
+        "format": "amd"
+      },
+      "github:firebase/firebase-bower@3.3.0": {
+        "main": "firebase.js",
+        "registry": "jspm",
+        "meta": {
+          "firebase.js": {
+            "exports": "firebase",
+            "format": "global"
+          }
+        }
+      },
       "npm:browserify-zlib@0.1.4": {
         "dependencies": {
           "readable-stream": "^2.0.2",

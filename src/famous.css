@@ -18,6 +18,14 @@
     transform-style: preserve-3d;
 }
 
+svg {
+    position: absolute;
+}
+
+textarea::-webkit-scrollbar {
+    display: none;
+}
+
 .famous-container, .famous-group {
     position: absolute;
     top: 0px;
