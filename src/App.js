@@ -19,8 +19,8 @@ import {ImageSideMenuView}          from 'arva-kit/menus/navigationDrawer/sideMe
 import {AccountIcon}                from 'arva-kit/icons/AccountIcon.js';
 
 /* Importing CSS in jspm bundled builds injects them into the DOM automagically */
-import './famous.css';
-import './fonts.css';
+import './famous.css!';
+import './fonts.css!';
 
 /* Here we import all controllers we want to use in the app */
 import {HomeController}             from './controllers/HomeController.js';
