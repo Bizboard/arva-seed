@@ -3,15 +3,14 @@
     "install-all": "npm install && jspm install && node scripts/linkJspmToLocal.js",
     "devbuilder": "node scripts/devbuilder.js",
     "start": "electron www/electron.js",
-    "release": "jspm build src/App.js www/bundle.js -- --minify --skip-source-maps; electron-packager ./www HelloWorld --platform=win32,darwin --arch=x64 --version=0.36.0 --out=build --overwrite"
+    "release": "jspm build src/App.js www/bundle.js -- --minify --skip-source-maps; electron-packager ./www HelloWorld --platform=win32,darwin --arch=x64 --version=0.36.0 --out=build --overwrite",
     "build": "jspm build src/App.js www/bundle.js && echo Build finished at `date`",
     "watch": "jspm build src/App.js www/bundle.js -wid",
     "gen-keystore": "keytool -genkey -v -keystore release.keystore -alias release -keyalg RSA -keysize 2048 -validity 10000",
     "gen-icons": "node ./scripts/generateIcons.js",
-    "copy-apk": "mkdir -p build && cp platforms/android/build/outputs/apk/android-armv7-release.apk build/android-armv7-release.apk",
+    "copy-apk": "mkdir -p build && cp platforms/android/build/outputs/apk/android-armv7-release.apk build/android-armv7-release.apk"
   },
   "jspm": {
-    "name": "nl.bizboard.arva.seed",
     "main": "main.js",
     "dependencies": {
       "arva-js": "github:bizboard/arva-js@develop",
@@ -39,47 +38,41 @@
       "babel-plugin-transform-es2015-spread": "npm:babel-plugin-transform-es2015-spread@^6.8.0",
       "babel-plugin-transform-runtime-constructor-name": "github:bizboard/babel-plugin-transform-runtime-constructor-name@master",
       "core-js": "npm:core-js@^2.4.0",
-      "http": "github:jspm/nodelibs-http@^0.2.0-alpha",
-      "module": "github:jspm/nodelibs-module@^0.2.0-alpha",
-      "plugin-babel": "npm:systemjs-plugin-babel@^0.0.12",
-      "url": "github:jspm/nodelibs-url@^0.2.0-alpha"
+      "plugin-babel": "npm:systemjs-plugin-babel@^0.0.12"
     },
     "peerDependencies": {
-      "assert": "github:jspm/nodelibs-assert@^0.2.0-alpha",
-      "buffer": "github:jspm/nodelibs-buffer@^0.2.0-alpha",
-      "child_process": "github:jspm/nodelibs-child_process@^0.2.0-alpha",
-      "constants": "github:jspm/nodelibs-constants@^0.2.0-alpha",
-      "crypto": "github:jspm/nodelibs-crypto@^0.2.0-alpha",
-      "dgram": "github:jspm/nodelibs-dgram@^0.2.0-alpha",
-      "dns": "github:jspm/nodelibs-dns@^0.2.0-alpha",
+      "assert": "npm:jspm-nodelibs-assert@^0.2.0",
+      "buffer": "npm:jspm-nodelibs-buffer@^0.2.0",
+      "child_process": "npm:jspm-nodelibs-child_process@^0.2.0",
+      "constants": "npm:jspm-nodelibs-constants@^0.2.0",
+      "crypto": "npm:jspm-nodelibs-crypto@^0.2.0",
+      "dgram": "npm:jspm-nodelibs-dgram@^0.2.0",
+      "dns": "npm:jspm-nodelibs-dns@^0.2.0",
       "ecc-jsbn": "npm:ecc-jsbn@~0.1.1",
-      "events": "github:jspm/nodelibs-events@^0.2.0-alpha",
-      "fs": "github:jspm/nodelibs-fs@^0.2.0-alpha",
+      "events": "npm:jspm-nodelibs-events@^0.2.0",
+      "fs": "npm:jspm-nodelibs-fs@^0.2.0",
       "http": "github:jspm/nodelibs-http@^0.2.0-alpha",
-      "https": "github:jspm/nodelibs-https@^0.2.0-alpha",
+      "https": "npm:jspm-nodelibs-https@^0.2.0",
       "jodid25519": "npm:jodid25519@^1.0.0",
       "jsbn": "npm:jsbn@0.1",
-      "net": "github:jspm/nodelibs-net@^0.2.0-alpha",
-      "os": "github:jspm/nodelibs-os@^0.2.0-alpha",
-      "path": "github:jspm/nodelibs-path@^0.2.0-alpha",
+      "net": "npm:jspm-nodelibs-net@^0.2.0",
+      "os": "npm:jspm-nodelibs-os@^0.2.0",
+      "path": "npm:jspm-nodelibs-path@^0.2.0",
       "process": "github:jspm/nodelibs-process@^0.2.0-alpha",
-      "punycode": "github:jspm/nodelibs-punycode@^0.2.0-alpha",
-      "querystring": "github:jspm/nodelibs-querystring@^0.2.0-alpha",
-      "stream": "github:jspm/nodelibs-stream@^0.2.0-alpha",
-      "string_decoder": "github:jspm/nodelibs-string_decoder@^0.2.0-alpha",
-      "timers": "github:jspm/nodelibs-timers@^0.2.0-alpha",
-      "tls": "github:jspm/nodelibs-tls@^0.2.0-alpha",
-      "tty": "github:jspm/nodelibs-tty@^0.2.0-alpha",
+      "punycode": "npm:jspm-nodelibs-punycode@^0.2.0",
+      "querystring": "npm:jspm-nodelibs-querystring@^0.2.0",
+      "stream": "npm:jspm-nodelibs-stream@^0.2.0",
+      "string_decoder": "npm:jspm-nodelibs-string_decoder@^0.2.0",
+      "timers": "npm:jspm-nodelibs-timers@^0.2.0",
+      "tls": "npm:jspm-nodelibs-tls@^0.2.0",
+      "tty": "npm:jspm-nodelibs-tty@^0.2.0",
       "tweetnacl": "npm:tweetnacl@0.13",
-      "url": "github:jspm/nodelibs-url@^0.2.0-alpha",
-      "util": "github:jspm/nodelibs-util@^0.2.0-alpha",
-      "vm": "github:jspm/nodelibs-vm@^0.2.0-alpha",
-      "zlib": "github:jspm/nodelibs-zlib@^0.2.0-alpha"
+      "url": "npm:jspm-nodelibs-url@^0.2.0",
+      "util": "npm:jspm-nodelibs-util@^0.2.0",
+      "vm": "npm:jspm-nodelibs-vm@^0.2.0",
+      "zlib": "npm:jspm-nodelibs-zlib@^0.2.0"
     },
     "overrides": {
-      "github:bizboard/famous-flex@master": {
-        "format": "amd"
-      },
       "github:firebase/firebase-bower@3.3.0": {
         "main": "firebase.js",
         "registry": "jspm",
@@ -106,6 +99,9 @@
         "map": {
           "./browser.js": {
             "node": "./node.js"
+          },
+          "./node.js": {
+            "browser": "./browser.js"
           },
           "fs": "@node/fs",
           "net": "@node/net",
