@@ -28,7 +28,12 @@ SystemJS.config({
   },
   arvaOptions: {
     "fileMappings": {
-      "github:bizboard/arva-js@develop": "../arva-js"
+      "github:bizboard/arva-js@develop": "../arva-js",
+      "github:bizboard/famous-flex@master": "../famous-flex"
+    },
+    "iconOptions": {
+      "form": "rounded",
+      "thickness": "bold"
     }
   },
   paths: {
@@ -45,6 +50,8 @@ SystemJS.config({
       "plugin-babel": "npm:systemjs-plugin-babel@0.0.12",
       "babel-plugin-transform-decorators": "npm:babel-plugin-transform-decorators@6.8.0",
       "module": "github:jspm/nodelibs-module@0.2.0-alpha",
+      "http": "github:jspm/nodelibs-http@0.2.0-alpha",
+      "url": "github:jspm/nodelibs-url@0.2.0-alpha",
       "babel-plugin-transform-decorators-legacy": "npm:babel-plugin-transform-decorators-legacy@1.3.4",
       "core-js": "npm:core-js@2.4.1",
       "babel-plugin-syntax-decorators": "npm:babel-plugin-syntax-decorators@6.8.0",
@@ -85,6 +92,31 @@ SystemJS.config({
       "npm:babel-plugin-syntax-async-functions@6.8.0": {
         "map": {
           "babel-runtime": "npm:babel-runtime@6.9.2"
+        }
+      },
+      "github:jspm/nodelibs-http@0.2.0-alpha": {
+        "map": {
+          "http-browserify": "npm:stream-http@2.3.0"
+        }
+      },
+      "npm:stream-http@2.3.0": {
+        "map": {
+          "inherits": "npm:inherits@2.0.1",
+          "readable-stream": "npm:readable-stream@2.1.4",
+          "builtin-status-codes": "npm:builtin-status-codes@2.0.0",
+          "xtend": "npm:xtend@4.0.1",
+          "to-arraybuffer": "npm:to-arraybuffer@1.0.1"
+        }
+      },
+      "github:jspm/nodelibs-url@0.2.0-alpha": {
+        "map": {
+          "url-browserify": "npm:url@0.11.0"
+        }
+      },
+      "npm:url@0.11.0": {
+        "map": {
+          "punycode": "npm:punycode@1.3.2",
+          "querystring": "npm:querystring@0.2.0"
         }
       },
       "npm:babel-plugin-syntax-decorators@6.8.0": {
@@ -135,9 +167,33 @@ SystemJS.config({
           "loose-envify": "npm:loose-envify@1.2.0"
         }
       },
+      "npm:debug@2.2.0": {
+        "map": {
+          "ms": "npm:ms@0.7.1"
+        }
+      },
       "npm:loose-envify@1.2.0": {
         "map": {
           "js-tokens": "npm:js-tokens@1.0.3"
+        }
+      },
+      "npm:chalk@1.1.3": {
+        "map": {
+          "escape-string-regexp": "npm:escape-string-regexp@1.0.5",
+          "ansi-styles": "npm:ansi-styles@2.2.1",
+          "has-ansi": "npm:has-ansi@2.0.0",
+          "supports-color": "npm:supports-color@2.0.0",
+          "strip-ansi": "npm:strip-ansi@3.0.1"
+        }
+      },
+      "npm:has-ansi@2.0.0": {
+        "map": {
+          "ansi-regex": "npm:ansi-regex@2.0.0"
+        }
+      },
+      "npm:strip-ansi@3.0.1": {
+        "map": {
+          "ansi-regex": "npm:ansi-regex@2.0.0"
         }
       },
       "npm:babel-helper-define-map@6.9.0": {
@@ -255,6 +311,17 @@ SystemJS.config({
           "invariant": "npm:invariant@2.2.1",
           "lodash": "npm:lodash@4.15.0"
         }
+      },
+      "npm:readable-stream@2.1.4": {
+        "map": {
+          "inherits": "npm:inherits@2.0.1",
+          "isarray": "npm:isarray@1.0.0",
+          "string_decoder": "npm:string_decoder@0.10.31",
+          "buffer-shims": "npm:buffer-shims@1.0.0",
+          "process-nextick-args": "npm:process-nextick-args@1.0.7",
+          "core-util-is": "npm:core-util-is@1.0.2",
+          "util-deprecate": "npm:util-deprecate@1.0.2"
+        }
       }
     }
   },
@@ -304,6 +371,9 @@ SystemJS.config({
         }
       }
     }
+  },
+  map: {
+    "text": "github:bizboard/arva-js@develop/utils/IconLoader.js"
   }
 });
 
@@ -315,6 +385,9 @@ SystemJS.config({
     "bitbucket:*/*.json"
   ],
   map: {
+    "fastclick": "npm:fastclick@1.0.6",
+    "famous-autosizetextarea": "github:ijzerenhein/famous-autosizetextarea@0.3.1",
+    "es6-map": "npm:es6-map@0.1.4",
     "arva-js": "github:bizboard/arva-js@develop",
     "assert": "github:jspm/nodelibs-assert@0.2.0-alpha",
     "babel-polyfill": "npm:babel-polyfill@6.9.1",
@@ -328,9 +401,8 @@ SystemJS.config({
     "ecc-jsbn": "npm:ecc-jsbn@0.1.1",
     "electron": "npm:electron@1.3.3",
     "events": "github:jspm/nodelibs-events@0.2.0-alpha",
-    "famous": "github:bizboard/famous@0.3.7",
+    "famous": "github:bizboard/famous@develop",
     "famous-flex": "github:bizboard/famous-flex@master",
-    "fastclick": "npm:fastclick@1.0.6",
     "firebase": "github:firebase/firebase-bower@3.3.0",
     "fs": "github:jspm/nodelibs-fs@0.2.0-alpha",
     "http": "github:jspm/nodelibs-http@0.2.0-alpha",
@@ -593,7 +665,7 @@ SystemJS.config({
         "path": "github:jspm/nodelibs-path@0.1.0",
         "firebase": "github:firebase/firebase-bower@3.3.0",
         "request-animation-frame-mock": "github:erykpiast/request-animation-frame-mock@0.1.8",
-        "famous": "github:bizboard/famous@0.3.7",
+        "famous": "github:bizboard/famous@develop",
         "famous-flex": "github:bizboard/famous-flex@master"
       }
     },
@@ -611,6 +683,55 @@ SystemJS.config({
     "github:jspm/nodelibs-path@0.1.0": {
       "map": {
         "path-browserify": "npm:path-browserify@0.0.0"
+      }
+    },
+    "npm:es6-map@0.1.4": {
+      "map": {
+        "d": "npm:d@0.1.1",
+        "es6-iterator": "npm:es6-iterator@2.0.0",
+        "es6-set": "npm:es6-set@0.1.4",
+        "event-emitter": "npm:event-emitter@0.3.4",
+        "es6-symbol": "npm:es6-symbol@3.1.0",
+        "es5-ext": "npm:es5-ext@0.10.12"
+      }
+    },
+    "npm:event-emitter@0.3.4": {
+      "map": {
+        "d": "npm:d@0.1.1",
+        "es5-ext": "npm:es5-ext@0.10.12"
+      }
+    },
+    "npm:es6-set@0.1.4": {
+      "map": {
+        "d": "npm:d@0.1.1",
+        "es6-iterator": "npm:es6-iterator@2.0.0",
+        "es6-symbol": "npm:es6-symbol@3.1.0",
+        "event-emitter": "npm:event-emitter@0.3.4",
+        "es5-ext": "npm:es5-ext@0.10.12"
+      }
+    },
+    "npm:es6-iterator@2.0.0": {
+      "map": {
+        "d": "npm:d@0.1.1",
+        "es5-ext": "npm:es5-ext@0.10.12",
+        "es6-symbol": "npm:es6-symbol@3.1.0"
+      }
+    },
+    "npm:d@0.1.1": {
+      "map": {
+        "es5-ext": "npm:es5-ext@0.10.12"
+      }
+    },
+    "npm:es6-symbol@3.1.0": {
+      "map": {
+        "es5-ext": "npm:es5-ext@0.10.12",
+        "d": "npm:d@0.1.1"
+      }
+    },
+    "npm:es5-ext@0.10.12": {
+      "map": {
+        "es6-iterator": "npm:es6-iterator@2.0.0",
+        "es6-symbol": "npm:es6-symbol@3.1.0"
       }
     },
     "github:jspm/nodelibs-http@0.2.0-alpha": {
