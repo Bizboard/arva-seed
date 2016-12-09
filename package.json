@@ -52,14 +52,14 @@
       "ecc-jsbn": "npm:ecc-jsbn@~0.1.1",
       "events": "npm:jspm-nodelibs-events@^0.2.0",
       "fs": "npm:jspm-nodelibs-fs@^0.2.0",
-      "http": "github:jspm/nodelibs-http@^0.2.0-alpha",
+      "http": "npm:jspm-nodelibs-http@^0.2.0",
       "https": "npm:jspm-nodelibs-https@^0.2.0",
       "jodid25519": "npm:jodid25519@^1.0.0",
       "jsbn": "npm:jsbn@0.1",
       "net": "npm:jspm-nodelibs-net@^0.2.0",
       "os": "npm:jspm-nodelibs-os@^0.2.0",
       "path": "npm:jspm-nodelibs-path@^0.2.0",
-      "process": "github:jspm/nodelibs-process@^0.2.0-alpha",
+      "process": "npm:jspm-nodelibs-process@^0.2.0",
       "punycode": "npm:jspm-nodelibs-punycode@^0.2.0",
       "querystring": "npm:jspm-nodelibs-querystring@^0.2.0",
       "stream": "npm:jspm-nodelibs-stream@^0.2.0",
@@ -74,9 +74,6 @@
       "zlib": "npm:jspm-nodelibs-zlib@^0.2.0"
     },
     "overrides": {
-      "github:bizboard/famous-flex@master": {
-        "format": "amd"
-      },
       "github:firebase/firebase-bower@3.3.0": {
         "main": "firebase.js",
         "registry": "jspm",
