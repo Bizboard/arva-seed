@@ -23,7 +23,7 @@ import './famous.css!';
 import './fonts.css!';
 
 /* Here we import all controllers we want to use in the app */
-import {HomeController}             from './controllers/HomeController.js';
+import {LoginController}             from './controllers/LoginController.js';
 
 export class App extends ArvaApp {
 
@@ -31,7 +31,7 @@ export class App extends ArvaApp {
     static references = {};
 
     /* The controllers that will be used in the app. */
-    static controllers = [HomeController];
+    static controllers = [LoginController];
 
 
     /* Define which DataSource to use */
@@ -75,7 +75,7 @@ export class App extends ArvaApp {
          * this.references.menu = Injection.get(Menu); */
 
         /* Set default controller and method */
-        Injection.get(Router).setDefault('Home', 'Index');
+        Injection.get(Router).setDefault('Login', 'Index');
 
         /* Set default controller specifications */
         Injection.get(Router).setControllerSpecs({});
