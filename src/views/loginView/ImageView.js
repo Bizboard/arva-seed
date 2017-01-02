@@ -6,6 +6,7 @@ import {layout, event}      from 'arva-js/layout/Decorators.js';
 
 export class ImageView extends View {
 
+    //TODO not sure if this solution is eloquent enough (also image stretches on large screen)
     // Background surface
     @layout.translate(0, 0, -10)
     @layout.fullSize()
@@ -19,8 +20,7 @@ export class ImageView extends View {
         content: 'mrBox',
         properties: {
             color: '#771369',
-            // Not sure if fontSize is correct, since specifications talk about 18/14, but it seems like
-            // such a minor difference in size
+            // TODO Not sure if fontSize is correct, since specifications talk about 18/14, but it seems like such a minor difference in size
             fontSize: '32px'
         }
     });
@@ -31,7 +31,7 @@ export class ImageView extends View {
     @layout.dock.top()
     @layout.stick.center()
     pageSubTitle = new Surface({
-        // Not sure if this is correct?
+        // TODO Not sure if this is best practice?
         content: 'je spullen <i style="font-size: 14px">in de cloud</i>',
         properties: {
             color: '#AAAAAA',
@@ -45,9 +45,8 @@ export class ImageView extends View {
     @layout.dock.top()
     @layout.stick.center()
     image = new ImageSurface({
+        // TODO Is this where I put my images folder?
         content:'./images/mrBox.png'
     });
-
-
 
 }
