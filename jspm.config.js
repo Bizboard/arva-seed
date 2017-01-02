@@ -2256,6 +2256,79 @@ SystemJS.config({
       "map": {
         "isexe": "npm:isexe@1.1.2"
       }
+    },
+    "bitbucket:bizboard/nl.bizboard.mrbox.shared@develop": {
+      "map": {
+        "lodash": "npm:lodash@4.17.2",
+        "arva-js": "github:bizboard/arva-js@develop",
+        "file-saver": "npm:file-saver@1.3.3",
+        "es2015-i18n-tag": "npm:es2015-i18n-tag@1.1.3",
+        "month-days": "npm:month-days@1.0.0",
+        "firebase": "npm:firebase@3.6.4",
+        "moment": "npm:moment@2.17.1"
+      }
+    },
+    "npm:firebase@3.6.4": {
+      "map": {
+        "jsonwebtoken": "npm:jsonwebtoken@7.1.9",
+        "faye-websocket": "npm:faye-websocket@0.9.3",
+        "dom-storage": "npm:dom-storage@2.0.2",
+        "xmlhttprequest": "npm:xmlhttprequest@1.8.0",
+        "rsvp": "npm:rsvp@3.2.1"
+      }
+    },
+    "npm:jsonwebtoken@7.1.9": {
+      "map": {
+        "ms": "npm:ms@0.7.2",
+        "xtend": "npm:xtend@4.0.1",
+        "lodash.once": "npm:lodash.once@4.1.1",
+        "jws": "npm:jws@3.1.4",
+        "joi": "npm:joi@6.10.1"
+      }
+    },
+    "npm:faye-websocket@0.9.3": {
+      "map": {
+        "websocket-driver": "npm:websocket-driver@0.6.5"
+      }
+    },
+    "npm:jws@3.1.4": {
+      "map": {
+        "jwa": "npm:jwa@1.1.5",
+        "base64url": "npm:base64url@2.0.0",
+        "safe-buffer": "npm:safe-buffer@5.0.1"
+      }
+    },
+    "npm:websocket-driver@0.6.5": {
+      "map": {
+        "websocket-extensions": "npm:websocket-extensions@0.1.1"
+      }
+    },
+    "npm:jwa@1.1.5": {
+      "map": {
+        "base64url": "npm:base64url@2.0.0",
+        "safe-buffer": "npm:safe-buffer@5.0.1",
+        "ecdsa-sig-formatter": "npm:ecdsa-sig-formatter@1.0.9",
+        "buffer-equal-constant-time": "npm:buffer-equal-constant-time@1.0.1"
+      }
+    },
+    "npm:joi@6.10.1": {
+      "map": {
+        "hoek": "npm:hoek@2.16.3",
+        "moment": "npm:moment@2.17.1",
+        "isemail": "npm:isemail@1.2.0",
+        "topo": "npm:topo@1.1.0"
+      }
+    },
+    "npm:ecdsa-sig-formatter@1.0.9": {
+      "map": {
+        "base64url": "npm:base64url@2.0.0",
+        "safe-buffer": "npm:safe-buffer@5.0.1"
+      }
+    },
+    "npm:topo@1.1.0": {
+      "map": {
+        "hoek": "npm:hoek@2.16.3"
+      }
     }
   }
 });

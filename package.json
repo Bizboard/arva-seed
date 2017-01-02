@@ -157,6 +157,9 @@
           "process": "@empty"
         }
       },
+      "npm:moment@2.17.1": {
+        "jspmNodeConversion": false
+      },
       "npm:ms@0.7.1": {
         "jspmNodeConversion": false,
         "format": "cjs"

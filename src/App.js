@@ -58,7 +58,7 @@ export class App extends ArvaApp {
         useTypefaces({TextBody: {fontSize: '14px', fontFamily: 'avenir-light'}});
 
         setColors({
-            PrimaryUIColor: '#4d616e',
+            PrimaryUIColor: '#771369',
             SecondaryUIColor: 'blue',
             QuaternaryUIColor: 'orange'
         });
