@@ -20,6 +20,7 @@
       "es6-map": "npm:es6-map@^0.1.4",
       "famous": "github:bizboard/famous@develop",
       "famous-autosizetextarea": "github:ijzerenhein/famous-autosizetextarea@^0.3.1",
+      "famous-bkimagesurface": "github:ijzerenhein/famous-bkimagesurface@master",
       "famous-flex": "github:bizboard/famous-flex@master",
       "fastclick": "npm:fastclick@^1.0.6",
       "firebase": "github:firebase/firebase-bower@^3.0.5",

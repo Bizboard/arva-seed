@@ -291,6 +291,7 @@ SystemJS.config({
     "bitbucket:*/*.json"
   ],
   map: {
+    "famous-bkimagesurface": "github:ijzerenhein/famous-bkimagesurface@master",
     "mrbox-shared": "bitbucket:bizboard/nl.bizboard.mrbox.shared@develop",
     "bcrypt-pbkdf": "npm:bcrypt-pbkdf@1.0.0",
     "cordova": "npm:cordova@6.4.0",
