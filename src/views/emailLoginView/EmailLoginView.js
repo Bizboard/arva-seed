@@ -1,85 +1,51 @@
-import Surface                  from 'famous/core/Surface.js';
 import BkImageSurface           from 'famous-bkimagesurface/BkImageSurface.js';
 
 import {View}                   from 'arva-js/core/View.js';
-import {LabelButtonView}        from './LabelButtonView.js';
+import {ImpactBig}              from 'arva-kit/text/ImpactBig.js';
 import {layout, event}          from 'arva-js/layout/Decorators.js';
-import {UISmallGray}            from 'arva-kit/text/UISmallGray.js';
 import {TextButton}             from 'arva-kit/buttons/TextButton.js';
-import {Colors}                 from 'arva-kit/defaults/DefaultColors.js'
+import {LabelInputView}         from '../../components/LabelInputView.js';
+import {Colors}                 from 'arva-kit/defaults/DefaultColors.js';
+import {SolidTextButton}        from 'arva-kit/buttons/SolidTextButton.js';
 import {TypeFaces}              from 'arva-kit/defaults/DefaultTypefaces.js';
-import {SingleLineTextInput}    from 'arva-kit/input/SingleLineTextInput.js';
 
-import MrBoxLogo                from './MrBoxLogo.svg';
+import MrBoxLogo                from '../../resources/MrBoxLogo.svg';
 
 @layout.columnDockPadding(720, [0, 16, 0, 16])
 export class EmailLoginView extends View {
 
     // Background Image Surface: MrBoxLogo
-    @layout.translate(0, 0, -10)
     @layout.fullSize()
+    @layout.translate(0, 0, -10)
     backgroundimage = new BkImageSurface({
         content: MrBoxLogo
     });
 
     // Header: Login
     @layout.dock.top()
-    @layout.size(true, true)
+    @layout.size(132, 32)
     // TODO fix distance to top: I've tried dockpadding & dockspace
-    @layout.dockPadding(0, 64, 0, 0)
-    login = new Surface({
-        content: 'Inloggen',
-        properties: {
-            fontSize: TypeFaces.ImpactBig.fontSize,
-            fontWeight: 'bold',
-            color: Colors.Black
-        }
-    });
+    // @layout.dockSpace(128)
+    @layout.dockPadding(64, 0, 0, 0)
+    login = new ImpactBig({ content: 'Inloggen' });
 
-    // TODO fix importing LabelButtonView correctly
-    // @layout.dock.top()
-    // @layout.dockSpace(64)
-    // email = new LabelButtonView({content: 'Email', placeholder: 'Vul je emailadres in', password: false });
-
-
-    // @layout.dock.top()
-    // @layout.dockSpace(16)
-    // password = new LabelButtonView({content: 'Password', placeholder: 'Vul je wachtwoord in', password: true });
-
-    // Label: Email
+    // Label button view: email
     @layout.dock.top()
     @layout.dockSpace(64)
-    @layout.size(true, true)
-    email = new UISmallGray({
-        content: 'Email'
-    });
+    @layout.size(undefined,true)
+    emailLabelInput = new LabelInputView({content: 'Email', required: true, placeholder: 'Vul je emailadres in', password: false });
 
-    // Email input
-    @layout.dock.top()
-    @layout.dockSpace(4)
-    @layout.size(undefined, 48)
-    emailinput = new SingleLineTextInput({placeholder: 'Vul je emailadres in', required: true, password: true});
-
-    // Label: Password
+    // Label button view: password
     @layout.dock.top()
     @layout.dockSpace(16)
-    @layout.size(true, true)
-    password = new UISmallGray({
-        content: 'Wachtwoord'
-    });
-
-    // Password input
-    @layout.dock.top()
-    @layout.dockSpace(4)
-    @layout.size(undefined, 48)
-    passwordinput = new SingleLineTextInput({placeholder: 'Vul je wachtwoord in', required: true});
+    @layout.size(undefined,true)
+    passwordLabelInput = new LabelInputView({content: 'Password', required: true, placeholder: 'Vul je wachtwoord in', password: true });
 
     // Login button
     @layout.dock.top()
     @layout.dockSpace(64)
     @layout.size(undefined, 48)
-        //TODO fix the style for un-enabled textbutton
-    loginButton = new TextButton({ content: 'Log in', enableBorder: true , enabled: false});
+    loginButton = new SolidTextButton({ content: 'Log in', enableBorder: true , enabled: false});
 
     // Forgot password button
     @layout.dock.top()
@@ -87,7 +53,7 @@ export class EmailLoginView extends View {
     @layout.size(undefined, 48)
     forgotPasswordButton = new TextButton({ content: 'Wachtwoord vergeten', enableBorder: true });
 
-    // Login Button
+    // Cancel Button
     @layout.dock.top()
     @layout.dockSpace(16)
     @layout.size(undefined, 48)

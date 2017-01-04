@@ -3,11 +3,11 @@ import {layout, event}          from 'arva-js/layout/Decorators.js';
 import {UISmallGray}            from 'arva-kit/text/UISmallGray.js';
 import {SingleLineTextInput}    from 'arva-kit/input/SingleLineTextInput.js';
 
-export class LabelButtonView extends View {
+export class LabelInputView extends View {
 
     // Label
     @layout.dock.top()
-    @layout.size(true, true)
+    @layout.size(~100, ~14)
     label = new UISmallGray({
         content: this.options.content
     });
@@ -16,6 +16,6 @@ export class LabelButtonView extends View {
     @layout.dock.top()
     @layout.dockSpace(4)
     @layout.size(undefined, 48)
-    input = new SingleLineTextInput({...this.options, placeholder: this.options.placeholder, required: true, password: this.options.password});
+    input = new SingleLineTextInput({...this.options});
 
 }

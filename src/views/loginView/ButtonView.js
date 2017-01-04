@@ -4,6 +4,8 @@ import {LoginRegisterButtonsView}   from './LoginRegisterButtonsView.js';
 import {IconButton}                 from 'arva-kit/buttons/IconButton.js';
 import {TextButton}                 from 'arva-kit/buttons/TextButton.js';
 
+import fbLogo                       from './fblogo.png';
+
 @layout.dockPadding(0, 16)
 export class ButtonView extends View {
 
@@ -14,7 +16,7 @@ export class ButtonView extends View {
     @layout.size(undefined, 48)
     facebookButton = new IconButton({
         content: 'Inloggen met Facebook',
-        image: './images/fblogo.png',
+        image: fbLogo,
         backgroundProperties: {
             backgroundColor: '#2a5298'
         },
@@ -23,7 +25,7 @@ export class ButtonView extends View {
         }
     });
 
-    // 2 buttons for register & login
+    // Two buttons for register & login
     @layout.dock.top()
     @layout.dockSpace(16)
     loginRegisterButtons = new LoginRegisterButtonsView()

@@ -20,7 +20,7 @@ export class ImageView extends View {
     // Text surface: "mrBox"
     @layout.dock.top()
     @layout.stick.center()
-    @layout.size(true, true)
+    @layout.size(100, 44)
     pageTitle = new Surface({
         content: 'mrBox',
         properties: {
@@ -32,8 +32,8 @@ export class ImageView extends View {
     // Text surface: "je spullen in de cloud"
     @layout.dock.top()
     @layout.dockSpace(4)
+    @layout.size(138, 15)
     @layout.stick.center()
-    @layout.size(true, true)
     pageSubTitle = new UISmallGray({
         content: 'je spullen <span style="font: inherit; color: inherit; font-style: italic">in the cloud</span>'
     });

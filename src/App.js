@@ -11,8 +11,8 @@ import {Injection}                  from 'arva-js/utils/Injection.js';
 import {DataSource}                 from 'arva-js/data/DataSource.js';
 import {DialogManager}              from 'arva-js/utils/DialogManager.js';
 
-import {setColors}                  from 'arva-kit/defaults/DefaultColors.js';
-import {useTypefaces}               from 'arva-kit/defaults/DefaultTypefaces.js';
+import {Colors, setColors}          from 'arva-kit/defaults/DefaultColors.js';
+import {setTypefaces}               from 'arva-kit/defaults/DefaultTypefaces.js';
 import {NavigationDrawer}           from 'arva-kit/menus/navigationDrawer/NavigationDrawer.js';
 import {ImageSideMenuView}          from 'arva-kit/menus/navigationDrawer/sideMenus/ImageSideMenuView.js';
 
@@ -42,11 +42,11 @@ export class App extends ArvaApp {
     static defaultDataSource(path = '/', options = {}) {
         /* Firebase initialization */
         firebase.initializeApp({
-            apiKey: "AIzaSyBl-UFNia9_0DJbib6_nralN9K8whdfKWY",
-            authDomain: "bizboard-mrbox.firebaseapp.com",
-            databaseURL: "https://bizboard-mrbox.firebaseio.com",
-            storageBucket: "bizboard-mrbox.appspot.com",
-            messagingSenderId: "855814959208"
+            apiKey: 'AIzaSyBl-UFNia9_0DJbib6_nralN9K8whdfKWY',
+            authDomain: 'bizboard-mrbox.firebaseapp.com',
+            databaseURL: 'https://bizboard-mrbox.firebaseio.com',
+            storageBucket: 'bizboard-mrbox.appspot.com',
+            messagingSenderId: '855814959208'
         });
         return new FirebaseDataSource(path, options);
     }
@@ -59,12 +59,17 @@ export class App extends ArvaApp {
         /* Change initial route, view animation or something needed before we start */
         provide(DataSource)(App.defaultDataSource);
 
-        useTypefaces({TextBody: {fontSize: '14px', fontFamily: 'avenir-light'}});
-
         setColors({
-            PrimaryUIColor: '#771369',
+            PrimaryUIColor: 'rgb(119, 19, 105)',
             SecondaryUIColor: 'blue',
-            QuaternaryUIColor: 'orange'
+            QuaternaryUIColor: 'orange',
+            ImageTextColor: 'rgb(51, 51, 51)',
+            BasicTextColor: 'rgb(51, 51, 51)'
+        });
+
+        setTypefaces({
+            TextBody: {fontSize: '14px', fontFamily: 'avenir-light'},
+            ImpactBig: { color: Colors.BasicTextColor }
         });
         this.start();
     }
