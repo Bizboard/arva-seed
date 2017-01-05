@@ -3,27 +3,32 @@ import 'arva-js/utils/hotfixes/IESupport.js';
 
 import firebase                     from 'firebase';
 
-import {FirebaseDataSource}         from 'arva-js/data/datasources/FirebaseDataSource.js';
 import {App as ArvaApp}             from 'arva-js/core/App.js';
 import {Router}                     from 'arva-js/core/Router.js';
-import {provide}                    from 'arva-js/utils/di/Decorators.js';
 import {Injection}                  from 'arva-js/utils/Injection.js';
 import {DataSource}                 from 'arva-js/data/DataSource.js';
+import {provide}                    from 'arva-js/utils/di/Decorators.js';
 import {DialogManager}              from 'arva-js/utils/DialogManager.js';
+import {setLocale}                  from 'mrbox-shared/utils/Localization.js';
+import {FirebaseDataSource}         from 'arva-js/data/datasources/FirebaseDataSource.js';
 
-import {setColors}                  from 'arva-kit/defaults/DefaultColors.js';
-import {useTypefaces}               from 'arva-kit/defaults/DefaultTypefaces.js';
+import {Colors, setColors}          from 'arva-kit/defaults/DefaultColors.js';
+import {setTypefaces}               from 'arva-kit/defaults/DefaultTypefaces.js';
 import {NavigationDrawer}           from 'arva-kit/menus/navigationDrawer/NavigationDrawer.js';
 import {ImageSideMenuView}          from 'arva-kit/menus/navigationDrawer/sideMenus/ImageSideMenuView.js';
 
 import {AccountIcon}                from 'arva-kit/icons/AccountIcon.js';
 
 /* Importing CSS in jspm bundled builds injects them into the DOM automagically */
-import './famous.css';
-import './fonts.css';
+import './famous.css!';
+import './fonts.css!';
 
 /* Here we import all controllers we want to use in the app */
-import {HomeController}             from './controllers/HomeController.js';
+import {LoginController}                    from './controllers/LoginController.js';
+import {EmailLoginController}               from './controllers/EmailLoginController.js';
+import {EmailRegisterController}            from './controllers/EmailRegisterController.js';
+import {ResetPasswordController}            from './controllers/ResetPasswordController.js';
+
 
 export class App extends ArvaApp {
 
@@ -31,18 +36,18 @@ export class App extends ArvaApp {
     static references = {};
 
     /* The controllers that will be used in the app. */
-    static controllers = [HomeController];
+    static controllers = [LoginController, EmailLoginController, EmailRegisterController, ResetPasswordController];
 
 
     /* Define which DataSource to use */
     static defaultDataSource(path = '/', options = {}) {
         /* Firebase initialization */
         firebase.initializeApp({
-            apiKey: "AIzaSyBl-UFNia9_0DJbib6_nralN9K8whdfKWY",
-            authDomain: "bizboard-mrbox.firebaseapp.com",
-            databaseURL: "https://bizboard-mrbox.firebaseio.com",
-            storageBucket: "bizboard-mrbox.appspot.com",
-            messagingSenderId: "855814959208"
+            apiKey: 'AIzaSyBl-UFNia9_0DJbib6_nralN9K8whdfKWY',
+            authDomain: 'bizboard-mrbox.firebaseapp.com',
+            databaseURL: 'https://bizboard-mrbox.firebaseio.com',
+            storageBucket: 'bizboard-mrbox.appspot.com',
+            messagingSenderId: '855814959208'
         });
         return new FirebaseDataSource(path, options);
     }
@@ -55,13 +60,21 @@ export class App extends ArvaApp {
         /* Change initial route, view animation or something needed before we start */
         provide(DataSource)(App.defaultDataSource);
 
-        useTypefaces({TextBody: {fontSize: '14px', fontFamily: 'avenir-light'}});
-
         setColors({
-            PrimaryUIColor: '#4d616e',
+            PrimaryUIColor: 'rgb(119, 19, 105)',
             SecondaryUIColor: 'blue',
-            QuaternaryUIColor: 'orange'
+            QuaternaryUIColor: 'orange',
+            ImageTextColor: 'rgb(51, 51, 51)',
+            BasicTextColor: 'rgb(51, 51, 51)'
         });
+
+        setTypefaces({
+            TextBody: {fontSize: '14px', fontFamily: 'avenir-light'},
+            ImpactBig: { color: Colors.BasicTextColor }
+        });
+
+        /* TODO: set locale from system settings */
+        setLocale('nl-NL');
         this.start();
     }
 
@@ -75,7 +88,7 @@ export class App extends ArvaApp {
          * this.references.menu = Injection.get(Menu); */
 
         /* Set default controller and method */
-        Injection.get(Router).setDefault('Home', 'Index');
+        Injection.get(Router).setDefault('Login', 'Index');
 
         /* Set default controller specifications */
         Injection.get(Router).setControllerSpecs({});
