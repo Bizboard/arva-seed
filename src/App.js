@@ -25,6 +25,8 @@ import './fonts.css!';
 
 /* Here we import all controllers we want to use in the app */
 import {LoginController}                    from './controllers/LoginController.js';
+import {ProfileController}                  from "./controllers/ProfileController.js";
+import {EditProfileController}              from "./controllers/EditProfileController";
 import {EmailLoginController}               from './controllers/EmailLoginController.js';
 import {EmailRegisterController}            from './controllers/EmailRegisterController.js';
 import {ResetPasswordController}            from './controllers/ResetPasswordController.js';
@@ -36,7 +38,7 @@ export class App extends ArvaApp {
     static references = {};
 
     /* The controllers that will be used in the app. */
-    static controllers = [LoginController, EmailLoginController, EmailRegisterController, ResetPasswordController];
+    static controllers = [LoginController, EmailLoginController, EmailRegisterController, ResetPasswordController, ProfileController, EditProfileController];
 
 
     /* Define which DataSource to use */
