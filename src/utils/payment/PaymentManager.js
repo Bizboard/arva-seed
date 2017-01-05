@@ -29,7 +29,6 @@ export class PaymentManager extends PromiseBasedManager {
         await this._promiseWithTimeout(this._payment.once('value'), agentTimeout);
         if (this._payment.status === 'pending') {
             console.log("Waiting for the agent to recognize the payment...");
-            //TODO: Decide how to make this work...
             let payment = await this._promiseWithTimeout(this._payment.once('changed'), agentTimeout, "Waiting for payment agent");
         }
 
