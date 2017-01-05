@@ -9,13 +9,25 @@ export class LabelInputView extends View {
     @layout.dock.top()
     @layout.size(~200, ~14)
     label = new UISmallGray({
-        content: this.options.content
+        content: this.options.content,
+        properties: {
+            /* Prevent line-breaks from happening */
+            whiteSpace: 'nowrap'
+        }
     });
 
     // input
     @layout.dock.top()
     @layout.dockSpace(4)
     @layout.size(undefined, 48)
-    input = new SingleLineTextInput({...this.options});
+    input = new SingleLineTextInput(this.options);
 
+    setValue() {
+        return this.input.setValue(...arguments);
+    }
+
+    getValue() {
+        return this.input.getValue(...arguments);
+    }
+    
 }

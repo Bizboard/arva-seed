@@ -19,6 +19,7 @@ export class ButtonView extends View {
     facebookButton = new IconButton({
         content: localize`Log in with facebook`,
         image: fbLogo,
+        clickEventName: 'facebookLogin',
         backgroundProperties: {
             backgroundColor: '#2a5298'
         },

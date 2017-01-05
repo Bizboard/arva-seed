@@ -11,15 +11,14 @@ export class LoginRegisterButtonsView extends View {
     @layout.dock.left()
     @layout.stick.top()
     @layout.size((size) => size * 0.5 - 16, 48)
-    loginButton = new TextButton({ content: localize`Log in`, enableBorder: true });
+    loginButton = new TextButton({ content: localize`Log in`, enableBorder: true, clickEventName: 'emailLogin' });
 
-
-
+    
     // Register Button
     @layout.stick.top()
     @layout.dock.right()
     @layout.size((size) => size * 0.5, 48)
-    registerButton = new TextButton({ content: localize`Register`, enableBorder: true });
+    registerButton = new TextButton({ content: localize`Register`, enableBorder: true, clickEventName: 'emailRegister' });
 
 
 }

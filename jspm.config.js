@@ -291,6 +291,7 @@ SystemJS.config({
     "bitbucket:*/*.json"
   ],
   map: {
+    "email-validator": "npm:email-validator@1.0.7",
     "famous-bkimagesurface": "github:ijzerenhein/famous-bkimagesurface@master",
     "mrbox-shared": "bitbucket:bizboard/nl.bizboard.mrbox.shared@develop",
     "bcrypt-pbkdf": "npm:bcrypt-pbkdf@1.0.0",
