@@ -3,13 +3,14 @@ import 'arva-js/utils/hotfixes/IESupport.js';
 
 import firebase                     from 'firebase';
 
-import {FirebaseDataSource}         from 'arva-js/data/datasources/FirebaseDataSource.js';
 import {App as ArvaApp}             from 'arva-js/core/App.js';
 import {Router}                     from 'arva-js/core/Router.js';
-import {provide}                    from 'arva-js/utils/di/Decorators.js';
 import {Injection}                  from 'arva-js/utils/Injection.js';
 import {DataSource}                 from 'arva-js/data/DataSource.js';
+import {provide}                    from 'arva-js/utils/di/Decorators.js';
 import {DialogManager}              from 'arva-js/utils/DialogManager.js';
+import {setLocale}                  from 'mrbox-shared/utils/Localization.js';
+import {FirebaseDataSource}         from 'arva-js/data/datasources/FirebaseDataSource.js';
 
 import {Colors, setColors}          from 'arva-kit/defaults/DefaultColors.js';
 import {setTypefaces}               from 'arva-kit/defaults/DefaultTypefaces.js';
@@ -71,6 +72,9 @@ export class App extends ArvaApp {
             TextBody: {fontSize: '14px', fontFamily: 'avenir-light'},
             ImpactBig: { color: Colors.BasicTextColor }
         });
+
+        /* TODO: set locale from system settings */
+        setLocale('nl-NL');
         this.start();
     }
 

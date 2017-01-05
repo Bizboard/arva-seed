@@ -6,97 +6,99 @@ import {ImpactBig}              from 'arva-kit/text/ImpactBig.js';
 import {UISmallGray}            from 'arva-kit/text/UISmallGray.js';
 import {layout, event}          from 'arva-js/layout/Decorators.js';
 import {TextButton}             from 'arva-kit/buttons/TextButton.js';
-import {Colors}                 from 'arva-kit/defaults/DefaultColors.js'
-import {LabelInputView}         from '../../components/LabelInputView.js';
+import {localize}               from 'mrbox-shared/utils/Localization.js';
+import {Colors}                 from 'arva-kit/defaults/DefaultColors.js';
 import {TypeFaces}              from 'arva-kit/defaults/DefaultTypefaces.js';
+
+import {LabelInputView}         from '../../components/LabelInputView.js';
 
 @layout.scrollable()
 export class ContentEmailRegisterView extends View {
 
-    // Background surface so the user is always able to scroll, not only when he is hovering over an inputfield
+    /* Background surface so the user is always able to scroll, not only when he is hovering over an inputfield*/
     @layout.fullSize()
     @layout.translate(0, 0, -10)
     background = new Surface();
 
-    // Header: Register
+    /* Header: Register*/
     @layout.dock.top()
     @layout.size(132, 32)
-    register = new ImpactBig({ content: 'Registreren' });
+    register = new ImpactBig({ content: localize`Register` });
 
-    // Label: title
+    /* Label: title*/
     @layout.dock.top()
     @layout.dockSpace(64)
     @layout.size(~20, ~5)
     label = new UISmallGray({
-        content: 'Aanhef'
+        content: localize`Title`
     });
 
-    // Dropdown: title
+    /* Dropdown: title*/
     @layout.dock.top()
     @layout.dockSpace(4)
     @layout.size(undefined,~50)
     titleDropdown = new Dropdown({
-        placeholder: 'Kies je aanhef',
+        placeholder: localize`Choose your title`,
         items: [
             {
-                text: 'Dhr.',
+                text: localize`Mr.`,
                 selected: false,
                 data: 1
             },
             {
-                text: 'Mevr.',
+                text: localize`Mrs.`,
                 selected: false,
                 data: 2
             }]
     });
 
-    // Label button view: first name
+    /* Label button view: first name*/
     @layout.dock.top()
     @layout.dockSpace(16)
     @layout.size(undefined,true)
-    firstNameLabelInput = new LabelInputView({content: 'Voornaam', required: true, placeholder: 'Vul je voornaam in', password: false });
+    firstNameLabelInput = new LabelInputView({content: localize`First name`, required: true, placeholder: localize`Enter your firstname`, password: false });
 
-    // Label button view: infix
+    /* Label button view: infix*/
     @layout.dock.top()
     @layout.dockSpace(16)
     @layout.size(undefined,true)
-    infixNameLabelInput = new LabelInputView({content: 'Tussenvoegsel', required: false, placeholder: 'Evt. tussenvoegsel', password: false });
+    infixNameLabelInput = new LabelInputView({content: localize`Infix`, required: false, placeholder: localize`Possible infix`, password: false });
 
-    // Label button view: last name
+    /* Label button view: last name*/
     @layout.dock.top()
     @layout.dockSpace(16)
     @layout.size(undefined,true)
-    lastNameLabelInput = new LabelInputView({content: 'Achternaam', required: true, placeholder: 'Vul je achternaam in', password: false });
+    lastNameLabelInput = new LabelInputView({content: localize`Last name`, required: true, placeholder: localize`Enter your lastname`, password: false });
 
-    // Label button view: email
+    /* Label button view: email*/
     @layout.dock.top()
     @layout.dockSpace(16)
     @layout.size(undefined,true)
-    emailLabelInput = new LabelInputView({content: 'Email', required: true, placeholder: 'Vul je email adres in', password: false });
+    emailLabelInput = new LabelInputView({content: 'Email', required: true, placeholder: localize`Enter your email`, password: false });
 
-    // Label button view: password
+    /* Label button view: password*/
     @layout.dock.top()
     @layout.dockSpace(16)
     @layout.size(undefined,true)
-    passwordLabelInput = new LabelInputView({content: 'Wachtwoord', required: true, placeholder: 'Vul een wachtwoord in', password: true });
+    passwordLabelInput = new LabelInputView({content: localize`Password`, required: true, placeholder: localize`Enter your password`, password: true });
 
-    // Label button view: repeat password
+    /* Label button view: repeat password*/
     @layout.dock.top()
     @layout.dockSpace(16)
     @layout.size(undefined,true)
-    repeatPasswordLabelInput = new LabelInputView({content: 'Wachtwoord herhalen', required: true, placeholder: 'Herhaal je wachtwoord', password: true });
+    repeatPasswordLabelInput = new LabelInputView({content: localize`Repeat password`, required: true, placeholder: localize`Repeat your password`, password: true });
 
-    // Register button
+    /* Register button*/
     @layout.dock.top()
     @layout.dockSpace(64)
     @layout.size(undefined, 48)
-    registerButton = new TextButton({ content: 'Registreer', enableBorder: true , enabled: false});
+    registerButton = new TextButton({ content: localize`Register`, enableBorder: true , enabled: false});
 
-    // Cancel button
+    /* Cancel button*/
     @layout.dock.top()
     @layout.dockSpace(16)
     @layout.size(undefined, 48)
-    cancelButton = new TextButton({ content: 'Annuleren', enableBorder: true });
+    cancelButton = new TextButton({ content: localize`Cancel`, enableBorder: true });
 
 
 }

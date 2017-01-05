@@ -18,9 +18,7 @@ export class EmailRegisterView extends View {
     });
 
     @layout.dock.top()
-    // TODO fix distance to top: I've tried dockpadding & dockspace
-    @layout.dockSpace(64)
-    // @layout.dockPadding(0, 64, 0, 0)
+    @layout.dockPadding(64, 0, 32, 0)
     contentEmailRegister = new ContentEmailRegisterView();
 
 }

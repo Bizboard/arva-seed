@@ -4,8 +4,10 @@ import BkImageSurface       from 'famous-bkimagesurface/BkImageSurface.js';
 import {View}               from 'arva-js/core/View.js';
 import {layout, event}      from 'arva-js/layout/Decorators.js';
 import {UISmallGray}        from 'arva-kit/text/UISmallGray.js';
-import {Colors}             from 'arva-kit/defaults/DefaultColors.js'
+import {Colors}             from 'arva-kit/defaults/DefaultColors.js';
+import {localize}           from 'mrbox-shared/utils/Localization.js';
 import {TypeFaces}          from 'arva-kit/defaults/DefaultTypefaces.js';
+
 
 import MrBox                from './MrBox.png';
 
@@ -35,7 +37,7 @@ export class ImageView extends View {
     @layout.size(138, 15)
     @layout.stick.center()
     pageSubTitle = new UISmallGray({
-        content: 'je spullen <span style="font: inherit; color: inherit; font-style: italic">in the cloud</span>'
+        content:  localize`your stuff <span style="font: inherit; color: inherit; font-style: italic">in the cloud</span>`
     });
 
     // Image surface

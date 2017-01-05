@@ -7,7 +7,7 @@ export class LabelInputView extends View {
 
     // Label
     @layout.dock.top()
-    @layout.size(~100, ~14)
+    @layout.size(~200, ~14)
     label = new UISmallGray({
         content: this.options.content
     });
