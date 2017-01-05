@@ -42,13 +42,15 @@ export class App extends ArvaApp {
     /* Define which DataSource to use */
     static defaultDataSource(path = '/', options = {}) {
         /* Firebase initialization */
-        firebase.initializeApp({
-            apiKey: 'AIzaSyBl-UFNia9_0DJbib6_nralN9K8whdfKWY',
-            authDomain: 'bizboard-mrbox.firebaseapp.com',
-            databaseURL: 'https://bizboard-mrbox.firebaseio.com',
-            storageBucket: 'bizboard-mrbox.appspot.com',
-            messagingSenderId: '855814959208'
-        });
+        if(firebase.apps.length === 0) {
+            firebase.initializeApp({
+                apiKey: 'AIzaSyBl-UFNia9_0DJbib6_nralN9K8whdfKWY',
+                authDomain: 'bizboard-mrbox.firebaseapp.com',
+                databaseURL: 'https://bizboard-mrbox.firebaseio.com',
+                storageBucket: 'bizboard-mrbox.appspot.com',
+                messagingSenderId: '855814959208'
+            });
+        }
         return new FirebaseDataSource(path, options);
     }
 
