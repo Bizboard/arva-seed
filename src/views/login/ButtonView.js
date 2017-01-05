@@ -11,8 +11,10 @@ import fbLogo                       from './fblogo.png';
 @layout.dockPadding(0, 16)
 export class ButtonView extends View {
 
-    // TODO Fix the facebook button
-    // Button surface: facebook icon combined with text
+    /*
+     TODO Fix the size of the facebook icon + have both text/icon centered
+     Button surface: facebook icon combined with text
+     */
     @layout.dock.top()
     @layout.stick.center()
     @layout.size(undefined, 48)
@@ -28,7 +30,7 @@ export class ButtonView extends View {
         }
     });
 
-    // Two buttons for register & login
+    /* Two buttons for register & login*/
     @layout.dock.top()
     @layout.dockSpace(16)
     loginRegisterButtons = new LoginRegisterButtonsView()
