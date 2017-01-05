@@ -10,14 +10,15 @@ import {localize}               from 'mrbox-shared/utils/Localization.js';
 import {Colors}                 from 'arva-kit/defaults/DefaultColors.js';
 import {TypeFaces}              from 'arva-kit/defaults/DefaultTypefaces.js';
 
-import {LabelInputView}         from '../../components/LabelInputView.js';
+import {LabeledTextInput}       from '../../components/LabeledTextInput.js';
 
 @layout.scrollable()
-export class ContentEmailRegisterView extends View {
+@layout.translate(0, 0, 10)
+export class EmailRegisterContentView extends View {
 
     /* Background surface so the user is always able to scroll, not only when he is hovering over an inputfield*/
     @layout.fullSize()
-    @layout.translate(0, 0, -10)
+    @layout.translate(0, 0, 0)
     background = new Surface();
 
     /* Header: Register*/
@@ -56,37 +57,38 @@ export class ContentEmailRegisterView extends View {
     @layout.dock.top()
     @layout.dockSpace(16)
     @layout.size(undefined,true)
-    firstNameLabelInput = new LabelInputView({content: localize`First name`, required: true, placeholder: localize`Enter your firstname`, password: false });
+    firstNameLabelInput = new LabeledTextInput({content: localize`First name`, required: true, placeholder: localize`Enter your firstname`, password: false });
 
     /* Label button view: infix*/
     @layout.dock.top()
     @layout.dockSpace(16)
     @layout.size(undefined,true)
-    infixNameLabelInput = new LabelInputView({content: localize`Infix`, required: false, placeholder: localize`Possible infix`, password: false });
+    infixNameLabelInput = new LabeledTextInput({content: localize`Infix`, required: false, placeholder: localize`Possible infix`, password: false });
 
     /* Label button view: last name*/
     @layout.dock.top()
     @layout.dockSpace(16)
     @layout.size(undefined,true)
-    lastNameLabelInput = new LabelInputView({content: localize`Last name`, required: true, placeholder: localize`Enter your lastname`, password: false });
+    lastNameLabelInput = new LabeledTextInput({content: localize`Last name`, required: true, placeholder: localize`Enter your lastname`, password: false });
 
     /* Label button view: email*/
     @layout.dock.top()
     @layout.dockSpace(16)
     @layout.size(undefined,true)
-    emailLabelInput = new LabelInputView({content: 'Email', required: true, placeholder: localize`Enter your email`, password: false });
+    emailLabelInput = new LabeledTextInput({content: 'Email', required: true, placeholder: localize`Enter your email`, password: false });
 
     /* Label button view: password*/
     @layout.dock.top()
     @layout.dockSpace(16)
     @layout.size(undefined,true)
-    passwordLabelInput = new LabelInputView({content: localize`Password`, required: true, placeholder: localize`Enter your password`, password: true });
+    passwordLabelInput = new LabeledTextInput({content: localize`Password`, required: true, placeholder: localize`Enter your password`, password: true });
 
+    // TODO Fix single line 'wachtwoord herhalen'
     /* Label button view: repeat password*/
     @layout.dock.top()
     @layout.dockSpace(16)
     @layout.size(undefined,true)
-    repeatPasswordLabelInput = new LabelInputView({content: localize`Repeat password`, required: true, placeholder: localize`Repeat your password`, password: true });
+    repeatPasswordLabelInput = new LabeledTextInput({ content: localize`Repeat password`, required: true, placeholder: localize`Repeat your password`, password: true });
 
     /* Register button*/
     @layout.dock.top()

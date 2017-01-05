@@ -1,5 +1,5 @@
 import {Controller}                 from 'arva-js/core/Controller.js';
-import {ResetPasswordView}          from '../views/resetPasswordView/ResetPasswordView.js';
+import {ResetPasswordView}          from '../views/resetPassword/ResetPasswordView.js';
 
 export class ResetPasswordController extends Controller {
     Index(){

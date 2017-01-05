@@ -1,5 +1,5 @@
 import {Controller}                 from 'arva-js/core/Controller.js';
-import {EmailRegisterView}              from '../views/emailRegisterView/EmailRegisterView.js';
+import {EmailRegisterView}              from '../views/emailRegister/EmailRegisterView.js';
 
 export class EmailRegisterController extends Controller {
     Index(){

@@ -1,5 +1,5 @@
 import {Controller}                 from 'arva-js/core/Controller.js';
-import {LoginView}                   from '../views/loginView/LoginView.js';
+import {LoginView}                   from '../views/login/LoginView.js';
 
 export class LoginController extends Controller {
     Index(){

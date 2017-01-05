@@ -5,12 +5,12 @@ import {ImpactBig}              from 'arva-kit/text/ImpactBig.js';
 import {layout, event}          from 'arva-js/layout/Decorators.js';
 import {TextButton}             from 'arva-kit/buttons/TextButton.js';
 import {localize}               from 'mrbox-shared/utils/Localization.js';
-import {LabelInputView}         from '../../components/LabelInputView.js';
 import {Colors}                 from 'arva-kit/defaults/DefaultColors.js';
 import {SolidTextButton}        from 'arva-kit/buttons/SolidTextButton.js';
 import {TypeFaces}              from 'arva-kit/defaults/DefaultTypefaces.js';
 
 import MrBoxLogo                from '../../resources/MrBoxLogo.svg';
+import {LabeledTextInput}       from '../../components/LabeledTextInput.js';
 
 @layout.columnDockPadding(720, [0, 16, 0, 16])
 export class EmailLoginView extends View {
@@ -34,13 +34,13 @@ export class EmailLoginView extends View {
     @layout.dock.top()
     @layout.dockSpace(64)
     @layout.size(undefined,true)
-    emailLabelInput = new LabelInputView({content: 'Email', required: true, placeholder: localize`Enter your email`, password: false });
+    emailLabelInput = new LabeledTextInput({content: 'Email', required: true, placeholder: localize`Enter your email`, password: false });
 
     /* Label button view: password*/
     @layout.dock.top()
     @layout.dockSpace(16)
     @layout.size(undefined,true)
-    passwordLabelInput = new LabelInputView({content: localize`Password`, required: true, placeholder: localize`Enter your password`, password: true });
+    passwordLabelInput = new LabeledTextInput({content: localize`Password`, required: true, placeholder: localize`Enter your password`, password: true });
 
     /* Login button*/
     @layout.dock.top()

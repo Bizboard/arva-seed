@@ -1,13 +1,13 @@
-import {localize}           from 'mrbox-shared/utils/Localization.js';
-import {TextButton}         from 'arva-kit/buttons/TextButton.js';
-import {layout, event}      from 'arva-js/layout/Decorators.js';
 import {View}               from 'arva-js/core/View.js';
+import {layout, event}      from 'arva-js/layout/Decorators.js';
+import {TextButton}         from 'arva-kit/buttons/TextButton.js';
+import {localize}           from 'mrbox-shared/utils/Localization.js';
 
 
 
 export class LoginRegisterButtonsView extends View {
 
-    // Login Button
+    /* Login Button*/
     @layout.dock.left()
     @layout.stick.top()
     @layout.size((size) => size * 0.5 - 16, 48)
@@ -15,7 +15,7 @@ export class LoginRegisterButtonsView extends View {
 
 
 
-    // Register Button
+    /* Register Button*/
     @layout.stick.top()
     @layout.dock.right()
     @layout.size((size) => size * 0.5, 48)
