@@ -6,6 +6,7 @@ import {layout, event}          from 'arva-js/layout/Decorators.js';
 import {UISmallGray}            from 'arva-kit/text/UISmallGray.js';
 import {localize}               from 'mrbox-shared/utils/Localization.js';
 import {LabeledTextInput}       from 'arva-kit/input/LabeledTextInput.js';
+import {Colors}                 from 'arva-kit/defaults/DefaultColors.js'
 
 
 @layout.columnDockPadding(720, [32, 16, 0, 16])
@@ -34,7 +35,6 @@ export class SettingsView extends View {
             }]
     });
 
-    // TODO: enabled=true doesn't enable the switch
     @layout.dock.top()
     @layout.dockSpace(16)
     @layout.size(undefined, ~50)
@@ -53,7 +53,6 @@ export class SettingsView extends View {
     @layout.dock.top()
     @layout.dockSpace(16)
     @layout.size(undefined, 48)
-        //TODO Do I set this color globally somewhere?
-    removeAccountButton = new TextButton({content: localize`Remove Account`, properties: {color: 'rgb(255, 63, 63)'}, enableBorder: true});
+    removeAccountButton = new TextButton({content: localize`Remove Account`, properties: {color: Colors.WarningColor}, enableBorder: true});
 
 }

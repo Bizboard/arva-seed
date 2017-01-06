@@ -71,7 +71,9 @@ export class App extends ArvaApp {
             SecondaryUIColor: 'blue',
             QuaternaryUIColor: 'orange',
             ImageTextColor: 'rgb(51, 51, 51)',
-            BasicTextColor: 'rgb(51, 51, 51)'
+            BasicTextColor: 'rgb(51, 51, 51)',
+            /* App specific colors */
+            WarningColor: 'rgb(255, 63, 63)'
         });
 
         setTypefaces({
