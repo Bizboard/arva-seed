@@ -30,7 +30,6 @@ import {LoginController}                    from './controllers/LoginController.
 import {ProfileController}                  from "./controllers/ProfileController.js";
 import {EditProfileController}              from './controllers/EditProfileController';
 import {EditProfileController}              from "./controllers/EditProfileController";
-import {EditPasswordController}             from "./controllers/EditPasswordController";
 import {EmailLoginController}               from './controllers/EmailLoginController.js';
 import {EmailRegisterController}            from './controllers/EmailRegisterController.js';
 import {ResetPasswordController}            from './controllers/ResetPasswordController.js';
