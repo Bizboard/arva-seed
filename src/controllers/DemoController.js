@@ -20,15 +20,15 @@ export class DemoController extends Controller {
         super(...arguments);
         this._dataSource = Injection.get(DataSource);
         this._auth = this._dataSource.getAuth();
-        this._auth.then(() => {
-            this._boxPictures = Injection.get(BoxPictures, this._auth.uid);
+        this._auth.then((auth) => {
+            this._boxPictures = Injection.get(BoxPictures, auth.uid);
         });
         this._dialogManager = Injection.get(DialogManager);
 
     }
 
     async Index() {
-        await this._auth;
+        let auth = await this._auth;
         this.demoView = new DemoView({email: auth.providerData[0].email, uid: auth.uid});
         this.demoView.on('getCameraPicture', this._addCameraPicture);
         this.demoView.on('getLibraryPicture', this._addLibraryPicture);
