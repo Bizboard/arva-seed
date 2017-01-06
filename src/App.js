@@ -28,7 +28,6 @@ import './fonts.css!';
 import {SettingsController}                 from "./controllers/SettingsController";
 import {LoginController}                    from './controllers/LoginController.js';
 import {ProfileController}                  from "./controllers/ProfileController.js";
-import {EditProfileController}              from './controllers/EditProfileController';
 import {EditProfileController}              from "./controllers/EditProfileController";
 import {EmailLoginController}               from './controllers/EmailLoginController.js';
 import {EmailRegisterController}            from './controllers/EmailRegisterController.js';
