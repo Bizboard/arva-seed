@@ -25,9 +25,12 @@ import './famous.css!';
 import './fonts.css!';
 
 /* Here we import all controllers we want to use in the app */
+import {SettingsController}                 from "./controllers/SettingsController";
 import {LoginController}                    from './controllers/LoginController.js';
 import {ProfileController}                  from "./controllers/ProfileController.js";
 import {EditProfileController}              from './controllers/EditProfileController';
+import {EditProfileController}              from "./controllers/EditProfileController";
+import {EditPasswordController}             from "./controllers/EditPasswordController";
 import {EmailLoginController}               from './controllers/EmailLoginController.js';
 import {EmailRegisterController}            from './controllers/EmailRegisterController.js';
 import {ResetPasswordController}            from './controllers/ResetPasswordController.js';
@@ -43,7 +46,7 @@ export class App extends ArvaApp {
     /* The controllers that will be used in the
      app. */
     //TODO It's probably better to refactor some of these controllers to merge all login related stuff to the same controller
-    static controllers = [LoginController, EmailLoginController, EmailRegisterController, ResetPasswordController, ProfileController, EditProfileController, DemoController];
+    static controllers = [LoginController, EmailLoginController, EmailRegisterController, ResetPasswordController, ProfileController, EditProfileController, SettingsController, DemoController];
 
 
     /* Define which DataSource to use */
@@ -130,7 +133,7 @@ export class App extends ArvaApp {
                 image: sideMenuScene,
                 menuItems: [{
                     icon: AccountIcon,
-                    text: 'mrBOX'Lo
+                    text: 'mrBOX'
                 }]
             }
         });

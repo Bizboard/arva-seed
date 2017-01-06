@@ -12,6 +12,7 @@ import {TextButton}             from 'arva-kit/buttons/TextButton.js';
 import {Colors}                 from 'arva-kit/defaults/DefaultColors.js';
 import {TypeFaces}              from 'arva-kit/defaults/DefaultTypefaces.js';
 import {LabeledTextInput}       from 'arva-kit/input/LabeledTextInput.js';
+
 import {localize}               from 'mrbox-shared/utils/Localization.js';
 
 import MrBoxLogo                from '../../resources/MrBoxLogo.svg';
@@ -27,7 +28,6 @@ export class EmailRegisterView extends View {
     backgroundimage = new BkImageSurface({
         content: MrBoxLogo
     });
-
 
     /* Header: Register*/
     @layout.dock.top()

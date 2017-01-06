@@ -32,4 +32,3 @@ export class EmailLoginController extends Controller {
         return this.emailLoginView;
     }
 }
-
