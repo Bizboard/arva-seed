@@ -4,7 +4,7 @@ import {TextButton}         from 'arva-kit/buttons/TextButton.js';
 import {localize}           from 'mrbox-shared/utils/Localization.js';
 
 
-
+@layout.dockPadding(0, 16)
 export class LoginRegisterButtonsView extends View {
 
     /* Login Button*/
@@ -13,12 +13,10 @@ export class LoginRegisterButtonsView extends View {
     @layout.size((size) => size * 0.5 - 16, 48)
     loginButton = new TextButton({ content: localize`Log in`, enableBorder: true, clickEventName: 'emailLogin' });
 
-
     /* Register Button*/
     @layout.stick.top()
     @layout.dock.right()
     @layout.size((size) => size * 0.5, 48)
     registerButton = new TextButton({ content: localize`Register`, enableBorder: true, clickEventName: 'emailRegister' });
-
 
 }

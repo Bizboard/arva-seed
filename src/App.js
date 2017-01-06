@@ -16,6 +16,7 @@ import {Colors, setColors}          from 'arva-kit/defaults/DefaultColors.js';
 import {setTypefaces}               from 'arva-kit/defaults/DefaultTypefaces.js';
 import {NavigationDrawer}           from 'arva-kit/menus/navigationDrawer/NavigationDrawer.js';
 import {ImageSideMenuView}          from 'arva-kit/menus/navigationDrawer/sideMenus/ImageSideMenuView.js';
+import {OneButtonDialog}            from 'arva-kit/dialogs/OneButtonDialog.js';
 
 import {AccountIcon}                from 'arva-kit/icons/AccountIcon.js';
 
@@ -26,25 +27,29 @@ import './fonts.css!';
 /* Here we import all controllers we want to use in the app */
 import {LoginController}                    from './controllers/LoginController.js';
 import {ProfileController}                  from "./controllers/ProfileController.js";
-import {EditProfileController}              from "./controllers/EditProfileController";
+import {EditProfileController}              from './controllers/EditProfileController';
 import {EmailLoginController}               from './controllers/EmailLoginController.js';
 import {EmailRegisterController}            from './controllers/EmailRegisterController.js';
 import {ResetPasswordController}            from './controllers/ResetPasswordController.js';
+import {DemoController}                     from './controllers/DemoController.js';
 
+import sideMenuScene                        from './views/images/sidemenupic.jpg';
 
 export class App extends ArvaApp {
 
     /* References to Dependency Injection created App and Controller instances, so they are not garbage collected. */
     static references = {};
 
-    /* The controllers that will be used in the app. */
-    static controllers = [LoginController, EmailLoginController, EmailRegisterController, ResetPasswordController, ProfileController, EditProfileController];
+    /* The controllers that will be used in the
+     app. */
+    //TODO It's probably better to refactor some of these controllers to merge all login related stuff to the same controller
+    static controllers = [LoginController, EmailLoginController, EmailRegisterController, ResetPasswordController, ProfileController, EditProfileController, DemoController];
 
 
     /* Define which DataSource to use */
     static defaultDataSource(path = '/', options = {}) {
         /* Firebase initialization */
-        if(firebase.apps.length === 0) {
+        if (firebase.apps.length === 0) {
             firebase.initializeApp({
                 apiKey: 'AIzaSyBl-UFNia9_0DJbib6_nralN9K8whdfKWY',
                 authDomain: 'bizboard-mrbox.firebaseapp.com',
@@ -74,7 +79,7 @@ export class App extends ArvaApp {
 
         setTypefaces({
             TextBody: {fontSize: '14px', fontFamily: 'avenir-light'},
-            ImpactBig: { color: Colors.BasicTextColor }
+            ImpactBig: {color: Colors.BasicTextColor}
         });
 
         /* TODO: set locale from system settings */
@@ -87,33 +92,59 @@ export class App extends ArvaApp {
      * but before any Controller method is executed by the Router.
      */
     static loaded() {
+        /* Disable the pushing up of the keyboard */
+        if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
+            window.cordova.plugins.Keyboard.disableScroll(true);
+        }
+
         /* Instantiate things you need before the router is executed here. For example:
          *
          * this.references.menu = Injection.get(Menu); */
 
+
+        let router = Injection.get(Router);
         /* Set default controller and method */
-        Injection.get(Router).setDefault('Login', 'Index');
+        router.setDefault('Login', 'Index');
+
 
         /* Set default controller specifications */
-        Injection.get(Router).setControllerSpecs({});
 
+
+        Injection.get(Router).setControllerSpecs({});
         let dialogManager = Injection.get(DialogManager);
-        let menu = Injection.get(NavigationDrawer, {
-            topMenuOptions: { defaultTitle: 'Arva Application' },
+
+        let navigationDrawer = Injection.get(NavigationDrawer, {
+            topMenuOptions: {defaultTitle: 'Arva Application'},
+            showInitial: false,
+            hideOnRoutes: [{                         // route's that will auto hide the top & side menu
+                controller: 'Login'
+            }, {
+                controller: 'Email'
+            }, {
+                controller: 'EmailLogin'
+            }, {
+                controller: 'EmailRegister'
+            }],
             sideMenu: {
                 viewClass: ImageSideMenuView,
-                image: 'https://www.bizboard.nl/img/tauro.jpg',
+                image: sideMenuScene,
                 menuItems: [{
                     icon: AccountIcon,
-                    text: 'Menu item 1'
+                    text: 'mrBOX'Lo
                 }]
             }
         });
 
-        menu.setNavigationDrawerEnabled(true);
-        menu.on('rightButtonClick', ()=> {});
+        navigationDrawer.on('rightButtonClick', () => {
+            dialogManager.show({
+                dialog: new OneButtonDialog({title: 'Demo Application', button: {buttonText: 'Ok'}})
+            })
+        });
 
-        Object.assign(this.references, {menu, dialogManager});
+        navigationDrawer.on('rightButtonClick', ()=> {
+        });
+
+        Object.assign(this.references, {navigationDrawer, dialogManager});
 
     }
 

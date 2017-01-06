@@ -1,11 +1,9 @@
 import EmailValidator           from 'email-validator';
-import BkImageSurface               from 'famous-bkimagesurface/BkImageSurface.js';
+import BkImageSurface           from 'famous-bkimagesurface/BkImageSurface.js';
 import Surface                  from 'famous/core/Surface.js';
 
-import {View}                       from 'arva-js/core/View.js';
-import {layout, event}              from 'arva-js/layout/Decorators.js';
-import {ContentEmailRegisterView}   from './ContentEmailRegisterView.js';
-
+import {View}                   from 'arva-js/core/View.js';
+import {layout, event}          from 'arva-js/layout/Decorators.js';
 
 import {Dropdown}               from 'arva-kit/input/Dropdown.js';
 import {ImpactBig}              from 'arva-kit/text/ImpactBig.js';
@@ -14,7 +12,6 @@ import {TextButton}             from 'arva-kit/buttons/TextButton.js';
 import {Colors}                 from 'arva-kit/defaults/DefaultColors.js';
 import {TypeFaces}              from 'arva-kit/defaults/DefaultTypefaces.js';
 import {LabeledTextInput}       from 'arva-kit/input/LabeledTextInput.js';
-
 import {localize}               from 'mrbox-shared/utils/Localization.js';
 
 import MrBoxLogo                from '../../resources/MrBoxLogo.svg';
