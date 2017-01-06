@@ -102,3 +102,12 @@ textarea::-webkit-scrollbar {
 ::-webkit-scrollbar{
     display: none;
 }
+
+/* Prevent the yellow color from appearing when auto filling fields */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}
+

@@ -5,7 +5,6 @@ import Surface                  from 'famous/core/Surface.js';
 import {View}                   from 'arva-js/core/View.js';
 import {layout, event}          from 'arva-js/layout/Decorators.js';
 
-
 import {Dropdown}               from 'arva-kit/input/Dropdown.js';
 import {ImpactBig}              from 'arva-kit/text/ImpactBig.js';
 import {UISmallGray}            from 'arva-kit/text/UISmallGray.js';

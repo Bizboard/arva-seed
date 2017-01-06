@@ -1,4 +1,5 @@
 import BkImageSurface           from 'famous-bkimagesurface/BkImageSurface.js';
+import ImageSurface             from 'famous/surfaces/ImageSurface.js';
 import EmailValidator           from 'email-validator';
 
 import {View}                   from 'arva-js/core/View.js';
@@ -18,9 +19,10 @@ import MrBoxLogo                from '../../resources/MrBoxLogo.svg';
 export class EmailLoginView extends View {
 
     /* Background Image Surface: MrBoxLogo*/
-    @layout.fullSize()
-    @layout.translate(0, 0, -10)
-    backgroundimage = new BkImageSurface({
+    @layout.size(undefined, true)
+    @layout.opacity(0.1)
+    @layout.translate(0, 80, -10)
+    backgroundimage = new ImageSurface({
         content: MrBoxLogo
     });
 
@@ -37,6 +39,7 @@ export class EmailLoginView extends View {
         content: 'Email',
         required: true,
         usesFeedback: true,
+        feedbackText: localize`Required`,
         placeholder: localize`Enter your email`,
         validator: (input) => {
             let isValid = EmailValidator.validate(input);
@@ -51,9 +54,10 @@ export class EmailLoginView extends View {
     passwordLabelInput = new LabeledTextInput({
         content: localize`Password`,
         required: true,
+        usesFeedback: true,
+        feedbackText: localize`Required`,
         placeholder: localize`Enter your password`,
-        password: true,
-        usesFeedback: true
+        password: true
     });
 
     /* Login button*/
@@ -86,8 +90,7 @@ export class EmailLoginView extends View {
         super(options);
         this.on('stateIncorrect', () => {
             this.loginButton.disable();
-        }
-        )
+        })
         this.on('stateCorrect', () => {
             if (this.emailLabelInput.input.isStateCorrect() && this.passwordLabelInput.input.isStateCorrect()) {
                 this.loginButton.enable();
