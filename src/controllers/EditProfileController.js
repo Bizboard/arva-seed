@@ -3,9 +3,9 @@ import {EditProfileView}            from '../views/editProfile/EditProfileView.j
 
 export class EditProfileController extends Controller {
     Index(){
-        if(!this.editprofileView) {
-            this.editprofileView = new EditProfileView();
+        if(!this.editProfileView) {
+            this.editProfileView = new EditProfileView();
         }
-        return this.editprofileView;
+        return this.editProfileView;
     }
 }
