@@ -1,10 +1,9 @@
 import EmailValidator           from 'email-validator';
-import BkImageSurface               from 'famous-bkimagesurface/BkImageSurface.js';
+import BkImageSurface           from 'famous-bkimagesurface/BkImageSurface.js';
 import Surface                  from 'famous/core/Surface.js';
 
-import {View}                       from 'arva-js/core/View.js';
-import {layout, event}              from 'arva-js/layout/Decorators.js';
-import {ContentEmailRegisterView}   from './ContentEmailRegisterView.js';
+import {View}                   from 'arva-js/core/View.js';
+import {layout, event}          from 'arva-js/layout/Decorators.js';
 
 
 import {Dropdown}               from 'arva-kit/input/Dropdown.js';
@@ -30,7 +29,6 @@ export class EmailRegisterView extends View {
     backgroundimage = new BkImageSurface({
         content: MrBoxLogo
     });
-
 
     /* Header: Register*/
     @layout.dock.top()

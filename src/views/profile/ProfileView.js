@@ -80,6 +80,6 @@ export class ProfileView extends View {
     @layout.dock.top()
     @layout.dockSpace(16)
     @layout.size(undefined, 48)
-    cancel = new TextButton({ content: localize`Change Password`, enableBorder: true });
+    changePassword = new TextButton({ content: localize`Change Password`, enableBorder: true });
 
 }

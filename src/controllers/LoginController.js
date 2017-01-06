@@ -1,5 +1,5 @@
 import {Controller}                 from 'arva-js/core/Controller.js';
-import {LoginView}                  from '../views/loginView/LoginView.js';
+import {LoginView}                  from '../views/login/LoginView.js';
 
 import {FacebookLogin}              from 'arva-kit/utils/authentication/FacebookLogin.js';
 import {PasswordLogin}              from 'arva-kit/utils/authentication/PasswordLogin.js';

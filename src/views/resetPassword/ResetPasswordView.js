@@ -4,13 +4,13 @@ import {View}                   from 'arva-js/core/View.js';
 import {ImpactBig}              from 'arva-kit/text/ImpactBig.js';
 import {layout, event}          from 'arva-js/layout/Decorators.js';
 import {TextButton}             from 'arva-kit/buttons/TextButton.js';
+import {LabeledTextInput}       from 'arva-kit/input/LabeledTextInput';
 import {localize}               from 'mrbox-shared/utils/Localization.js';
 import {Colors}                 from 'arva-kit/defaults/DefaultColors.js';
 import {SolidTextButton}        from 'arva-kit/buttons/SolidTextButton.js';
 import {TypeFaces}              from 'arva-kit/defaults/DefaultTypefaces.js';
 
 import MrBoxLogo                from '../../resources/MrBoxLogo.svg';
-import {LabeledTextInput}       from '../../components/LabeledTextInput.js';
 
 @layout.columnDockPadding(720, [0, 16, 0, 16])
 export class ResetPasswordView extends View {
@@ -36,7 +36,7 @@ export class ResetPasswordView extends View {
     @layout.dock.top()
     @layout.dockSpace(64)
     @layout.size(undefined,true)
-    emailLabelInput = new LabeledTextInput({content: 'Email', required: true, placeholder: localize`Enter your email`, password: false });
+    emailLabelInput = new LabeledTextInput({label: 'Email', required: true, placeholder: localize`Enter your email`, password: false });
 
     /* Request password button*/
     @layout.dock.top()

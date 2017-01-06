@@ -12,7 +12,7 @@
     "name": "nl.bizboard.arva.seed",
     "main": "main.js",
     "dependencies": {
-      "arva-js": "github:bizboard/arva-js@develop",
+      "arva-js": "github:bizboard/arva-kit@master",
       "arva-kit": "bitbucket:bizboard/arva-kit@master",
       "babel-polyfill": "npm:babel-polyfill@^6.9.1",
       "cordova": "npm:cordova@^6.4.0",
