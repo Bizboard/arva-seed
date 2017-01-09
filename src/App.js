@@ -25,14 +25,15 @@ import './famous.css!';
 import './fonts.css!';
 
 /* Here we import all controllers we want to use in the app */
+import {DemoController}                     from './controllers/DemoController.js';
 import {SettingsController}                 from "./controllers/SettingsController";
 import {LoginController}                    from './controllers/LoginController.js';
 import {ProfileController}                  from "./controllers/ProfileController.js";
+import {SortOptionsController}              from "./controllers/SortOptionsController";
 import {EditProfileController}              from "./controllers/EditProfileController";
 import {EmailLoginController}               from './controllers/EmailLoginController.js';
 import {EmailRegisterController}            from './controllers/EmailRegisterController.js';
 import {ResetPasswordController}            from './controllers/ResetPasswordController.js';
-import {DemoController}                     from './controllers/DemoController.js';
 
 import sideMenuScene                        from './views/images/sidemenupic.jpg';
 
@@ -44,7 +45,7 @@ export class App extends ArvaApp {
     /* The controllers that will be used in the
      app. */
     //TODO It's probably better to refactor some of these controllers to merge all login related stuff to the same controller
-    static controllers = [LoginController, EmailLoginController, EmailRegisterController, ResetPasswordController, ProfileController, EditProfileController, SettingsController, DemoController];
+    static controllers = [LoginController, EmailLoginController, EmailRegisterController, ResetPasswordController, ProfileController, EditProfileController, SettingsController, SortOptionsController, DemoController];
 
 
     /* Define which DataSource to use */
