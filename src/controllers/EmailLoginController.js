@@ -18,8 +18,7 @@ export class EmailLoginController extends Controller {
             });
             this.emailLoginView.on('login', (email, password) => {
                 new PasswordLogin().authenticateToDataSource(email, password).then((uid) => {
-                    this.router.go('Demo', 'Index');
-                    //TODO: Change this, this is only for the demo
+                    this.router.go('Profile', 'Index');
                 }).catch(()=> {
                     dialogManager.show({dialog: new OneButtonDialog({body: localize`Invalid password and/or email!`, button: {buttonText: 'Ok'}})});
                 });

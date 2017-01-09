@@ -53,12 +53,12 @@ export class EmailRegisterView extends View {
             {
                 text: localize`Mr.`,
                 selected: false,
-                data: 1
+                data: 'male'
             },
             {
                 text: localize`Mrs.`,
                 selected: false,
-                data: 2
+                data: 'female'
             }]
     });
 
@@ -81,7 +81,7 @@ export class EmailRegisterView extends View {
     @layout.dock.top()
     @layout.dockSpace(16)
     @layout.size(undefined, true)
-    infixName = new LabeledTextInput({
+    infix = new LabeledTextInput({
         label: localize`Infix`,
         required: false,
         placeholder: localize`Possible infix`,
@@ -152,7 +152,7 @@ export class EmailRegisterView extends View {
     /* Register button*/
     @layout.dock.top()
     @event.on('buttonClick', function() {
-        this._eventOutput.emit('register', this._fieldValues);
+        this._eventOutput.emit('register', {...this._fieldValues, sex: this.titleDropdown.getSelectedItem()});
     })
     @layout.dockSpace(64)
     @layout.size(undefined, 48)
@@ -173,7 +173,7 @@ export class EmailRegisterView extends View {
         });
         this.on('stateCorrect', () => {
             /* A field has been updated, see if we can enable the button */
-            let fieldRenderableNames = ['firstName', 'lastName', 'email', 'password', 'repeatPassword'];
+            let fieldRenderableNames = ['firstName', 'infix', 'lastName', 'email', 'password', 'repeatPassword'];
             let inputReady = true;
             this._fieldValues = {};
             for (let fieldName of fieldRenderableNames) {

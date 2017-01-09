@@ -14,13 +14,13 @@ export class ProfileView extends View {
 
     @layout.dock.top()
     @layout.size(345, 32)
-    userName = new ImpactBig({ content: 'Olivier Jansen'});
+    userName = new ImpactBig({ content: `${this.options.consumer.firstName} ${this.options.consumer.lastName}`});
 
     @layout.dock.top()
     @layout.dockSpace(8)
     @layout.size(~100, ~14)
     userEmail = new UISmallGray({
-        content: 'olivier@bizboard.nl'
+        content: `${this.options.consumer.email}`
     });
 
     @layout.dock.top()
