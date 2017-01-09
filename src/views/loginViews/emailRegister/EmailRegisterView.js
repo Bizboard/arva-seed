@@ -15,7 +15,7 @@ import {LabeledTextInput}       from 'arva-kit/input/LabeledTextInput.js';
 
 import {localize}               from 'mrbox-shared/utils/Localization.js';
 
-import MrBoxLogo                from '../../resources/MrBoxLogo.svg';
+import MrBoxLogo                from '../../../images/MrBoxLogo.svg';
 
 @layout.scrollable()
 @layout.columnDockPadding(720, [16])

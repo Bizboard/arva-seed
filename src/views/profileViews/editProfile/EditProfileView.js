@@ -10,8 +10,8 @@ import {SolidTextButton}        from "arva-kit/buttons/SolidTextButton";
 import {localize}               from 'mrbox-shared/utils/Localization.js';
 import {LabeledTextInput}       from 'arva-kit/input/LabeledTextInput.js';
 
-import {IconTextButton}         from "../../components/IconTextButton";
-import {LabeledTextButton}      from "../../components/LabeledTextButton";
+import {IconTextButton}         from "../../../components/IconTextButton";
+import {LabeledTextButton}      from "../../../components/LabeledTextButton";
 
 @layout.scrollable()
 @layout.columnDockPadding(720, [32, 16, 32, 16])

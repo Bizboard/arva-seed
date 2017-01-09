@@ -1,6 +1,6 @@
 import {Controller}                 from 'arva-js/core/Controller.js';
 import {Injection}                  from 'arva-js/utils/Injection.js';
-import {LoginView}                  from '../views/login/LoginView.js';
+import {LoginView}                  from '../views/loginViews/login/LoginView.js';
 
 import {FacebookLogin}              from 'arva-kit/utils/authentication/FacebookLogin.js';
 import {PasswordLogin}              from 'arva-kit/utils/authentication/PasswordLogin.js';

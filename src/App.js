@@ -26,16 +26,19 @@ import './fonts.css!';
 
 /* Here we import all controllers we want to use in the app */
 import {DemoController}                     from './controllers/DemoController.js';
-import {SettingsController}                 from "./controllers/SettingsController";
+import {SettingsController}                 from "./controllers/SettingsController.js";
 import {LoginController}                    from './controllers/LoginController.js';
+import {ContactController}                  from './controllers/ContactController.js';
 import {ProfileController}                  from "./controllers/ProfileController.js";
-import {SortOptionsController}              from "./controllers/SortOptionsController";
-import {EditProfileController}              from "./controllers/EditProfileController";
+import {SortOptionsController}              from "./controllers/SortOptionsController.js";
+import {EditPasswordController}             from "./controllers/EditPasswordController.js";
+import {EditProfileController}              from "./controllers/EditProfileController.js";
 import {EmailLoginController}               from './controllers/EmailLoginController.js';
 import {EmailRegisterController}            from './controllers/EmailRegisterController.js';
 import {ResetPasswordController}            from './controllers/ResetPasswordController.js';
 
-import sideMenuScene                        from './views/images/sidemenupic.jpg';
+
+import sideMenuScene                        from './images/sidemenupic.jpg';
 
 export class App extends ArvaApp {
 
@@ -45,7 +48,7 @@ export class App extends ArvaApp {
     /* The controllers that will be used in the
      app. */
     //TODO It's probably better to refactor some of these controllers to merge all login related stuff to the same controller
-    static controllers = [LoginController, EmailLoginController, EmailRegisterController, ResetPasswordController, ProfileController, EditProfileController, SettingsController, SortOptionsController, DemoController];
+    static controllers = [LoginController, EmailLoginController, EditPasswordController, EmailRegisterController, ResetPasswordController, ProfileController, EditProfileController, SettingsController, ContactController, SortOptionsController, DemoController];
 
 
     /* Define which DataSource to use */

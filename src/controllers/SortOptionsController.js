@@ -1,5 +1,5 @@
 import {Controller}                 from 'arva-js/core/Controller.js';
-import {SortOptionsView}               from '../views/sortOptions/SortOptionsView.js';
+import {SortOptionsView}            from '../components/SortOptionsView.js';
 
 export class SortOptionsController extends Controller {
     Index(){

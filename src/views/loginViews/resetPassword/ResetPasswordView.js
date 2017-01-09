@@ -10,7 +10,7 @@ import {Colors}                 from 'arva-kit/defaults/DefaultColors.js';
 import {SolidTextButton}        from 'arva-kit/buttons/SolidTextButton.js';
 import {TypeFaces}              from 'arva-kit/defaults/DefaultTypefaces.js';
 
-import MrBoxLogo                from '../../resources/MrBoxLogo.svg';
+import MrBoxLogo                from '../../../images/MrBoxLogo.svg';
 
 @layout.columnDockPadding(720, [0, 16, 0, 16])
 export class ResetPasswordView extends View {

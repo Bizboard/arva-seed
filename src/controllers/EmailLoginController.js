@@ -5,7 +5,7 @@ import {DialogManager}              from 'arva-js/utils/DialogManager.js'
 import {OneButtonDialog}            from 'arva-kit/dialogs/OneButtonDialog.js'
 import {localize}                   from 'mrbox-shared/utils/Localization.js';
 
-import {EmailLoginView}             from '../views/emailLogin/EmailLoginView.js';
+import {EmailLoginView}             from '../views/loginViews/emailLogin/EmailLoginView.js';
 
 
 export class EmailLoginController extends Controller {

@@ -12,7 +12,7 @@ import {SolidTextButton}        from 'arva-kit/buttons/SolidTextButton.js';
 import {TypeFaces}              from 'arva-kit/defaults/DefaultTypefaces.js';
 import {LabeledTextInput}       from 'arva-kit/input/LabeledTextInput.js';
 
-import MrBoxLogo                from '../../resources/MrBoxLogo.svg';
+import MrBoxLogo                from '../../../images/MrBoxLogo.svg';
 
 
 @layout.columnDockPadding(720, [16])

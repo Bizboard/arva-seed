@@ -1,5 +1,5 @@
 import {Controller}                 from 'arva-js/core/Controller.js';
-import {ProfileView}                from '../views/profile/ProfileView.js';
+import {ProfileView}                from '../views/profileViews/profile/ProfileView.js';
 import {Consumer}                   from 'mrbox-shared/models/Consumers.js'
 import {Injection}                  from 'arva-js/utils/Injection.js'
 

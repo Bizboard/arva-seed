@@ -9,9 +9,9 @@ import {UISmallGray}        from 'arva-kit/text/UISmallGray.js';
 import {Colors}             from 'arva-kit/defaults/DefaultColors.js';
 import {localize}           from 'mrbox-shared/utils/Localization.js';
 
-import MrBox                from '../images/MrBox.png';
-import background           from '../images/livingroom_background.jpg';
-import mrboxMaskot          from '../images/mrbox_maskot.png';
+import MrBox                from '../../../images/MrBox.png';
+import background           from '../../../images/livingroom_background.jpg';
+import mrboxMaskot          from '../../../images/mrbox_maskot.png';
 
 @layout.dockPadding(16)
 export class ImageView extends View {

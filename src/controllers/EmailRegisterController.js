@@ -1,5 +1,5 @@
 import {Controller}                 from 'arva-js/core/Controller.js';
-import {EmailRegisterView}          from '../views/emailRegister/EmailRegisterView.js';
+import {EmailRegisterView}          from '../views/loginViews/emailRegister/EmailRegisterView.js';
 import {EmailRegistration}          from 'arva-kit/utils/authentication/EmailRegistration.js';
 
 import {DialogManager}              from 'arva-js/utils/DialogManager.js'

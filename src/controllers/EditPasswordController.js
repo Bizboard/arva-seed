@@ -1,5 +1,5 @@
 import {Controller}                 from 'arva-js/core/Controller.js';
-import {EditPasswordView}           from '../views/editPassword/EditPasswordView.js';
+import {EditPasswordView}           from '../views/profileViews/editPassword/EditPasswordView.js';
 
 export class EditPasswordController extends Controller {
     Index(){
