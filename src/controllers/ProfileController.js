@@ -6,6 +6,7 @@ import {Injection}                  from 'arva-js/utils/Injection.js'
 
 export class ProfileController extends Controller {
     Index(){
+
         // TODO Understand why there we are not checking if profileView hasn't been created already
         this.profileView = new ProfileView({consumer: Injection.get(Consumer)});
         return this.profileView;

@@ -22,7 +22,7 @@ export class ContactView extends View {
 
     @layout.dock.top()
     @layout.dockSpace(8)
-    @layout.size(227, 19)
+    @layout.size(257, 19)
     @layout.stick.center()
     questionsText = new UIRegular({
         content: localize`Do you have any questions?`,
@@ -33,7 +33,7 @@ export class ContactView extends View {
 
     @layout.dock.top()
     @layout.dockSpace(8)
-    @layout.size(242, 19)
+    @layout.size(257, 19)
     @layout.stick.center()
     helpText = new UIRegular({
         content: localize`We are ready to help you out!`,

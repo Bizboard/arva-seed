@@ -26,7 +26,7 @@ export class ResetPasswordView extends View {
     @layout.dock.top()
     @layout.size(345, 32)
     /*
-     TODO fix distance to top: I've tried dockpadding & dockspace
+
      @layout.dockSpace(128)
      */
     @layout.dockPadding(64, 0, 0, 0)

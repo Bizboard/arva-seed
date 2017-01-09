@@ -27,17 +27,17 @@ import './fonts.css!';
 /* Here we import all controllers we want to use in the app */
 import {FAQController}                      from './controllers/FAQController';
 import {DemoController}                     from './controllers/DemoController.js';
-import {SettingsController}                 from './controllers/SettingsController.js';
 import {LoginController}                    from './controllers/LoginController.js';
 import {ContactController}                  from './controllers/ContactController.js';
 import {ProfileController}                  from './controllers/ProfileController.js';
+import {SettingsController}                 from './controllers/SettingsController.js';
+import {LocationController}                 from './controllers/LocationController.js';
+import {EmailLoginController}               from './controllers/EmailLoginController.js';
+import {EditProfileController}              from './controllers/EditProfileController.js';
 import {SortOptionsController}              from './controllers/SortOptionsController.js';
 import {EditPasswordController}             from './controllers/EditPasswordController.js';
-import {EditProfileController}              from './controllers/EditProfileController.js';
-import {EmailLoginController}               from './controllers/EmailLoginController.js';
 import {EmailRegisterController}            from './controllers/EmailRegisterController.js';
 import {ResetPasswordController}            from './controllers/ResetPasswordController.js';
-
 
 import sideMenuScene                        from './images/sidemenupic.jpg';
 
@@ -49,7 +49,7 @@ export class App extends ArvaApp {
     /* The controllers that will be used in the
      app. */
     //TODO It's probably better to refactor some of these controllers to merge all login related stuff to the same controller
-    static controllers = [LoginController, EmailLoginController, EditPasswordController, EmailRegisterController, ResetPasswordController, ProfileController, EditProfileController, SettingsController, ContactController, SortOptionsController, DemoController, FAQController];
+    static controllers = [LoginController, EmailLoginController, EditPasswordController, EmailRegisterController, ResetPasswordController, ProfileController, EditProfileController, SettingsController, ContactController, SortOptionsController, DemoController, FAQController, LocationController];
 
     /* Define which DataSource to use */
     static defaultDataSource(path = '/', options = {}) {
