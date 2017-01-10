@@ -8,9 +8,10 @@ export class LocationController extends Controller {
     Index(){
         if(!this.locationView) {
             let locations = new StorageLocations();
-            // TODO How do I properly load locations in?
             this.locationView = new LocationView({locations: locations});
         }
         return this.locationView;
     }
 }
+
+//

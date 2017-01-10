@@ -8,7 +8,7 @@ import {layout, event}          from 'arva-js/layout/Decorators.js';
 import {Gray}                   from "arva-kit/defaults/DefaultColors";
 import {localize}               from 'mrbox-shared/utils/Localization.js';
 
-import backgroundImage          from './BackgroundMrBox.png';
+import sloganMrBox          from './BackgroundMrBox.png';
 
 @layout.columnDockPadding(720, [0, 16, 0, 16])
 export class ContactView extends View {
@@ -17,7 +17,7 @@ export class ContactView extends View {
     @layout.size(undefined, 127)
     @layout.stick.center()
     image = new ImageSurface({
-        content: backgroundImage
+        content: sloganMrBox
     });
 
     @layout.dock.top()

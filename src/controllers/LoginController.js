@@ -22,6 +22,7 @@ export class LoginController extends Controller {
         return this.loginView;
     }
 
+
     _facebookAuthenticate() {
         new FacebookLogin().authenticateToDataSource().then((result) => {
             this.router.go('Demo', 'Index');
