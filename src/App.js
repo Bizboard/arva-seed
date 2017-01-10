@@ -27,6 +27,7 @@ import './fonts.css!';
 /* Here we import all controllers we want to use in the app */
 import {FAQController}                      from './controllers/FAQController';
 import {DemoController}                     from './controllers/DemoController.js';
+import {InvoiceController}                  from './controllers/InvoiceController';
 import {LoginController}                    from './controllers/LoginController.js';
 import {ContactController}                  from './controllers/ContactController.js';
 import {ProfileController}                  from './controllers/ProfileController.js';
@@ -49,21 +50,40 @@ export class App extends ArvaApp {
     /* The controllers that will be used in the
      app. */
     //TODO It's probably better to refactor some of these controllers to merge all login related stuff to the same controller
-    static controllers = [LoginController, EmailLoginController, EditPasswordController, EmailRegisterController, ResetPasswordController, ProfileController, EditProfileController, SettingsController, ContactController, SortOptionsController, DemoController, FAQController, LocationController];
+    static controllers = [LoginController, EmailLoginController, EditPasswordController, EmailRegisterController, ResetPasswordController, ProfileController, EditProfileController, SettingsController, ContactController, SortOptionsController, DemoController, FAQController, LocationController, InvoiceController];
+
 
     /* Define which DataSource to use */
     static defaultDataSource(path = '/', options = {}) {
+
+
+        // CHANGED THE FIREBASE CONNECTION TO MR-BOX-RULE-TEST
+
         /* Firebase initialization */
         if (firebase.apps.length === 0) {
             firebase.initializeApp({
-                apiKey: 'AIzaSyBl-UFNia9_0DJbib6_nralN9K8whdfKWY',
-                authDomain: 'bizboard-mrbox.firebaseapp.com',
-                databaseURL: 'https://bizboard-mrbox.firebaseio.com',
-                storageBucket: 'bizboard-mrbox.appspot.com',
-                messagingSenderId: '855814959208'
+                apiKey: "AIzaSyBsljNdO7m1qLyk1g--znkEv16rqRnN2dk",
+                authDomain: "mr-box-rule-test.firebaseapp.com",
+                databaseURL: "https://mr-box-rule-test.firebaseio.com",
+                storageBucket: "mr-box-rule-test.appspot.com",
+                messagingSenderId: "324587311673"
             });
         }
         return new FirebaseDataSource(path, options);
+
+
+        //
+        // /* Firebase initialization */
+        // if (firebase.apps.length === 0) {
+        //     firebase.initializeApp({
+        //         apiKey: 'AIzaSyBl-UFNia9_0DJbib6_nralN9K8whdfKWY',
+        //         authDomain: 'bizboard-mrbox.firebaseapp.com',
+        //         databaseURL: 'https://bizboard-mrbox.firebaseio.com',
+        //         storageBucket: 'bizboard-mrbox.appspot.com',
+        //         messagingSenderId: '855814959208'
+        //     });
+        // }
+        // return new FirebaseDataSource(path, options);
     }
 
     /**
