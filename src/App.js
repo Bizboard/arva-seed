@@ -33,6 +33,7 @@ import {ContactController}                  from './controllers/ContactControlle
 import {ProfileController}                  from './controllers/ProfileController.js';
 import {SettingsController}                 from './controllers/SettingsController.js';
 import {LocationController}                 from './controllers/LocationController.js';
+import {InvoiceDetailController}            from './controllers/InvoiceDetailController';
 import {EmailLoginController}               from './controllers/EmailLoginController.js';
 import {EditProfileController}              from './controllers/EditProfileController.js';
 import {SortOptionsController}              from './controllers/SortOptionsController.js';
@@ -47,10 +48,11 @@ export class App extends ArvaApp {
     /* References to Dependency Injection created App and Controller instances, so they are not garbage collected. */
     static references = {};
 
+    //
     /* The controllers that will be used in the
      app. */
     //TODO It's probably better to refactor some of these controllers to merge all login related stuff to the same controller
-    static controllers = [LoginController, EmailLoginController, EditPasswordController, EmailRegisterController, ResetPasswordController, ProfileController, EditProfileController, SettingsController, ContactController, SortOptionsController, DemoController, FAQController, LocationController, InvoiceController];
+    static controllers = [LoginController, EmailLoginController, EditPasswordController, EmailRegisterController, ResetPasswordController, ProfileController, EditProfileController, SettingsController, ContactController, SortOptionsController, DemoController, FAQController, LocationController, InvoiceController, InvoiceDetailController];
 
 
     /* Define which DataSource to use */
