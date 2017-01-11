@@ -24,33 +24,16 @@ export class InvoiceDetailView extends View {
     @layout.size(345, 32)
     header = new ImpactBig({ content: 'Artikelen'});
 
-    // @layout.dock.top()
-    // @layout.size(undefined, 75)
-    // @layout.dockSpace(32)
-    // firstArticle = new ArticleCard({leftText: 'Oma\'s spullen', rightText: '€10,00', smallText:  'Volle mrBOX XL'});
-
-    @layout.fullSize()
-    @layout.dock.top()
-    @layout.dockSpace(32)
-    articleList = new ListView({
-        spacing: true,
-        scrollViewOptions: {
-            itemTemplate: (data) => {
-                @layout.dockSpace(32)
-                class listItem extends View {
-                    @layout.dock.top()
-                    @layout.size(undefined, 75)
-                    item = new ArticleCard({leftText: data.description, rightText: data.price, smallText: data.type});
-                }
-                return new listItem();
-            }
-        },
-        dataStore: this.options.invoices[0].products
-        // dataMapper: (data) => ({
-        //     text: data.timestamp,
-        //     previewText: data.description
-        // })
-    });
-
+    // constructor(options = {}) {
+    //     super(options);
+    //
+    //     for(let product of this.options.invoices[0].products) {
+    //         this.addRenderable(new ArticleCard({
+    //             leftText: product.description,
+    //             rightText: product.price,
+    //             smallText: product.type
+    //         }), product.description, layout.dock.top() @layout.size(undefined, 75));
+    //     }
+    // }
 
 }

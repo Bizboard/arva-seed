@@ -13,10 +13,11 @@ import {setLocale}                  from 'mrbox-shared/utils/Localization.js';
 import {FirebaseDataSource}         from 'arva-js/data/datasources/FirebaseDataSource.js';
 
 import {Colors, setColors}          from 'arva-kit/defaults/DefaultColors.js';
+import {OneButtonDialog}            from 'arva-kit/dialogs/OneButtonDialog.js';
+import {LoginAwareRouter}           from 'arva-kit/routers/LoginAwareRouter.js';
 import {setTypefaces}               from 'arva-kit/defaults/DefaultTypefaces.js';
 import {NavigationDrawer}           from 'arva-kit/menus/navigationDrawer/NavigationDrawer.js';
 import {ImageSideMenuView}          from 'arva-kit/menus/navigationDrawer/sideMenus/ImageSideMenuView.js';
-import {OneButtonDialog}            from 'arva-kit/dialogs/OneButtonDialog.js';
 
 import {AccountIcon}                from 'arva-kit/icons/AccountIcon.js';
 
@@ -25,21 +26,11 @@ import './famous.css!';
 import './fonts.css!';
 
 /* Here we import all controllers we want to use in the app */
-import {FAQController}                      from './controllers/FAQController';
 import {DemoController}                     from './controllers/DemoController.js';
-import {InvoiceController}                  from './controllers/InvoiceController';
 import {LoginController}                    from './controllers/LoginController.js';
-import {ContactController}                  from './controllers/ContactController.js';
+import {AboutController}                    from './controllers/AboutController.js';
 import {ProfileController}                  from './controllers/ProfileController.js';
-import {SettingsController}                 from './controllers/SettingsController.js';
-import {LocationController}                 from './controllers/LocationController.js';
-import {InvoiceDetailController}            from './controllers/InvoiceDetailController';
-import {EmailLoginController}               from './controllers/EmailLoginController.js';
-import {EditProfileController}              from './controllers/EditProfileController.js';
 import {SortOptionsController}              from './controllers/SortOptionsController.js';
-import {EditPasswordController}             from './controllers/EditPasswordController.js';
-import {EmailRegisterController}            from './controllers/EmailRegisterController.js';
-import {ResetPasswordController}            from './controllers/ResetPasswordController.js';
 
 import sideMenuScene                        from './images/sidemenupic.jpg';
 
@@ -53,8 +44,8 @@ export class App extends ArvaApp {
     //
     /* The controllers that will be used in the
      app. */
-    //TODO It's probably better to refactor some of these controllers to merge all login related stuff to the same controller
-    static controllers = [LoginController, EmailLoginController, EditPasswordController, EmailRegisterController, ResetPasswordController, ProfileController, EditProfileController, SettingsController, ContactController, SortOptionsController, DemoController, FAQController, LocationController, InvoiceController, InvoiceDetailController];
+    static router = LoginAwareRouter;
+    static controllers = [LoginController, ProfileController, AboutController, SortOptionsController, DemoController];
 
 
     /* Define which DataSource to use */
@@ -64,30 +55,30 @@ export class App extends ArvaApp {
         // CHANGED THE FIREBASE CONNECTION TO MR-BOX-RULE-TEST
 
         /* Firebase initialization */
-        if (firebase.apps.length === 0) {
-            firebase.initializeApp({
-                apiKey: "AIzaSyBsljNdO7m1qLyk1g--znkEv16rqRnN2dk",
-                authDomain: "mr-box-rule-test.firebaseapp.com",
-                databaseURL: "https://mr-box-rule-test.firebaseio.com",
-                storageBucket: "mr-box-rule-test.appspot.com",
-                messagingSenderId: "324587311673"
-            });
-        }
-        return new FirebaseDataSource(path, options);
-
-
-        //
-        // /* Firebase initialization */
         // if (firebase.apps.length === 0) {
         //     firebase.initializeApp({
-        //         apiKey: 'AIzaSyBl-UFNia9_0DJbib6_nralN9K8whdfKWY',
-        //         authDomain: 'bizboard-mrbox.firebaseapp.com',
-        //         databaseURL: 'https://bizboard-mrbox.firebaseio.com',
-        //         storageBucket: 'bizboard-mrbox.appspot.com',
-        //         messagingSenderId: '855814959208'
+        //         apiKey: 'AIzaSyBsljNdO7m1qLyk1g--znkEv16rqRnN2dk',
+        //         authDomain: 'mr-box-rule-test.firebaseapp.com',
+        //         databaseURL: 'https://mr-box-rule-test.firebaseio.com',
+        //         storageBucket: 'mr-box-rule-test.appspot.com',
+        //         messagingSenderId: '324587311673'
         //     });
         // }
         // return new FirebaseDataSource(path, options);
+
+
+
+        /* Firebase initialization */
+        if (firebase.apps.length === 0) {
+            firebase.initializeApp({
+                apiKey: 'AIzaSyBl-UFNia9_0DJbib6_nralN9K8whdfKWY',
+                authDomain: 'bizboard-mrbox.firebaseapp.com',
+                databaseURL: 'https://bizboard-mrbox.firebaseio.com',
+                storageBucket: 'bizboard-mrbox.appspot.com',
+                messagingSenderId: '855814959208'
+            });
+        }
+        return new FirebaseDataSource(path, options);
     }
 
     /**
@@ -96,7 +87,7 @@ export class App extends ArvaApp {
      */
     static initialize() {
         /* Change initial route, view animation or something needed before we start */
-        provide(DataSource)(App.defaultDataSource);
+        Injection.provide(DataSource, App.defaultDataSource);
 
         setColors({
             PrimaryUIColor: 'rgb(118, 20, 104)',
