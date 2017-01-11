@@ -43,6 +43,8 @@ import {ResetPasswordController}            from './controllers/ResetPasswordCon
 
 import sideMenuScene                        from './images/sidemenupic.jpg';
 
+// TODO IMPORT FONT FROM https://fonts.google.com/specimen/PT+Sans?selection.family=PT+Sans
+
 export class App extends ArvaApp {
 
     /* References to Dependency Injection created App and Controller instances, so they are not garbage collected. */
@@ -97,7 +99,7 @@ export class App extends ArvaApp {
         provide(DataSource)(App.defaultDataSource);
 
         setColors({
-            PrimaryUIColor: 'rgb(119, 19, 105)',
+            PrimaryUIColor: 'rgb(118, 20, 104)',
             SecondaryUIColor: 'blue',
             QuaternaryUIColor: 'orange',
             ImageTextColor: 'rgb(51, 51, 51)',
