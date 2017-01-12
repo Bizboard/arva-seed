@@ -17,7 +17,7 @@ import {localize}               from 'mrbox-shared/utils/Localization.js';
 
 import MrBoxLogo                from '../../../images/MrBoxLogo.svg';
 
-@layout.scrollable()
+@layout.nativeScrollable()
 @layout.columnDockPadding(720, [16])
 export class EmailRegisterView extends View {
 

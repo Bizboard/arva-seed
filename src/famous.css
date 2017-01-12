@@ -93,6 +93,7 @@ textarea::-webkit-scrollbar {
     overflow: scroll;
     position: absolute;
     pointer-events: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .famous-native-scroller::after {
