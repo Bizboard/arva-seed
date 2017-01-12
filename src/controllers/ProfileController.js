@@ -14,18 +14,8 @@ export class ProfileController extends Controller {
     constructor() {
         super(...arguments);
 
-        this._setConsumer();
-
-        this.router.on('loginchange', () => {
-            this.profileView = null;
-            this.settingsView = null;
-            this.editProfileView = null;
-            this.editpasswordView = null;
-            this.invoiceView = null;
-            this.invoiceDetailView = null;
-
-            this._setConsumer();
-        });
+        this.router.on('loginchange', this._setConsumer);
+        this.router.on('login', this._setConsumer);
     }
 
     Index(){
@@ -73,5 +63,13 @@ export class ProfileController extends Controller {
     _setConsumer() {
         let user = this.router.getUser();
         this.consumer = Injection.get(Consumer, user.uid);
+
+        this.profileView = null;
+        this.settingsView = null;
+        this.editProfileView = null;
+        this.editpasswordView = null;
+        this.invoiceView = null;
+        this.invoiceDetailView = null;
+
     }
 }

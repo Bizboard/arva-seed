@@ -24,16 +24,20 @@ export class InvoiceDetailView extends View {
     @layout.size(345, 32)
     header = new ImpactBig({ content: 'Artikelen'});
 
-    // constructor(options = {}) {
-    //     super(options);
-    //
-    //     for(let product of this.options.invoices[0].products) {
-    //         this.addRenderable(new ArticleCard({
-    //             leftText: product.description,
-    //             rightText: product.price,
-    //             smallText: product.type
-    //         }), product.description, layout.dock.top() @layout.size(undefined, 75));
-    //     }
-    // }
+    constructor(options = {}) {
+        super(options);
+        this.options.invoices.once('value', () => {
 
+            let products = this.options.invoices[0].products
+            for (let index in products) {
+                console.log(products[index].description);
+                this.addRenderable(new ArticleCard({
+                    leftText: products[index].description,
+                    rightText: products[index].price,
+                    smallText: products[index].type
+                }), products[index].description, layout.dock.top(), layout.dockSpace(32), layout.size(undefined, 75));
+            }
+
+        })
+    }
 }
