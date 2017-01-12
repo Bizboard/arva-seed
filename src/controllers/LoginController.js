@@ -8,10 +8,10 @@ import {PasswordLogin}              from 'arva-kit/utils/authentication/Password
 import {FacebookLogin}              from 'arva-kit/utils/authentication/FacebookLogin.js';
 import {EmailRegistration}          from 'arva-kit/utils/authentication/EmailRegistration.js';
 
-import {LoginView}                  from '../views/loginViews/login/LoginView.js';
-import {EmailLoginView}             from '../views/loginViews/emailLogin/EmailLoginView.js';
-import {ResetPasswordView}          from '../views/loginViews/resetPassword/ResetPasswordView.js';
-import {EmailRegisterView}          from '../views/loginViews/emailRegister/EmailRegisterView.js';
+import {LoginView}                  from '../views/login/login/LoginView.js';
+import {EmailLoginView}             from '../views/login/emailLogin/EmailLoginView.js';
+import {ResetPasswordView}          from '../views/login/resetPassword/ResetPasswordView.js';
+import {EmailRegisterView}          from '../views/login/emailRegister/EmailRegisterView.js';
 
 
 export class LoginController extends Controller {
