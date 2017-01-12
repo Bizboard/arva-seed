@@ -1,4 +1,4 @@
-// To test this view, insert firebase.auth().signInWithEmailAndPassword('karl@gmail.com', 'karl1234')
+/* To test this view, insert firebase.auth().signInWithEmailAndPassword('karl@gmail.com', 'karl1234')*/
 
 import Surface                  from 'famous/core/Surface.js';
 
@@ -29,6 +29,7 @@ export class InvoiceView extends View {
         spacing: true,
         bold: true,
         scrollViewOptions: {
+            /* TODO probarly need to fix grouping per language*/
             groupBy: (invoice) =>  {if (invoice.status == 'Openstaand') {return 'Openstaand';} else {return 'Betaald';}},
             groupTemplate: (status) => {
                 @layout.dockPadding(8,16,0,16)
