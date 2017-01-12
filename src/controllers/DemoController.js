@@ -39,7 +39,7 @@ export class DemoController extends Controller {
     }
 
     async _addLibraryPicture() {
-        let pictureUrl = await PictureSelector.getLibraryPicture();
+        let pictureUrl = await PictureSelector.fetchPicture(false);
         this._addPictureFromUrl(pictureUrl);
     }
 
@@ -54,7 +54,7 @@ export class DemoController extends Controller {
     }
 
     async _addCameraPicture() {
-        let pictureUrl = await PictureSelector.getCameraPicture();
+        let pictureUrl = await PictureSelector.fetchPicture(true);
         this._addPictureFromUrl(pictureUrl);
     }
 
