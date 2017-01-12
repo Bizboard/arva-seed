@@ -3,12 +3,12 @@ import {Injection}                  from 'arva-js/utils/Injection.js';
 import {Invoices}                   from 'mrbox-shared/models/Invoices.js';
 import {Consumer}                   from 'mrbox-shared/models/Consumers.js';
 
-import {InvoiceView}                from '../views/profileViews/invoice/InvoiceView.js';
-import {ProfileView}                from '../views/profileViews/profile/ProfileView.js';
-import {SettingsView}               from '../views/profileViews/settings/SettingsView.js';
-import {EditProfileView}            from '../views/profileViews/editProfile/EditProfileView.js';
-import {EditPasswordView}           from '../views/profileViews/editPassword/EditPasswordView.js';
-import {InvoiceDetailView}          from '../views/profileViews/invoiceDetail/InvoiceDetailView.js';
+import {InvoiceView}                from '../views/profile/invoice/InvoiceView.js';
+import {ProfileView}                from '../views/profile/profile/ProfileView.js';
+import {SettingsView}               from '../views/profile/settings/SettingsView.js';
+import {EditProfileView}            from '../views/profile/editProfile/EditProfileView.js';
+import {EditPasswordView}           from '../views/profile/editPassword/EditPasswordView.js';
+import {InvoiceDetailView}          from '../views/profile/invoiceDetail/InvoiceDetailView.js';
 
 export class ProfileController extends Controller {
     constructor() {

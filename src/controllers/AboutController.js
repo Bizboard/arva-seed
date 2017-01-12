@@ -2,9 +2,9 @@ import {Controller}                 from 'arva-js/core/Controller.js';
 import {StorageLocations}           from 'mrbox-shared/models/StorageLocations.js';
 
 
-import {FAQView}                    from '../views/aboutViews/FAQ/FAQView.js';
-import {ContactView}                from '../views/aboutViews/contact/ContactView.js';
-import {LocationView}               from '../views/aboutViews/location/LocationView.js';
+import {FAQView}                    from '../views/about/FAQ/FAQView.js';
+import {ContactView}                from '../views/about/contact/ContactView.js';
+import {LocationView}               from '../views/about/location/LocationView.js';
 
 export class AboutController extends Controller {
     Index(){
