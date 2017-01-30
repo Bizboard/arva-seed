@@ -3,6 +3,7 @@
 /node_modules/
 www/bundle.*
 www/dev.*
+www/img/
 scripts/devbuild.lock
 build
 platforms
