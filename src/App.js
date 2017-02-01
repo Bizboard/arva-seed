@@ -27,9 +27,6 @@ import {HomeController}             from './controllers/HomeController.js';
 
 export class App extends ArvaApp {
 
-    /* References to Dependency Injection created App and Controller instances, so they are not garbage collected. */
-    static references = {};
-
     /* The controllers that will be used in the app. */
     static controllers = [HomeController];
 
@@ -65,13 +62,18 @@ export class App extends ArvaApp {
     }
 
     /**
-     * Called after the Router, Famous Context, and Controllers have been instantiated,
+     * Called after the Router, Famous Context, and DialogManager have been instantiated.
      * but before any Controller method is executed by the Router.
      */
     static loaded() {
         /* Instantiate things you need before the router is executed here. For example:
          *
-         * this.references.menu = Injection.get(Menu); */
+         * this.menu = Injection.get(Menu);
+         *
+         * Everything that is not injected and also not stored in 'this' can be garbage collected,
+         * so make sure that everything (relevant) that you want to keep for later is done through
+         * Injection.get, or Injection.provide
+         * */
 
         /* Set default controller and method */
         Injection.get(Router).setDefault('Home', 'Index');
@@ -79,8 +81,7 @@ export class App extends ArvaApp {
         /* Set default controller specifications */
         Injection.get(Router).setControllerSpecs({});
 
-        let dialogManager = Injection.get(DialogManager);
-        let menu = Injection.get(NavigationDrawer, {
+        let menu = Injection.provide(NavigationDrawer, new NavigationDrawer({
             topMenuOptions: { defaultTitle: 'Arva Application' },
             sideMenu: {
                 viewClass: ImageSideMenuView,
@@ -90,12 +91,11 @@ export class App extends ArvaApp {
                     text: 'Menu item 1'
                 }]
             }
-        });
+        }));
 
         menu.setNavigationDrawerEnabled(true);
         menu.on('rightButtonClick', ()=> {});
 
-        Object.assign(this.references, {menu, dialogManager});
 
     }
 
