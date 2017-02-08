@@ -1,31 +1,32 @@
 /**
  * Created by lundfall on 27/06/16.
  */
-var fs = require('fs');
-var rimraf = require('rimraf');
-var path = require('path');
-var systemjs = require('systemjs');
-var config = require('../jspm.config.js');
-var exec = require('child_process').exec;
-var arvaOptions = systemjs.arvaOptions;
+const fs = require('fs');
+const rimraf = require('rimraf');
+const path = require('path');
+let systemjs = {};
+SystemJS = { config: (newConfig) => { Object.assign(systemjs, newConfig); }};
+const config = require('../jspm.config.js');
+const exec = require('child_process').exec;
+const arvaOptions = systemjs.arvaOptions;
 if (!arvaOptions) {
     process.exit();
 }
-var fileMappings = arvaOptions.fileMappings;
-var packageMappings = systemjs.map;
+const fileMappings = arvaOptions.fileMappings;
+const packageMappings = systemjs.map;
 
-for (var packageName in fileMappings) {
+for (let packageName in fileMappings) {
 
-    var packageParts = packageName.split(':');
-    var registry = packageParts[0];
-    var restOfName = packageParts[1];
-    var externalFileName = fileMappings[packageName] + "/src";
+    let packageParts = packageName.split(':');
+    let registry = packageParts[0];
+    let restOfName = packageParts[1];
+    let externalFileName = fileMappings[packageName] + "/src";
 
     if (!registry || !restOfName) {
 
         continue;
     }
-    var jspmFileName = './jspm_packages/' + registry + "/" + restOfName;
+    let jspmFileName = './jspm_packages/' + registry + "/" + restOfName;
     /* Make paths absolute */
     jspmFileName = path.normalize(path.resolve('.') + '/' + jspmFileName);
     externalFileName = path.normalize(path.resolve('.') + '/' + externalFileName);
@@ -56,7 +57,7 @@ for (var packageName in fileMappings) {
 
 
 function directoryExists(path) {
-    var directoryExists = true;
+    let directoryExists = true;
     try {
         if (!fs.lstatSync(path).isDirectory()) {
             directoryExists = false;
