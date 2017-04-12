@@ -1,9 +1,10 @@
 {
   "scripts": {
-    "install-all": "npm install && jspm install && node scripts/linkJspmToLocal.js",
+    "install-all": "npm install && jspm install",
+    "prebuild": "node scripts/initialLinkedSync.js",
     "build": "jspm build src/App.js www/bundle.js",
     "postbuild": "echo Build finished at `date`",
-    "watch": "npm run build -- -wid",
+    "watch": "node scripts/linkedWatcher.js",
     "gen-keystore": "keytool -genkey -v -keystore release.keystore -alias release -keyalg RSA -keysize 2048 -validity 10000",
     "gen-icons": "node ./scripts/generateIcons.js",
     "copy-apk": "mkdir -p build && cp platforms/android/build/outputs/apk/android-armv7-release.apk build/android-armv7-release.apk",
@@ -107,8 +108,14 @@
     }
   },
   "devDependencies": {
+    "callback-promise": "^0.3.0",
+    "copy-dir": "^0.3.0",
+    "electron": "^1.4.15",
     "jspm": "^0.17.0-beta.28",
     "jspm-git": "^0.5.0-beta.3",
-    "splashicon-generator": "^0.2.7"
+    "lodash": "^4.17.4",
+    "rimraf": "^2.5.4",
+    "splashicon-generator": "^0.2.7",
+    "wml": "0.0.82"
   }
 }
