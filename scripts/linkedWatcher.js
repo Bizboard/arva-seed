@@ -86,7 +86,13 @@ let duplicateSymlinkedModules = (sourceDirectory, targetDirectory) => {
 /* Duplicate contents of jspm_packages to symlinked dev_jspm_packages */
 let jspmPackagesDir = path.normalize(path.join(path.resolve('.'), './jspm_packages'));
 let devJspmPackagesDir = path.normalize(path.join(path.resolve('.'), './dev_jspm_packages'));
-duplicateSymlinkedModules(jspmPackagesDir, devJspmPackagesDir);
+duplicateSymlinkedModules(jspmPackagesDir, devJspmPackagesDir, (error, done) => {
+    if (error) {
+        console.error(error);
+        process.exit(1)
+    }
+
+});
 
 
 /* Add paths to wml that copied to our local jspm_packages */
