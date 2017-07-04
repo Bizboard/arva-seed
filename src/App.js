@@ -15,6 +15,8 @@ import './fonts.css';
 /* Here we import all controllers we want to use in the app */
 import {HomeController}             from './controllers/HomeController.js';
 
+import './utils/debugging.js';
+
 export class App extends ArvaApp {
 
     /* References to Dependency Injection created App and Controller instances, so they are not garbage collected. */
@@ -23,15 +25,15 @@ export class App extends ArvaApp {
     /* The controllers that will be used in the app. */
     static controllers = [HomeController];
 
-
     /* Define which DataSource to use */
     static defaultDataSource() {
         /* Firebase initialization */
         firebase.initializeApp({
-            apiKey: '<api-key>',
-            authDomain: '<subdomain>.firebaseapp.com',
-            databaseURL: 'https://<subdomain>.firebaseio.com',
-            storageBucket: '<subdomain>.appspot.com'
+            apiKey: "AIzaSyAKm86MJ6QSjIjZswIplyLftQ-F0m_Vfvs",
+            authDomain: "databinding-test.firebaseapp.com",
+            databaseURL: "https://databinding-test.firebaseio.com",
+            storageBucket: "databinding-test.appspot.com",
+            messagingSenderId: "151696334136"
         });
         return new FirebaseDataSource('/', {});
     }
