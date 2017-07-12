@@ -386,8 +386,8 @@ SystemJS.config({
     "bitbucket:*.json"
   ],
   map: {
+    "arva-kit": "bitbucket:bizboard/arva-kit@develop",
     "double-ended-queue": "npm:double-ended-queue@2.1.0-0",
-    "bizboard/arva-kit": "bitbucket:bizboard/arva-kit@0.0.7",
     "eventemitter3": "npm:eventemitter3@2.0.2",
     "observe-js": "npm:observe-js@0.5.7",
     "object-assign": "npm:object-assign@4.1.1",
@@ -421,7 +421,7 @@ SystemJS.config({
   packages: {
     "npm:stream-browserify@2.0.1": {
       "map": {
-        "readable-stream": "npm:readable-stream@2.3.2",
+        "readable-stream": "npm:readable-stream@2.3.3",
         "inherits": "npm:inherits@2.0.3"
       }
     },
@@ -534,7 +534,7 @@ SystemJS.config({
     },
     "github:bizboard/arva-js@develop": {
       "map": {
-        "bowser": "npm:bowser@1.4.4",
+        "bowser": "npm:bowser@1.7.0",
         "eventemitter3": "npm:eventemitter3@1.2.0",
         "camelcase": "npm:camelcase@2.1.1",
         "observe-js": "npm:observe-js@0.5.7",
@@ -548,7 +548,7 @@ SystemJS.config({
         "request-animation-frame-mock": "github:erykpiast/request-animation-frame-mock@0.1.8",
         "famous": "github:bizboard/famous@develop",
         "famous-flex": "github:bizboard/famous-flex@master",
-        "lodash-decorators": "npm:lodash-decorators@3.0.1"
+        "lodash-decorators": "npm:lodash-decorators@3.0.2"
       }
     },
     "npm:xml2js@0.4.17": {
@@ -597,25 +597,6 @@ SystemJS.config({
         "es6-map": "npm:es6-map@0.1.5"
       }
     },
-    "npm:lodash-decorators@3.0.1": {
-      "map": {
-        "lodash": "npm:lodash@4.0.1"
-      }
-    },
-    "bitbucket:bizboard/arva-kit@0.0.7": {
-      "map": {
-        "color": "npm:color@0.11.4",
-        "rgbcolor": "npm:rgbcolor@0.0.4",
-        "bowser": "npm:bowser@1.4.3",
-        "degrees-radians": "npm:degrees-radians@1.0.3",
-        "lodash": "npm:lodash@4.17.4",
-        "famous-autosizetextarea": "github:ijzerenhein/famous-autosizetextarea@0.3.1",
-        "famous-flex": "github:bizboard/famous-flex@1.4.1",
-        "arva-js": "github:bizboard/arva-js@1.3.1",
-        "famous-bkimagesurface": "github:bizboard/famous-bkimagesurface@master",
-        "famous": "github:bizboard/famous@0.4.1"
-      }
-    },
     "npm:color@0.11.4": {
       "map": {
         "clone": "npm:clone@1.0.2",
@@ -642,22 +623,6 @@ SystemJS.config({
         "browserify-rsa": "npm:browserify-rsa@4.0.1",
         "parse-asn1": "npm:parse-asn1@5.1.0",
         "elliptic": "npm:elliptic@6.4.0"
-      }
-    },
-    "github:bizboard/arva-js@1.3.1": {
-      "map": {
-        "bowser": "npm:bowser@1.7.0",
-        "lodash": "npm:lodash@4.17.4",
-        "famous": "github:bizboard/famous@0.4.1",
-        "famous-flex": "github:bizboard/famous-flex@1.4.1",
-        "camelcase": "npm:camelcase@2.1.1",
-        "lodash-decorators": "npm:lodash-decorators@3.0.2",
-        "xml2js": "npm:xml2js@0.4.17",
-        "ordered-hashmap": "npm:ordered-hashmap@1.0.0",
-        "fastclick": "npm:fastclick@1.0.6",
-        "eventemitter3": "npm:eventemitter3@1.2.0",
-        "request-animation-frame-mock": "github:erykpiast/request-animation-frame-mock@0.1.8",
-        "firebase": "github:firebase/firebase-bower@3.9.0"
       }
     },
     "npm:create-hash@1.1.3": {
@@ -692,11 +657,6 @@ SystemJS.config({
         "safe-buffer": "npm:safe-buffer@5.1.1"
       }
     },
-    "github:bizboard/famous-flex@1.4.1": {
-      "map": {
-        "es6-map": "npm:es6-map@0.1.5"
-      }
-    },
     "npm:ripemd160@2.0.1": {
       "map": {
         "inherits": "npm:inherits@2.0.3",
@@ -710,7 +670,7 @@ SystemJS.config({
         "hmac-drbg": "npm:hmac-drbg@1.0.1",
         "minimalistic-crypto-utils": "npm:minimalistic-crypto-utils@1.0.1",
         "brorand": "npm:brorand@1.1.0",
-        "hash.js": "npm:hash.js@1.1.2",
+        "hash.js": "npm:hash.js@1.1.3",
         "minimalistic-assert": "npm:minimalistic-assert@1.0.0"
       }
     },
@@ -746,12 +706,6 @@ SystemJS.config({
         "es6-symbol": "npm:es6-symbol@3.1.1",
         "es6-set": "npm:es6-set@0.1.5",
         "es5-ext": "npm:es5-ext@0.10.23"
-      }
-    },
-    "npm:hash.js@1.1.2": {
-      "map": {
-        "inherits": "npm:inherits@2.0.3",
-        "minimalistic-assert": "npm:minimalistic-assert@1.0.0"
       }
     },
     "npm:es6-symbol@3.1.1": {
@@ -802,7 +756,7 @@ SystemJS.config({
       "map": {
         "minimalistic-assert": "npm:minimalistic-assert@1.0.0",
         "minimalistic-crypto-utils": "npm:minimalistic-crypto-utils@1.0.1",
-        "hash.js": "npm:hash.js@1.1.2"
+        "hash.js": "npm:hash.js@1.1.3"
       }
     },
     "npm:asn1.js@4.9.1": {
@@ -812,20 +766,40 @@ SystemJS.config({
         "bn.js": "npm:bn.js@4.11.7"
       }
     },
-    "npm:readable-stream@2.3.2": {
-      "map": {
-        "string_decoder": "npm:string_decoder@1.0.3",
-        "inherits": "npm:inherits@2.0.3",
-        "isarray": "npm:isarray@1.0.0",
-        "safe-buffer": "npm:safe-buffer@5.1.1",
-        "util-deprecate": "npm:util-deprecate@1.0.2",
-        "core-util-is": "npm:core-util-is@1.0.2",
-        "process-nextick-args": "npm:process-nextick-args@1.0.7"
-      }
-    },
     "npm:string_decoder@1.0.3": {
       "map": {
         "safe-buffer": "npm:safe-buffer@5.1.1"
+      }
+    },
+    "bitbucket:bizboard/arva-kit@develop": {
+      "map": {
+        "color": "npm:color@0.11.4",
+        "rgbcolor": "npm:rgbcolor@0.0.4",
+        "bowser": "npm:bowser@1.4.3",
+        "degrees-radians": "npm:degrees-radians@1.0.3",
+        "lodash": "npm:lodash@4.17.4",
+        "famous": "github:bizboard/famous@develop",
+        "famous-bkimagesurface": "github:bizboard/famous-bkimagesurface@master",
+        "famous-flex": "github:bizboard/famous-flex@master",
+        "arva-js": "github:bizboard/arva-js@develop",
+        "famous-autosizetextarea": "github:ijzerenhein/famous-autosizetextarea@0.3.1"
+      }
+    },
+    "npm:hash.js@1.1.3": {
+      "map": {
+        "inherits": "npm:inherits@2.0.3",
+        "minimalistic-assert": "npm:minimalistic-assert@1.0.0"
+      }
+    },
+    "npm:readable-stream@2.3.3": {
+      "map": {
+        "inherits": "npm:inherits@2.0.3",
+        "isarray": "npm:isarray@1.0.0",
+        "safe-buffer": "npm:safe-buffer@5.1.1",
+        "string_decoder": "npm:string_decoder@1.0.3",
+        "process-nextick-args": "npm:process-nextick-args@1.0.7",
+        "core-util-is": "npm:core-util-is@1.0.2",
+        "util-deprecate": "npm:util-deprecate@1.0.2"
       }
     }
   }

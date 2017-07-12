@@ -10,9 +10,8 @@ export class HomeController extends Controller {
 
     if (!this.homeView) {
       let body = Injection.get(Body, 'myBody')
-      body.height = 179
-      body.weight = 68
-      this.homeView = new HomeView({body})
+      body.height = 13
+      this.homeView = new HomeView({body, backgroundColor: 'red'})
 
       window.changeBody = () => {
         window.newBody = Injection.get(Body)

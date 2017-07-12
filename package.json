@@ -23,8 +23,8 @@
     "main": "main.js",
     "dependencies": {
       "arva-js": "github:bizboard/arva-js@develop",
+      "arva-kit": "bitbucket:bizboard/arva-kit@develop",
       "babel-polyfill": "npm:babel-polyfill@^6.9.1",
-      "bizboard/arva-kit": "bitbucket:bizboard/arva-kit@^0.0.7",
       "css": "github:systemjs/plugin-css@^0.1.23",
       "double-ended-queue": "npm:double-ended-queue@^2.1.0-0",
       "es6-map": "npm:es6-map@^0.1.4",
