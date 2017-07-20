@@ -25,7 +25,7 @@
     "name": "nl.bizboard.arva.seed",
     "main": "main.js",
     "dependencies": {
-      "arva-js": "github:bizboard/arva-js@develop",
+      "arva-js": "github:arva/arva-js@develop",
       "arva-kit": "bitbucket:bizboard/arva-kit@develop",
       "babel-polyfill": "npm:babel-polyfill@^6.9.1",
       "css": "github:systemjs/plugin-css@^0.1.23",
@@ -38,6 +38,7 @@
       "fastclick": "npm:fastclick@1.0.6",
       "firebase": "github:firebase/firebase-bower@^3.0.5",
       "lodash": "npm:lodash@^4.13.1",
+      "moment": "npm:moment@^2.18.1",
       "object-assign": "npm:object-assign@^4.1.1",
       "observe-js": "npm:observe-js@^0.5.7",
       "weakee": "npm:weakee@^1.0.0"
@@ -116,6 +117,9 @@
           "buffer": "@empty",
           "process": "@empty"
         }
+      },
+      "npm:moment@2.18.1": {
+        "jspmNodeConversion": false
       },
       "npm:ms@0.7.1": {
         "jspmNodeConversion": false,

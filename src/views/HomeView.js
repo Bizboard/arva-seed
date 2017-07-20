@@ -3,23 +3,34 @@ import { View }                         from 'arva-js/core/View.js'
 import { layout, event, bindings, flow }  from 'arva-js/layout/Decorators.js'
 import { Model }                        from 'arva-js/core/Model.js'
 
-let compoundOptionDuplicate = {height: 123, weight: 234}
+let compoundOptionDuplicate = {height: 123, weight: 234, backgroundColor: 'white'}
 
 @layout.nativeScrollable()
 @bindings.setup({
   body: Model,
   nested: {welcomeMessage: 'Hey dude!'},
   swap: false,
+  nested2: {welcomeMessage: 'Hey dude!'},
   backgroundColor: 'white',
   compoundOptions1: {height: 'opt1height', weight: 'op1weight'},
   compoundOptions2: {height: 'opt2height', weight: 'op2weight'},
   compoundOptions3: {},
   compoundOptions4: {height: 123, weight: 60, backgroundColor: 'white'},
   compoundOptions5: compoundOptionDuplicate,
-  compoundOptions6: compoundOptionDuplicate
+  compoundOptions6: compoundOptionDuplicate,
+  list: [
+    {
+      text: 'Hello world'
+    }
+  ],
+  fakeList: {
+    0: {
+      text: 'firstEntry'
+    }
+  },
 })
 @bindings.preprocess((incomingOptions, defaultOptions) => {
-  if (incomingOptions.backgroundColor) {
+  if (incomingOptions.backgroundColor !== defaultOptions.backgroundColor) {
 
     if (incomingOptions.compoundOptions5) {
       incomingOptions.compoundOptions5.backgroundColor = incomingOptions.backgroundColor
@@ -30,6 +41,9 @@ let compoundOptionDuplicate = {height: 123, weight: 234}
         ...defaultOptions.compoundOptions6,
         backgroundColor: incomingOptions.backgroundColor
       }
+      /*This is made to be sure that the getter of compoundOptions6 can be detected (works as of now) */
+  } else if (incomingOptions.compoundOptions6 && incomingOptions.compoundOptions6.backgroundColor) {
+    incomingOptions.compoundOptions5.backgroundColor = incomingOptions.compoundOptions6.backgroundColor
   }
 })
 @layout.dockPadding(10)
@@ -52,6 +66,12 @@ export class HomeView extends View {
   @flow.stateStep('bottom', {}, layout.translate(0, 200, 0))
   heightWeightNameDuplicate = options =>
     AnotherView.with({
+      [layout.extra]: {
+        @layout.dock.top(~30)
+        extra: this.options.list[0] && Surface.with({content: this.options.list[0].text}),
+        @layout.dock.top(~30)
+        extra2: Surface.with({content: 'Hello world 2'})
+      },
       height: options.body.height,
       @bindings.onChange((weight) => options.body.weight = weight)
       weight: options.body.weight,
@@ -72,6 +92,7 @@ export class HomeView extends View {
     .dock.top(true)
   heightWeightName2 = () => {
     window.options = this.options
+    window.homeView = this
     return AnotherView.with(this.options.swap ? this.options.compoundOptions2 : this.options.compoundOptions1)
   }
 
@@ -108,6 +129,7 @@ export class HomeView extends View {
       backgroundColor: options.compoundOptions4.backgroundColor
     })
 
+
   @flow.defaultState('top', {}, layout
     .dock.top(true).translate(0, 0, 0))
   @flow.stateStep('bottom', {}, layout.translate(0, 200, 0))
@@ -123,6 +145,17 @@ export class HomeView extends View {
       weight: options.compoundOptions6.weight,
       backgroundColor: options.compoundOptions6.backgroundColor
     })
+
+  @layout.animate()
+  @layout.size(~100, ~25)
+    .dock.top()
+  list = this.options.list.map(item =>
+    Surface.with({content: item.text})
+  )
+
+  @layout.size(~100, ~25)
+    .dock.top()
+  fakeList = Surface.with({content: this.options.fakeList[0].text})
 
 }
 
@@ -158,7 +191,7 @@ class AnotherView extends View {
     .dock.top()
   increaseByTenButton = Surface.with({
     content: `Increase by 10`,
-    properties: {backgroundColor: 'blue', borderRadius: '5px'},
+    properties: {backgroundColor: 'lightblue', borderRadius: '5px'},
   })
 
 }
