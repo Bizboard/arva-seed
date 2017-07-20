@@ -1,23 +1,46 @@
 /**
  * Created by lundfall on 27/06/16.
  */
-var fs = require('fs');
-var rimraf = require('rimraf');
-var path = require('path');
-let localToGlobalPaths = require('./linkedSync/localToGlobalPaths.js');
+const fs = require('fs');
+const rimraf = require('rimraf');
+const path = require('path');
+let systemjs = {};
+SystemJS = { config: (newConfig) => { Object.assign(systemjs, newConfig); }};
+const config = require('../jspm.config.js');
+const exec = require('child_process').exec;
+const arvaOptions = systemjs.arvaOptions;
+if (!arvaOptions) {
+    process.exit();
+}
+const fileMappings = arvaOptions.fileMappings;
+const packageMappings = systemjs.map;
 
-for (var localPath in localToGlobalPaths) {
-    let globalPath = localToGlobalPaths[localPath];
+for (let packageName in fileMappings) {
 
-    if (!directoryExists(localPath)) {
-        console.log('The package name does not exist: ' + localPath + ". Falling back on external resource");
+    let packageParts = packageName.split(':');
+    let registry = packageParts[0];
+    let restOfName = packageParts[1];
+    let externalFileName = fileMappings[packageName] + "/src";
+
+    if (!registry || !restOfName) {
+
         continue;
     }
-    rimraf.sync(localPath);
+    let jspmFileName = './jspm_packages/' + registry + "/" + restOfName;
+    /* Make paths absolute */
+    jspmFileName = path.normalize(path.resolve('.') + '/' + jspmFileName);
+    externalFileName = path.normalize(path.resolve('.') + '/' + externalFileName);
 
-    if (!directoryExists(globalPath)) {
-        console.log(globalPath + " is not a directory!");
+    if (!directoryExists(jspmFileName)) {
+        console.log('The package name does not exist: ' + packageName + ". Falling back on external resource");
         continue;
+    }
+    rimraf.sync(jspmFileName);
+
+
+    if (!directoryExists(externalFileName)) {
+        console.log(externalFileName + " is not a directory!");
+        continue
     }
 
     (function (externalFileName, jspmFileName) {
@@ -28,13 +51,13 @@ for (var localPath in localToGlobalPaths) {
                 console.log("Successfully mapped " + jspmFileName + " to " + externalFileName);
             }
         })
-    })(globalPath, localPath);
+    })(externalFileName, jspmFileName);
 
 }
 
 
 function directoryExists(path) {
-    var directoryExists = true;
+    let directoryExists = true;
     try {
         if (!fs.lstatSync(path).isDirectory()) {
             directoryExists = false;

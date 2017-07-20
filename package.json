@@ -3,7 +3,7 @@
     "install-all": "npm install && jspm install",
     "prebuild": "node scripts/initialLinkedSync.js && node scripts/prepareBabelSetup.js",
     "build": "jspm build src/App.js www/bundle.js",
-    "compatible-build": "node scripts/prepareBabelSetup.js --compatible && npm run build",
+    "compatible-build": "node scripts/prepareBabelSetup.js --compatible && jspm build src/App.js www/bundle.js",
     "postbuild": "echo Build finished at `date`",
     "start": "electron www/electron.js",
     "prewatch": "node scripts/prepareBabelSetup.js",
@@ -15,7 +15,6 @@
   },
   "arva": {
     "links": {
-      "arva-kit": "../arva-kit",
       "arva-js": "../arva-js",
       "famous": "../famous",
       "famous-flex": "../famous-flex"
@@ -27,20 +26,14 @@
     "dependencies": {
       "arva-js": "github:bizboard/arva-js@develop",
       "babel-polyfill": "npm:babel-polyfill@^6.9.1",
-      "bizboard/arva-kit": "bitbucket:bizboard/arva-kit@^0.0.7",
       "css": "github:systemjs/plugin-css@^0.1.23",
-      "double-ended-queue": "npm:double-ended-queue@^2.1.0-0",
       "es6-map": "npm:es6-map@^0.1.4",
-      "eventemitter3": "npm:eventemitter3@^2.0.2",
       "famous": "github:bizboard/famous@develop",
       "famous-autosizetextarea": "github:ijzerenhein/famous-autosizetextarea@^0.3.1",
       "famous-flex": "github:bizboard/famous-flex@master",
       "fastclick": "npm:fastclick@1.0.6",
       "firebase": "github:firebase/firebase-bower@^3.0.5",
-      "lodash": "npm:lodash@^4.13.1",
-      "object-assign": "npm:object-assign@^4.1.1",
-      "observe-js": "npm:observe-js@^0.5.7",
-      "weakee": "npm:weakee@^1.0.0"
+      "lodash": "npm:lodash@^4.13.1"
     },
     "devDependencies": {
       "babel-plugin-syntax-decorators": "npm:babel-plugin-syntax-decorators@^6.8.0",
@@ -77,7 +70,7 @@
       "vm": "npm:jspm-nodelibs-vm@^0.2.0"
     },
     "overrides": {
-      "github:firebase/firebase-bower@3.9.0": {
+      "github:firebase/firebase-bower@3.3.0": {
         "main": "firebase.js",
         "registry": "jspm",
         "meta": {
@@ -106,10 +99,11 @@
           "test.js"
         ]
       },
-      "npm:inherits@2.0.3": {
-        "ignore": [
-          "test.js"
-        ]
+      "npm:lodash@4.15.0": {
+        "map": {
+          "buffer": "@empty",
+          "process": "@empty"
+        }
       },
       "npm:lodash@4.17.4": {
         "map": {
@@ -120,23 +114,12 @@
       "npm:ms@0.7.1": {
         "jspmNodeConversion": false,
         "format": "cjs"
-      },
-      "npm:pbkdf2@3.0.12": {
-        "main": "browser.js"
-      },
-      "npm:safe-buffer@5.1.1": {
-        "browser": "index.js"
       }
     }
   },
   "devDependencies": {
-    "callback-promise": "^0.3.0",
-    "copy-dir": "^0.3.0",
-    "electron": "^1.4.15",
-    "jspm": "^0.17.0-beta.28",
+    "jspm": "^0.17.0-beta.22",
     "jspm-git": "^0.5.0-beta.3",
-    "rimraf": "^2.5.4",
-    "splashicon-generator": "^0.2.7",
-    "wml": "0.0.82"
+    "splashicon-generator": "^0.2.7"
   }
 }
