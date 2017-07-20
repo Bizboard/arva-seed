@@ -1,39 +1,18 @@
 SystemJS.config({
   babelOptions: {
-    "plugins": [
-      "babel-plugin-transform-decorators-legacy",
-      "babel-plugin-transform-class-properties",
-      [
-        "babel-plugin-transform-builtin-extend",
-        {
-          "globals": [
-            "Array"
-          ],
-          "approximate": true
-        }
-      ],
-      [
-        "babel-plugin-transform-es2015-spread",
-        {
-          "loose": true
-        }
-      ],
-      [
-        "babel-plugin-transform-es2015-for-of",
-        {
-          "loose": true
-        }
-      ]
-    ]
+    'plugins': [
+      'babel-plugin-transform-decorators-legacy',
+      'babel-plugin-transform-class-properties'
+    ],
+    'es2015': false,
+    'stage3': true,
+    'stage2': true,
+    'stage1': false
   },
   arvaOptions: {
-    "fileMappings": {
-      "github:bizboard/arva-js@develop": "../arva-js",
-      "github:bizboard/famous-flex@master": "../famous-flex"
-    },
-    "iconOptions": {
-      "form": "rounded",
-      "thickness": "bold"
+    'iconOptions': {
+      'form': 'rounded',
+      'thickness': 'bold'
     }
   },
   paths: {
