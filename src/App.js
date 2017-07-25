@@ -1,4 +1,3 @@
-import 'babel-polyfill'
 import firebase                     from 'firebase'
 
 import { FirebaseDataSource }         from 'arva-js/data/datasources/FirebaseDataSource.js'
@@ -20,6 +19,7 @@ import './fonts.css'
 import { HomeController }             from './controllers/HomeController.js'
 
 import './utils/debugging.js'
+import { OtherController } from './controllers/OtherController'
 
 export class App extends ArvaApp {
 
@@ -27,7 +27,7 @@ export class App extends ArvaApp {
   static references = {}
 
   /* The controllers that will be used in the app. */
-  static controllers = [HomeController]
+  static controllers = [HomeController, OtherController];
 
   /* Define which DataSource to use */
   static defaultDataSource () {

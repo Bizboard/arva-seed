@@ -1,11 +1,16 @@
 SystemJS.config({
   babelOptions: {
     'plugins': [
+      'babel-plugin-transform-es2015-destructuring',
+      'babel-plugin-transform-object-rest-spread',
       'babel-plugin-transform-decorators-legacy',
-      'babel-plugin-transform-class-properties'
+      'babel-plugin-transform-class-properties',
+      'babel-plugin-syntax-async-functions',
+      'babel-plugin-transform-es2015-spread'
     ],
+    'es2016': true,
     'es2015': false,
-    'stage3': true,
+    'stage3': false,
     'stage2': true,
     'stage1': false
   },
@@ -27,7 +32,6 @@ SystemJS.config({
   },
   devConfig: {
     'map': {
-      'plugin-babel': 'npm:systemjs-plugin-babel@0.0.12',
       'babel-plugin-transform-decorators': 'npm:babel-plugin-transform-decorators@6.8.0',
       'module': 'npm:jspm-nodelibs-module@0.2.0',
       'http': 'npm:jspm-nodelibs-http@0.2.0',
@@ -311,27 +315,42 @@ SystemJS.config({
       'main': 'main.js',
       'format': '',
       'meta': {
-        '*.js': {
-          'loader': 'plugin-babel'
-        },
         'models/*.js': {
           'loader': 'plugin-babel',
           'babelOptions': {
             'plugins': [
+              'babel-plugin-transform-es2015-destructuring',
+              'babel-plugin-transform-object-rest-spread',
               'babel-plugin-transform-decorators-legacy',
-              'babel-plugin-transform-runtime-constructor-name',
-              'babel-plugin-transform-class-properties'
-            ]
+              'babel-plugin-transform-class-properties',
+              'babel-plugin-syntax-async-functions',
+              'babel-plugin-transform-es2015-spread',
+              'babel-plugin-transform-runtime-constructor-name'
+            ],
+            'es2016': true,
+            'es2015': false,
+            'stage3': false,
+            'stage2': true,
+            'stage1': false
           }
         },
         'controllers/*.js': {
           'loader': 'plugin-babel',
           'babelOptions': {
             'plugins': [
+              'babel-plugin-transform-es2015-destructuring',
+              'babel-plugin-transform-object-rest-spread',
               'babel-plugin-transform-decorators-legacy',
-              'babel-plugin-transform-runtime-constructor-name',
-              'babel-plugin-transform-class-properties'
-            ]
+              'babel-plugin-transform-class-properties',
+              'babel-plugin-syntax-async-functions',
+              'babel-plugin-transform-es2015-spread',
+              'babel-plugin-transform-runtime-constructor-name'
+            ],
+            'es2016': true,
+            'es2015': false,
+            'stage3': false,
+            'stage2': true,
+            'stage1': false
           }
         },
         '*.css': {
@@ -354,32 +373,7 @@ SystemJS.config({
   },
   map: {
     'text': 'github:arva/arva-js@develop/utils/IconLoader.js'
-  },
-  plugins: [
-    'babel-plugin-transform-decorators-legacy',
-    'babel-plugin-transform-class-properties',
-    [
-      'babel-plugin-transform-builtin-extend',
-      {
-        'globals': [
-          'Array'
-        ],
-        'approximate': true
-      }
-    ],
-    [
-      'babel-plugin-transform-es2015-spread',
-      {
-        'loose': true
-      }
-    ],
-    [
-      'babel-plugin-transform-es2015-for-of',
-      {
-        'loose': true
-      }
-    ]
-  ]
+  }
 });
 
 SystemJS.config({
@@ -391,6 +385,10 @@ SystemJS.config({
     'bitbucket:*.json'
   ],
   map: {
+    'plugin-babel': 'npm:systemjs-plugin-babel@0.0.25',
+    'babel-plugin-syntax-async-functions': 'npm:babel-plugin-syntax-async-functions@6.13.0',
+    'babel-plugin-transform-object-rest-spread': 'npm:babel-plugin-transform-object-rest-spread@6.23.0',
+    'babel-plugin-transform-es2015-destructuring': 'npm:babel-plugin-transform-es2015-destructuring@6.23.0',
     'moment': 'npm:moment@2.18.1',
     'arva-kit': 'bitbucket:bizboard/arva-kit@develop',
     'double-ended-queue': 'npm:double-ended-queue@2.1.0-0',
@@ -412,7 +410,7 @@ SystemJS.config({
     'famous': 'github:bizboard/famous@develop',
     'famous-flex': 'github:bizboard/famous-flex@master',
     'firebase': 'github:firebase/firebase-bower@3.9.0',
-    'fs': 'npm:jspm-nodelibs-fs@0.2.0',
+    'fs': 'npm:jspm-nodelibs-fs@0.2.1',
     'lodash': 'npm:lodash@4.17.4',
     'os': 'npm:jspm-nodelibs-os@0.2.0',
     'path': 'npm:jspm-nodelibs-path@0.2.0',
@@ -803,6 +801,23 @@ SystemJS.config({
       'map': {
         'inherits': 'npm:inherits@2.0.3',
         'safe-buffer': 'npm:safe-buffer@5.1.1'
+      }
+    },
+    'npm:babel-plugin-transform-es2015-destructuring@6.23.0': {
+      'map': {
+        'babel-runtime': 'npm:babel-runtime@6.23.0'
+      }
+    },
+    'npm:babel-runtime@6.23.0': {
+      'map': {
+        'regenerator-runtime': 'npm:regenerator-runtime@0.10.5',
+        'core-js': 'npm:core-js@2.4.1'
+      }
+    },
+    'npm:babel-plugin-transform-object-rest-spread@6.23.0': {
+      'map': {
+        'babel-runtime': 'npm:babel-runtime@6.23.0',
+        'babel-plugin-syntax-object-rest-spread': 'npm:babel-plugin-syntax-object-rest-spread@6.13.0'
       }
     }
   }

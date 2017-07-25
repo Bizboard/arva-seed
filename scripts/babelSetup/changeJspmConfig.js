@@ -5,11 +5,9 @@
 const { execSync } = require('child_process');
 const fs = require('fs')
 
-module.exports = (newBabelConfig) => {
+module.exports = (newConfigSettings) => {
   fs.appendFileSync('./jspm.config.js', `
-SystemJS.config({
-  babelOptions: ${JSON.stringify(newBabelConfig)}
-});
+SystemJS.config(${JSON.stringify(newConfigSettings)});
 `);
   execSync('jspm clean');
 }
