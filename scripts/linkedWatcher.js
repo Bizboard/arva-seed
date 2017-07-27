@@ -120,7 +120,7 @@ execWml('rm all').then((output) => {
 
     setTimeout(() => {
         /* Wait a bit to avoid nasty race conditions when the files might be changing while building */
-        const jspmWatcher = spawn('jspm', ['build', 'src/App.js', 'www/bundle.js', '-wid']);
+        const jspmWatcher = spawn('jspm', ['build', 'src/App.js', 'www/es6bundle.js', '-wid']);
         jspmWatcher.stdout.on('data', (data) => {
             let output = data.toString();
             if (output) {
