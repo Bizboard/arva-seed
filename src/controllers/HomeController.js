@@ -1,8 +1,9 @@
 import { Controller }                 from 'arva-js/core/Controller.js'
 import { HomeView }                   from '../views/HomeView.js'
+import { DBSVView }                   from '../views/DBSVView.js'
 import { Injection }                  from 'arva-js/utils/Injection.js'
 import { DataSource }                 from 'arva-js/data/DataSource.js'
-import { Body }                       from '../models/Bodies'
+import { Body, Bodies }               from '../models/Bodies'
 import EventEmitter                 from 'eventemitter3'
 
 export class HomeController extends Controller {
@@ -12,7 +13,6 @@ export class HomeController extends Controller {
       let body = Injection.get(Body, 'myBody')
       body.height = 13
       this.homeView = new HomeView({body, backgroundColor: 'white', list: [{text: 'Item 1'}, {text: 'Item 2'}]});
-
       window.changeBody = () => {{}
         window.newBody = Injection.get(Body)
         newBody.height = 321
@@ -21,6 +21,11 @@ export class HomeController extends Controller {
       }
     }
     return this.homeView
+  }
+
+  DBSV() {
+    let bodies = Injection.get(Bodies);
+    return new DBSVView({data: bodies});
   }
 
   async testStuff () {

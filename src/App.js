@@ -68,6 +68,11 @@ export class App extends ArvaApp {
         menuItems: [{
           icon: AccountIcon,
           text: 'Menu item 1'
+        }, {
+          icon: AccountIcon,
+          controller: 'Home',
+          method: 'DBSV',
+          text: 'Menu item 2'
         }]
       }
     });
