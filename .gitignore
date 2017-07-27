@@ -11,3 +11,7 @@ res/icons
 res/screens
 store
 incrementBuildNum.js
+
+wip-cordova-plugin-crosswalk-webview/
+
+forked-cordova-plugin-crosswalk-webview/

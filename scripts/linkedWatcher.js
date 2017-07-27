@@ -120,7 +120,7 @@ execWml('rm all').then((output) => {
 
     setTimeout(() => {
         /* Wait a bit to avoid nasty race conditions when the files might be changing while building */
-        const jspmWatcher = spawn('jspm', ['build', 'src/App.js', 'www/bundle.js', '-wid']);
+        const jspmWatcher = spawn('jspm', ['build', 'src/App.js', 'www/es6bundle.js', '-wid']);
         jspmWatcher.stdout.on('data', (data) => {
             let output = data.toString();
             if (output) {
@@ -129,8 +129,8 @@ execWml('rm all').then((output) => {
                     if(process.platform === 'darwin'){
                         promiseExec(`osascript -e 'tell application "System Events"
         set activeApp to name of first application process whose frontmost is true
-        if not "Google Chrome" is in activeApp then
-                tell application "Google Chrome" to tell the active tab of its first window to reload
+        if not "Google Chrome Canary" is in activeApp then
+                tell application "Google Chrome Canary" to tell the active tab of its first window to reload
         end if
 end tell'`);
                     }
