@@ -8,7 +8,7 @@ let fs = require('fs')
 
 
 
-fs.readFile('./www/bundle.js.map', (err, chunk) => {
+fs.readFile('./www/es6bundle.js.map', (err, chunk) => {
   if(err){
     throw err;
   }
@@ -33,5 +33,5 @@ fs.readFile('./www/bundle.js.map', (err, chunk) => {
     }
 
   }
-  fs.writeFileSync('./www/bundle.alt.js.map', output)
+  fs.writeFileSync('./www/es6bundle.js.map', output)
 })
