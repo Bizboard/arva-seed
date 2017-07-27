@@ -29,8 +29,7 @@ export class DBSVView extends View {
       Surface.with({
         content: value,
         size: [undefined, 50]
-      })
-    ,
+      }),
     itemTemplate: (body) =>
       Surface.with({
         content: `Height: ${body.height}, weight: ${body.weight}`,

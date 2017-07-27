@@ -67,6 +67,8 @@ export class App extends ArvaApp {
         image: 'https://www.bizboard.nl/wp-content/uploads/2017/06/header_illustration.svg',
         menuItems: [{
           icon: AccountIcon,
+          controller: 'Home',
+          method: 'Index',
           text: 'Menu item 1'
         }, {
           icon: AccountIcon,
