@@ -316,44 +316,6 @@ SystemJS.config({
       'main': 'main.js',
       'format': '',
       'meta': {
-        'models/*.js': {
-          'loader': 'plugin-babel',
-          'babelOptions': {
-            'plugins': [
-              'babel-plugin-transform-es2015-destructuring',
-              'babel-plugin-transform-object-rest-spread',
-              'babel-plugin-transform-decorators-legacy',
-              'babel-plugin-transform-class-properties',
-              'babel-plugin-syntax-async-functions',
-              'babel-plugin-transform-es2015-spread',
-              'babel-plugin-transform-runtime-constructor-name'
-            ],
-            'es2016': true,
-            'es2015': false,
-            'stage3': false,
-            'stage2': true,
-            'stage1': false
-          }
-        },
-        'controllers/*.js': {
-          'loader': 'plugin-babel',
-          'babelOptions': {
-            'plugins': [
-              'babel-plugin-transform-es2015-destructuring',
-              'babel-plugin-transform-object-rest-spread',
-              'babel-plugin-transform-decorators-legacy',
-              'babel-plugin-transform-class-properties',
-              'babel-plugin-syntax-async-functions',
-              'babel-plugin-transform-es2015-spread',
-              'babel-plugin-transform-runtime-constructor-name'
-            ],
-            'es2016': true,
-            'es2015': false,
-            'stage3': false,
-            'stage2': true,
-            'stage1': false
-          }
-        },
         '*.css': {
           'loader': 'css'
         },
@@ -386,6 +348,7 @@ SystemJS.config({
     'bitbucket:*.json'
   ],
   map: {
+    'format-decimal': 'npm:format-decimal@0.1.0',
     'plugin-babel': 'npm:systemjs-plugin-babel@0.0.25',
     'babel-plugin-syntax-async-functions': 'npm:babel-plugin-syntax-async-functions@6.13.0',
     'babel-plugin-transform-object-rest-spread': 'npm:babel-plugin-transform-object-rest-spread@6.23.0',
