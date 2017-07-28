@@ -41,6 +41,7 @@
       "famous-flex": "github:bizboard/famous-flex@master",
       "fastclick": "npm:fastclick@1.0.6",
       "firebase": "github:firebase/firebase-bower@^3.0.5",
+      "format-decimal": "npm:format-decimal@^0.1.0",
       "lodash": "npm:lodash@^4.13.1",
       "moment": "npm:moment@^2.18.1",
       "object-assign": "npm:object-assign@^4.1.1",

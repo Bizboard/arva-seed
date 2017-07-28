@@ -13,7 +13,7 @@ export class HomeController extends Controller {
       let body = Injection.get(Body, 'myBody')
       body.height = 13
       this.homeView = new HomeView({body, backgroundColor: 'white', list: [{text: 'Item 1'}, {text: 'Item 2'}]});
-      window.changeBody = () => {{}
+      window.changeBody = () => {
         window.newBody = Injection.get(Body)
         newBody.height = 321
         newBody.weight = 100
@@ -24,12 +24,30 @@ export class HomeController extends Controller {
   }
 
   DBSV() {
-    let bodies = Injection.get(Bodies);
-    return new DBSVView({data: bodies});
+    if(!this.dbsvView){
+      let bodies = Injection.get(Bodies, {path: '025072814781607233'});
+      let changeRandomBody =() => {
+
+        if (bodies.length){
+          let randomPosition = Math.floor(Math.random() * bodies.length);
+          let diceValue = Math.random();
+          if(diceValue > 0.2){
+            bodies[randomPosition].height = Math.random();
+          } else {
+            bodies[randomPosition].remove()
+          }
+        }
+        setTimeout(changeRandomBody, window.changeFrequency);
+      }
+      window.changeFrequency = 1500;
+      changeRandomBody();
+      this.dbsvView = new DBSVView({data: bodies});
+    }
+    return this.dbsvView;
   }
 
   async testStuff () {
-    await new Promise((resolve) => setTimeout(resolve, 400));
+    await new Promise((resolve) => setTimeout(resolve, 20));
     console.log('Hey!');
     console.log('Hey 2!');
     console.log('Hey 3!');

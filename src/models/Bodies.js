@@ -11,7 +11,7 @@ export class Body extends Model {
 }
 
 export class Bodies extends PrioritisedArray {
-    constructor(dataSource = null, dataSnapshot = null, options = null, modelOptions = {}) {
-        super(Body, dataSource, dataSnapshot, options, modelOptions);
+    constructor(options = {}, modelOptions = {}) {
+        super(Body, null, null, options, modelOptions);
     }
 }
