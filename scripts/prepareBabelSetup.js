@@ -25,6 +25,7 @@ let compatibilityBabelPlugins = {
   'plugins': [
     'babel-plugin-transform-decorators-legacy',
     'babel-plugin-transform-class-properties',
+    'babel-plugin-transform-runtime-constructor-name',
     [
       'babel-plugin-transform-builtin-extend',
       {
@@ -56,18 +57,19 @@ let modernBabelPlugin = {
     'babel-plugin-transform-decorators-legacy',
     'babel-plugin-transform-class-properties',
     'babel-plugin-syntax-async-functions',
-    'babel-plugin-transform-es2015-spread'
+    'babel-plugin-transform-es2015-spread',
+    'babel-plugin-transform-runtime-constructor-name'
   ],
   'es2016': true,
   'es2015': false,
   'stage3': false,
   'stage2': true,
   'stage1': false
-}
+};
 
 
-let isCompatibleFlagPassed = process.argv.splice(2).find((arg) => arg === '--compatible')
-let overallTranspile = isCompatibleFlagPassed ? compatibilityBabelPlugins : modernBabelPlugin
+let isCompatibleFlagPassed = process.argv.splice(2).find((arg) => arg === '--compatible');
+let overallTranspile = isCompatibleFlagPassed ? compatibilityBabelPlugins : modernBabelPlugin;
 
 changeJspmConfig({
   babelOptions: Object.assign({}, overallTranspile, {comments: false})

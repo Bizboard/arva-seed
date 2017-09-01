@@ -6,7 +6,8 @@ SystemJS.config({
       'babel-plugin-transform-decorators-legacy',
       'babel-plugin-transform-class-properties',
       'babel-plugin-syntax-async-functions',
-      'babel-plugin-transform-es2015-spread'
+      'babel-plugin-transform-es2015-spread',
+      'babel-plugin-transform-runtime-constructor-name'
     ],
     'es2016': true,
     'es2015': false,
