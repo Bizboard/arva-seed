@@ -312,27 +312,27 @@ SystemJS.config({
     }
   },
   transpiler: 'plugin-babel',
+  meta: {
+    '*.css': {
+      'loader': 'css'
+    },
+    '*.svg': {
+      'loader': 'arva-js/utils/ImageLoader.js'
+    },
+    '*.gif': {
+      'loader': 'arva-js/utils/ImageLoader.js'
+    },
+    '*.png': {
+      'loader': 'arva-js/utils/ImageLoader.js'
+    },
+    '*.jpg': {
+      'loader': 'arva-js/utils/ImageLoader.js'
+    }
+  },
   packages: {
     'app': {
       'main': 'main.js',
-      'format': '',
-      'meta': {
-        '*.css': {
-          'loader': 'css'
-        },
-        '*.svg': {
-          'loader': 'arva-js/utils/ImageLoader.js'
-        },
-        '*.gif': {
-          'loader': 'arva-js/utils/ImageLoader.js'
-        },
-        '*.png': {
-          'loader': 'arva-js/utils/ImageLoader.js'
-        },
-        '*.jpg': {
-          'loader': 'arva-js/utils/ImageLoader.js'
-        }
-      }
+      'format': ''
     }
   },
   map: {
