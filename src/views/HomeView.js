@@ -11,7 +11,10 @@ let compoundOptionDuplicate = {height: 123, weight: 234, backgroundColor: 'white
   nested: {welcomeMessage: 'Hey dude!'},
   swap: false,
   nested2: {welcomeMessage: 'Hey dude!'},
-  backgroundColor: 'white',
+  backgroundColor: 'red',
+  fromFirstPreProcessing: 'firstPreprocessing',
+  fromSecondProcessing: 'secondPreprocessing',
+  outputFromPreprocessing: 123,
   compoundOptions1: {height: 'opt1height', weight: 'op1weight'},
   compoundOptions2: {height: 'opt2height', weight: 'op2weight'},
   compoundOptions3: {},
@@ -20,8 +23,15 @@ let compoundOptionDuplicate = {height: 123, weight: 234, backgroundColor: 'white
   compoundOptions6: compoundOptionDuplicate,
   list: [
     {
-      text: 'Hello world'
+      text: 'Option 1'
     }
+  ],
+  nestedList: [
+    [
+      {
+        text: 'Option 1'
+      }
+    ]
   ],
   fakeList: {
     0: {
@@ -41,9 +51,19 @@ let compoundOptionDuplicate = {height: 123, weight: 234, backgroundColor: 'white
         ...defaultOptions.compoundOptions6,
         backgroundColor: incomingOptions.backgroundColor
       }
-      /*This is made to be sure that the getter of compoundOptions6 can be detected (works as of now) */
+    /*This is made to be sure that the getter of compoundOptions6 can be detected (works as of now) */
   } else if (incomingOptions.compoundOptions6 && incomingOptions.compoundOptions6.backgroundColor) {
     incomingOptions.compoundOptions5.backgroundColor = incomingOptions.compoundOptions6.backgroundColor
+  }
+})
+@bindings.preprocess((incomingOptions) => {
+  if (incomingOptions.fromFirstPreProcessing) {
+    incomingOptions.outputFromPreprocessing = 'Processed by first preprocessing'
+  }
+})
+@bindings.preprocess((incomingOptions) => {
+  if (incomingOptions.fromSecondProcessing) {
+    incomingOptions.outputFromPreprocessing = 'Processed by second preprocessing'
   }
 })
 @layout.dockPadding(10)
@@ -92,6 +112,7 @@ export class HomeView extends View {
     .dock.top(true)
   heightWeightName2 = () => {
     window.options = this.options
+    window.optionObserver = this._optionObserver;
     window.homeView = this
     return AnotherView.with(this.options.swap ? this.options.compoundOptions2 : this.options.compoundOptions1)
   }
@@ -129,7 +150,6 @@ export class HomeView extends View {
       backgroundColor: options.compoundOptions4.backgroundColor
     })
 
-
   @flow.defaultState('top', {}, layout
     .dock.top(true).translate(0, 0, 0))
   @flow.stateStep('bottom', {}, layout.translate(0, 200, 0))
@@ -157,6 +177,9 @@ export class HomeView extends View {
     .dock.top()
   fakeList = Surface.with({content: this.options.fakeList[0].text})
 
+  @layout.size(~100, ~25)
+    .dock.top()
+  fromNestedList = this.options.nestedList.map((innerList) => Surface.with({content: innerList.map(({text}) => text).join(', ')}))
 }
 
 @bindings.setup({

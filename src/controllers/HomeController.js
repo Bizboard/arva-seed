@@ -12,7 +12,11 @@ export class HomeController extends Controller {
     if (!this.homeView) {
       let body = Injection.get(Body, 'myBody')
       body.height = 13
-      this.homeView = new HomeView({body, backgroundColor: 'white', list: [{text: 'Item 1'}, {text: 'Item 2'}]});
+      this.homeView = new HomeView({body,
+        backgroundColor: 'white',
+        list: [{text: 'Item 1'}, {text: 'Item 2'}],
+        nestedList: [[{text: 'First from HomeController'}], [{text: 'Another one from HomeController'}]]
+      });
       window.changeBody = () => {
         window.newBody = Injection.get(Body)
         newBody.height = 321
